@@ -1,0 +1,107 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[portuguese]{babel}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\newcommand{\dpar}[1]{\left(#1\right)}
+\newcommand{\un}[1]{\mathrm{#1}}
+
+\DeclareMathOperator{\sen}{sen}
+
+\title{Vetores}
+
+\author{Max Jáuregui}
+\begin{document}
+\maketitle
+
+\section{Introdução}
+
+A física é uma ciência fundamental, cujo principal objeto de estudo são os fenômenos naturais, também chamados de fenômenos físicos. O estudo desses fenômenos dá origem a teorias e princípios gerais, os quais são importantes para o próprio desenvolvimento da física assim como para eventuais aplicações práticas. 
+
+A física está sempre em constante desenvolvimento. Por exemplo, no século XVI, após várias observações da queda livre de objetos, Galileu propôs que, desprezando a resistência do ar, \textit{a aceleração de um corpo em queda livre é constante e não depende so seu peso}. Isso pode ser verificado atualmente em uma câmera de vácuo (veja \url{https://www.youtube.com/watch?v=hRkbx0YbHfU}). No entanto, esse princípio somente é valido para corpos que caem de alturas pequenas quando comparadas com o raio da Terra. De fato, poucos anos depois da morte de Galileu, Newton desenvolveu a teoria da gravitação universal, a qual inclui a afirmação de Galileu como um caso particular aproximado. Pela sua vez, a teoria de Newton tem também um limite de validade e é um caso particular aproximado da teoria da relatividade geral de Einstein, proposta quase 200 anos depois da morte de Newton. 
+
+A física estuda os fenômenos físicos de forma qualitativa e quantitativa fazendo uso da linguagem da matemática. Para isso, na observação desses fenômenos são obtidos dados numéricos por meio de medições ou cálculos. Chamamos de uma \textbf{grandeza física} a uma quantidade numérica associada a um fenômeno físico; por exemplo, a massa de um corpo, o lapso de tempo entre dois eventos, a velocidade de um corpo, etc..
+
+Para medir uma grandeza física associada a um sistema físico precisamos compará-la com um padrão, o qual define uma \textbf{unidade} da grandeza.
+
+No nosso curso, usaremos o sistema internacional de unidades (SI):
+\begin{itemize}
+	\item Unidade de tempo: segundo (s).
+	\item Unidade de comprimento: metro (m).
+	\item Unidade de massa: quilograma (kg). 
+\end{itemize}
+O grama (g) não é unidade fundamental de massa segundo o SI.
+
+Para denotar múltiplos e frações de unidades, usamos prefixos:
+
+\begin{center}
+	\begin{tabular}{c|c|c}
+		Prefixo&Símbolo&Fator\\\hline
+		quilo&k&$10^3$\\
+		centi&c&$10^{-2}$\\
+		mili&m&$10^{-3}$\\
+		micro&$\mu$&$10^{-6}$\\
+		nano&n&$10^{-9}$
+	\end{tabular}
+\end{center}
+Por exemplo, $1\un{cm}=10^{-2}\un{m}$, $5\mu\un{g}=5\times10^{-6}\un{g}$.
+
+Exemplos de conversão de unidades: 
+\begin{itemize}
+	\item Se o velocímetro de um carro marca 90 km/h, qual é a velocidade do carro em m/s? Vemos que
+	$$90 \frac{\un{km}}{\un{h}}=\dpar{90 \frac{\un{km}}{\un{h}}}\dpar{\frac{1000\un{m}}{1\un{km}}}\dpar{\frac{1\un{h}}{3600\un{s}}}=25\frac{\un{m}}{\un{s}}\,.$$
+	\item Um mililitro (mL) equivale a $1\un{cm}^3$, a quantos litros equivale $1\un{m}^3$? Vemos que
+	$$1\un{m}^3=1\un{m}^3\dpar{\frac{100\un{cm}}{1\un{m}}}^3\dpar{\frac{1\un{mL}}{1\un{cm}^3}}\dpar{\frac{1\un{L}}{1000\un{mL}}}=1000\un{L}\,.$$
+\end{itemize}
+
+
+\section{Vetores}
+Uma grandeza física é dita uma \textbf{grandeza escalar} quando é descrita por um único número; por exemplo, o lapso de tempo entre dois eventos é um exemplo de uma grandeza escalar. Outra classe importante de grandezas físicas, chamadas de \textbf{grandezas vetoriais}, não podem ser descritas por um único número. Por exemplo, para descrever a velocidade de um corpo, precisamos saber quão rápido ele se move (módulo da velocidade) e em qual direção. Grandezas vetoriais podem ser denotadas graficamente por segmentos de reta orientados (setas), os quais chamaremos de \textbf{vetores}.
+
+Um vetor $\vec{A}$ está caracterizado pelo seu \textbf{módulo} $|\vec{A}|$ (comprimento da seta) e pela sua direção. Logo, dois vetores paralelos que têm o mesmo módulo são iguais. Podemos ter também dois vetores $\vec A$ e $\vec B$ com $|\vec A|=|\vec B|$ tais que $\vec A\ne\vec B$. Para ver isso, podemos desenhar um círculo e considerar dois vetores $\vec A$ e $\vec B$ não paralelos, ambos com origem no centro do círculo e com as pontas na circunferência.
+
+A \textbf{adição} de dois vetores $\vec A$ e $\vec B$ produz um vetor $\vec R=\vec A+\vec B$. Depois de unir a origem de $\vec B$ com a ponta de $\vec A$, o vetor $\vec R$ será obtido unindo a origem de $\vec A$ com a ponta do vetor $\vec B$. Fazendo o desenho, podemos concluir que $|\vec A+\vec B|\le |\vec A|+|\vec B|$, onde a igualdade acontece quando $\vec A$ e $\vec B$ são paralelos. Pode-se verificar geometricamente que a adição de vetores é uma operação comutativa ($\vec A+\vec B=\vec B+\vec A$) e associativa ($\vec A+(\vec B+\vec C)=(\vec A+\vec B)+\vec C$).
+
+Multiplicar um vetor $\vec A$ por um número $c>0$ ($c<0$) produz um vetor $\vec B=c\vec A$ que é paralelo (antiparalelo) ao vetor $\vec A$ e tem módulo $|\vec B|=|c||\vec A|$.
+
+Um \textbf{vetor unitário} é um vetor $\vec a$ que tem módulo $|\vec a|=1$. Se $\vec a$ é um vetor unitário, usualmente escrevemos $\hat a$ no lugar de $\vec a$. 
+
+Dado qualquer vetor $\vec A$, podemos obter um vetor unitário $\hat a$ paralelo a $\vec A$. Com efeito, multiplicando o número $1/|\vec A|$ ao vetor $\vec A$, obtemos $\hat a=\vec A/|\vec A|$. Verificamos facilmente que $|\hat a|=1$.
+
+\section{Componentes de vetores}
+Os eixo $x$ de um sistema de coordenadas cartesianas no plano é paralelo a um vetor unitário que denotaremos por $\hat i$. Analogamente, o eixo $y$ é paralelo a um vetor unitário $\hat j$. No caso de coordenadas cartesianas no espaço, além dos vetores unitários $\hat i$ e $\hat j$, teremos o vetor unitário $\hat k$, que é paralelo ao eixo $z$. 
+
+Utilizando coordenadas cartesianas, um vetor $\vec A$ pode ser escrito como $\vec A=A_x\hat i+A_y\hat j+A_z\hat k$. Os números $A_x, A_y$ e $A_z$ são chamados de \textbf{componentes} do vetor $\vec A$.
+
+Desenhando um vetor $\vec A=A_x\hat i+A_y\hat j$, podemos concluir, após usar o teorema de Pitágoras, que $|\vec A|=\sqrt{A_x^2+A_y^2}$. Analogamente podemos verificar que, se $\vec B=B_x\hat i+B_y\hat j+B_z\hat k$, $|\vec B|=\sqrt{B_x^2+B_y^2+B_z^2}$.
+
+Se um vetor $\vec A$ no plano forma um ângulo $\theta$ com o semieixo positivo $x$, então, fazendo um desenho, podemos concluir que $A_x=|\vec A|\cos\theta$ e $A_y=|\vec A|\sen\theta$. A partir dessas relações concluímos o seguinte:
+\begin{itemize}
+	\item conhecendo o módulo de um vetor $\vec A$ e o ângulo $\theta$ que ele forma com o semieixo positivo $x$, podemos determinar os componentes $A_x$ e $A_y$;
+	\item conhecendo os componentes $A_x$ e $A_y$ de um vetor $\vec A$, podemos determinar $|\vec A|$ e o ângulo $\theta$ que o vetor $\vec A$ forma com o semieixo positivo $x$.
+\end{itemize}
+
+Por exemplo, se $\vec A=3\hat i-3\sqrt{3}\hat j$, vamos ter que $|\vec A|=\sqrt{3^2+(-3\sqrt{3})^2}=6$. Além disso, se $\theta$ é o ângulo entre o vetor $\vec A$ e o semieixo positivo $x$, temos que $\cos\theta=3/6=1/2$ e $\sen\theta=-3\sqrt{3}/6=\sqrt{3}/2$, de onde obtemos que $\theta=300º$ ($\theta$ deve pertencer ao quarto quadrante, pois $\cos\theta>0$ e $\sen\theta<0$).
+
+Se $\vec A=A_x\hat i+A_y\hat j+A_z\hat k$ e $\vec B=B_x\hat i+B_y\hat j+B_z\hat k$, usando as propriedades comutativa e associativa da adição de vetores, obtemos que
+$$\vec A+\vec B=(A_x+B_x)\hat i+(A_y+B_y)\hat j+(A_z+B_z)\hat k\,.$$
+Por outro lado, podemos verificar geometricamente que, para qualquer número $c$, 
+$$c\vec A=cA_x\hat i+cA_y\hat j+cA_z\hat k\,.$$
+
+Dados dois vetores $\vec A$ e $\vec B$ que formam um ângulo $\theta$ entre eles, definimos o \textbf{produto escalar} deles por
+$$\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta\,.$$
+Observamos que o produto escalar de dois vetores é um número. Também vemos imediatamente da definição que $\vec A\cdot\vec B=\vec B\cdot\vec A$.
+
+Dependendo do ângulo formado entre os vetores $\vec A$ e $\vec B$, o produto escalar desses vetores pode ser positivo, negativo ou zero. Em particular, vemos que $\vec A\cdot\vec B=0$ quando $\vec A$ e $\vec B$ são perpendiculares (lembre que $\cos 90º=0$). Por outro lado, se $\vec A$ e $\vec B$ são vetores paralelos, então $\vec A\cdot\vec B=|\vec A||\vec B|$ (lembre que $\cos 0º=1$) e, em particular, $\vec A\cdot\vec A=|\vec A|^2$.
+
+Vamos provar agora que o produto escalar é distributivo em relação à adição, ou seja, $\vec A\cdot (\vec B+\vec C)=\vec A\cdot\vec B+\vec A\cdot\vec C$. Primeiramente, podemos verificar imediatamente que essa igualdade é verdadeira quando $\vec B$ e $\vec C$ são paralelos ou antiparalelos a $\vec A$ ou quando $\vec B$ e $\vec C$ são perpendiculares a $\vec A$. Se $\vec B$ é um vetor paralelo a $\vec A$ e $\vec C$ é um vetor perpendicular a $\vec A$, então vamos ter que $\vec A\cdot(\vec B+\vec C)=\vec A\cdot\vec B$. Com efeito, se $\theta$ é o ângulo entre $\vec A$ e $\vec B+\vec C$, podemos verificar graficamente que $|\vec B+\vec C|\cos\theta=|\vec B|$
+
+No caso geral, podemos escrever $\vec B=\vec B_\parallel+\vec B_\perp$ e $\vec C=\vec C_\parallel+\vec C_\perp$, onde $\vec B_\parallel$ e $\vec C_\parallel$ são vetores paralelos a $\vec A$ e os vetores $\vec B_\perp$ e $\vec C_\perp$ são perpendiculares a $\vec A$. Logo,
+\begin{equation*}
+\begin{split}
+\vec A\cdot(\vec B+\vec C)&=\vec A\cdot(\vec B_\parallel+\vec B_\perp+\vec C_\parallel+\vec C_\perp)\\
+&=\vec A\cdot[(\vec B_\parallel+\vec C_\parallel)+(\vec B_\perp+\vec C_\perp)]
+\end{split}
+\end{equation*}
+\end{document}
