@@ -15,7 +15,7 @@
 
 Uma \textbf{grandeza física} é qualquer quantidade numérica associada a um fenômeno físico; por exemplo, a distância entre dois corpos, o lapso de tempo entre dois eventos, a velocidade de um corpo, etc. Para obtermos um valor associado a uma grandeza física, precisamos realizar um \textbf{processo de medição}. A medição de uma grandeza física pode ser direta ou indireta.
 
-\paragraph{Medição direta:} A medição consiste em comparar a grandeza física diretamente com um padrão utilizando um instrumento de medição. Podemos realizar uma medição direta de duas formas:
+\paragraph{Medição direta:} A medição consiste em comparar a grandeza física diretamente com um padrão (unidade da grandeza) utilizando um instrumento de medição. Podemos realizar uma medição direta de duas formas:
 \begin{itemize}
 	\item Fazendo uma única medição: Por exemplo, podemos medir o comprimento de uma mesa com uma régua cuja menor subdivisão tem comprimento igual a 1mm.
 	\item Considerando várias repetições da medição: Por exemplo, podemos medir repetidamente com um cronômetro o tempo que demora em cair um corpo desde uma certa altura até o chão. É claro que as repetições do experimento devem estar sujeitas às mesmas condições.
@@ -30,14 +30,28 @@ Mesmo que sejamos experientes no processo de medição de uma grandeza física, 
 
 \paragraph{Erros sistemáticos:} São erros causados pelo uso de instrumentos não calibrados ou pelo mau costume da pessoa que faz a medição. Esses erros podem ser diminuídos.
 
-Para explicitar o erro em uma medição de uma grandeza física, a medida deve ser expressa na forma $\overline{x}\pm \sigma_x$. Essa notação quer dizer que, com certeza ou pelo menos com grande probabilidade ($\ge 68\%$), o valor da grandeza se encontra no intervalo $[\overline{x}-\sigma_x, \overline{x}+\sigma_x]$. No caso de uma medida direta fazendo uma única medição, $\overline{x}$ e $\sigma_x$ são respectivamente a leitura e a \textbf{incerteza} do instrumento de medição. A incerteza do instrumento é as vezes fornecida pelo fabricante; caso contrário, podemos considerar que a incerteza do instrumento é igual à menor subdivisão do instrumento. No caso de uma medida direta considerando $n$ repetições da medição, vamos ter 
+Para explicitar o erro em uma medição de uma grandeza física, a medida deve ser expressa na forma $\overline{x}\pm \sigma_x$. Essa notação quer dizer que, com certeza ou pelo menos com grande probabilidade ($\ge 68\%$), o valor real da grandeza se encontra no intervalo $[\overline{x}-\sigma_x, \overline{x}+\sigma_x]$. No caso de uma medida direta fazendo uma única medição, $\overline{x}$ e $\sigma_x$ são respectivamente a leitura e a \textbf{incerteza} do instrumento de medição. A incerteza do instrumento é as vezes fornecida pelo fabricante; caso contrário, podemos considerar que a incerteza do instrumento é igual à menor subdivisão do instrumento. No caso de uma medida direta considerando $n$ repetições da medição, vamos ter 
 $$\overline{x}=\frac{x_1+\cdots+x_n}{n}\quad\text{(média aritmética)}\,,$$
 onde $x_1,\ldots,x_n$ são as leituras (sem incerteza) do instrumento de medição nas repetições. Por outro lado,
 $$\sigma_x=\sqrt{\frac{(x_1-\overline{x})^2+\cdots+(x_n-\overline{x})^2}{n-1}}\,,$$
 que é chamado de \textbf{desvio padrão} de $x_1,\ldots,x_n$.
 
-Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=x+y$, como determinamos $\sigma_z$? O maior valor de $z$ será $x+y+\sigma_x+\sigma_y$ e o menor valor será $x+y-\sigma_x-\sigma_y$. Logo, é seguro considerar $\sigma_z=\sigma_x+\sigma_y$. Porém isso superestima o erro da medida de $z$. Se $x$ e $y$ são medidas independentes, podemos considerar $\sigma_z=\sqrt{\sigma_x^2+\sigma_y^2}$.
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=x+y$, como determinamos $\overline{z}$ e $\sigma_z$? Primeiramente consideramos $\overline{z}=\overline{x}\overline{y}$. Para determinar $\sigma_z$, vamos encontrar o maior e o menor valor possível de $z$. O maior valor possível de $z$ será $\max(z)=x+y+\sigma_x+\sigma_y$ e o menor será $\min(z)=x+y-(\sigma_x+\sigma_y)$. Logo, é seguro considerar $\sigma_z=\sigma_x+\sigma_y$. Nessa matéria vamos considerar que $\sigma_z$ é definida por essa expressão mesmo quando ela superestima o erro da medida de $z$. De fato, se $x$ e $y$ são medidas independentes, poderíamos considerar $\sigma_z=\sqrt{\sigma_x^2+\sigma_y^2}$.
 
-Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=xy$, como determinamos $\sigma_z$? Primeiramente consideramos que $\sigma_x\ll x$ e $\sigma_y\ll y$. Logo, o maior valor de $z$ será $z+\sigma_z=(x+\sigma_x)(y+\sigma_y)$.
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=x-y$, como determinamos $\overline{z}$ e $\sigma_z$? Fazendo uma análise similar ao caso da soma, vamos obter que $\overline{z}=\overline{x}-\overline{y}$ e $\sigma_z=\sigma_x+\sigma_y$. Note que nesse caso os erros se somam.
+
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=xy$, como determinamos $\overline{z}$ e $\sigma_z$? Primeiramente definimos $\overline{z}=\overline{x}\overline{y}$. Para determinar $\sigma_z$, vamos considerar que $\sigma_x\ll |\overline{x}|$ e $\sigma_y\ll |\overline{y}|$, que é algo que acontece frequentemente na prática. Para calcular o maior e o menor valor possível de $z$, temos que analisar separadamente os 4 casos: 
+\begin{enumerate}
+	\item[(i)] $\overline{x}\ge 0$ e $\overline{y}\ge 0$;
+	\item[(ii)] $\overline{x}\ge 0$ e $\overline{y}<0$;
+	\item[(iii)] $\overline{x}<0$ e $\overline{y}\ge 0$;
+	\item[(iv)] $\overline{x}<0$ e $\overline{y}<0$.
+\end{enumerate}
+A forma de analisar cada caso é bem parecida, por isso vamos detalhar só o primeiro caso. Nesse caso vamos ter $$\max(z)=(\overline{x}+\sigma_x)(\overline{y}+\sigma_y)\quad\text{e}\quad\min(z)=(\overline{x}-\sigma_x)(\overline{y}-\sigma_y)\,;$$
+Logo, 
+$$\frac{\max(z)}{\overline{z}}\approx 1+\frac{\sigma_x}{\overline{x}}+\frac{\sigma_y}{\overline{y}}\quad\text{e}\quad\frac{\min(z)}{\overline{z}}\approx 1-\frac{\sigma_x}{\overline{x}}-\frac{\sigma_y}{\overline{y}}\,,$$
+onde temos desprezado o termo $\frac{\sigma_x\sigma_y}{\overline{z}}=(\frac{\sigma_x}{\overline{x}})(\frac{\sigma_y}{\overline{y}})$ em cada uma das equações, pois é muito pequeno em comparação com os outros termos. Logo, vamos ter que $\sigma_z=\overline{x}\sigma_y+\overline{y}\sigma_x$. No caso geral vamos ter que
+$$\sigma_z=|\overline{x}|\sigma_y+|\overline{y}|\sigma_x\,.$$
+
 
 \end{document}
