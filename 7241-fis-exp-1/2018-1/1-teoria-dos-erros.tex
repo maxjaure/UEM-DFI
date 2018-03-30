@@ -1,0 +1,77 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[portuguese]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\newcommand{\dpar}[1]{\left(#1\right)}
+\newcommand{\un}[1]{\mathrm{#1}}
+
+\title{Introdução à teoria dos erros}
+
+\author{Max Jáuregui}
+\begin{document}
+\maketitle
+
+Uma \textbf{grandeza física} é qualquer quantidade numérica associada a um fenômeno físico; por exemplo, a distância entre dois corpos, o lapso de tempo entre dois eventos, a velocidade de um corpo, etc. Para obtermos um valor associado a uma grandeza física, precisamos realizar um \textbf{processo de medição}. A medição de uma grandeza física pode ser direta ou indireta.
+
+\paragraph{Medição direta:} A medição consiste em comparar a grandeza física diretamente com um padrão (unidade da grandeza) utilizando um instrumento de medição. Podemos realizar uma medição direta de duas formas:
+\begin{itemize}
+	\item Fazendo uma única medição: Por exemplo, podemos medir o comprimento de uma mesa com uma régua cuja menor subdivisão tem comprimento igual a 1mm.
+	\item Considerando várias repetições da medição: Por exemplo, podemos medir repetidamente com um cronômetro o tempo que demora em cair um corpo desde uma certa altura até o chão. É claro que as repetições do experimento devem estar sujeitas às mesmas condições.
+\end{itemize}
+
+\paragraph{Medição indireta:}
+A medida é obtida utilizando uma equação que envolve grandezas físicas que podem ser medidas diretamente. Por exemplo, para medir o módulo da velocidade média de um corpo que cai livremente de uma altura $h$ em relação ao chão, usamos a relação $v=h/t$, onde $t$ é o tempo que demora o corpo em cair até o chão.
+
+Mesmo que sejamos experientes no processo de medição de uma grandeza física, as medidas obtidas sempre apresentarão erros. Podemos classificar os erros em: erros sistemáticos, erros aleatórios.
+
+\paragraph{Erros aleatórios:} São erros causados principalmente pela ignorância inevitável das condições exatas de medição. Esses erros são imprevisíveis e não podem ser diminuídos.
+
+\paragraph{Erros sistemáticos:} São erros causados usualmente pelo uso de instrumentos não calibrados ou pelo mau costume da pessoa que faz a medição. Esses erros podem ser diminuídos.
+
+Para explicitar o erro em uma medição de uma grandeza física, a medida deve ser expressa na forma $\overline{x}\pm \sigma_x$. Essa notação quer dizer que, com certeza ou pelo menos com grande probabilidade ($\ge 68\%$), o valor real da grandeza se encontra no intervalo $[\overline{x}-\sigma_x, \overline{x}+\sigma_x]$. 
+
+No caso de uma medida direta fazendo uma única medição, $\overline{x}$ e $\sigma_x$ são respectivamente a leitura e a \textbf{incerteza} do instrumento de medição. A incerteza do instrumento é às vezes fornecida pelo fabricante; caso contrário, podemos considerar que a incerteza do instrumento é igual à menor subdivisão do instrumento. No caso de uma medida direta considerando $n$ repetições da medição, vamos ter 
+$$\overline{x}=\frac{x_1+\cdots+x_n}{n}\quad\text{(média aritmética)}\,,$$
+onde $x_1,\ldots,x_n$ são as leituras (sem incerteza) do instrumento de medição nas repetições. Por outro lado,
+$$\sigma_x=\sqrt{\frac{(x_1-\overline{x})^2+\cdots+(x_n-\overline{x})^2}{n-1}}\,,$$
+que é chamado de \textbf{desvio padrão} de $x_1,\ldots,x_n$.
+
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=x+y$, como determinamos $\overline{z}$ e $\sigma_z$? Primeiramente consideramos $\overline{z}=\overline{x}\overline{y}$. Para determinar $\sigma_z$, vamos encontrar o maior e o menor valor possível de $z$. O maior valor possível de $z$ será $\max(z)=x+y+\sigma_x+\sigma_y$ e o menor será $\min(z)=x+y-(\sigma_x+\sigma_y)$. Logo, é seguro considerar $\sigma_z=\sigma_x+\sigma_y$. Nessa matéria vamos considerar que $\sigma_z$ é definida por essa expressão mesmo quando ela superestima o erro da medida de $z$. De fato, se $x$ e $y$ são medidas independentes, poderíamos considerar $\sigma_z=\sqrt{\sigma_x^2+\sigma_y^2}$.
+
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=x-y$, como determinamos $\overline{z}$ e $\sigma_z$? Fazendo uma análise similar ao caso da soma, vamos obter que $\overline{z}=\overline{x}-\overline{y}$ e $\sigma_z=\sigma_x+\sigma_y$. Note que nesse caso os erros se somam.
+
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=xy$, como determinamos $\overline{z}$ e $\sigma_z$? Primeiramente definimos $\overline{z}=\overline{x}\,\overline{y}$. Para determinar $\sigma_z$, vamos considerar que $\sigma_x\ll |\overline{x}|$ e $\sigma_y\ll |\overline{y}|$, que é algo que acontece frequentemente na prática. Para calcular o maior e o menor valor possível de $z$, temos que analisar separadamente os 4 casos: 
+\begin{enumerate}
+	\item[(i)] $\overline{x}\ge 0$ e $\overline{y}\ge 0$;
+	\item[(ii)] $\overline{x}\ge 0$ e $\overline{y}<0$;
+	\item[(iii)] $\overline{x}<0$ e $\overline{y}\ge 0$;
+	\item[(iv)] $\overline{x}<0$ e $\overline{y}<0$.
+\end{enumerate}
+A forma de analisar cada caso é bem parecida, por isso vamos detalhar só o primeiro caso. Nesse caso vamos ter $$\max(z)=(\overline{x}+\sigma_x)(\overline{y}+\sigma_y)\quad\text{e}\quad\min(z)=(\overline{x}-\sigma_x)(\overline{y}-\sigma_y)\,;$$
+Logo, 
+$$\frac{\max(z)}{\overline{z}}\approx 1+\frac{\sigma_x}{\overline{x}}+\frac{\sigma_y}{\overline{y}}\quad\text{e}\quad\frac{\min(z)}{\overline{z}}\approx 1-\frac{\sigma_x}{\overline{x}}-\frac{\sigma_y}{\overline{y}}\,,$$
+onde temos desprezado o termo $\frac{\sigma_x\sigma_y}{\overline{z}}=(\frac{\sigma_x}{\overline{x}})(\frac{\sigma_y}{\overline{y}})$ em cada uma das equações, pois é muito pequeno em comparação com os outros termos. Logo, vamos ter que $\sigma_z=\overline{x}\sigma_y+\overline{y}\sigma_x$. No caso geral vamos ter que
+$$\sigma_z=|\overline{y}|\sigma_x+|\overline{x}|\sigma_y\,.$$
+
+Sejam $\overline{x}+\sigma_x$ e $\overline{y}+\sigma_y$ as medidas de duas grandezas. Se $z=x/y$, podemos obter $\overline{z}$ e $\sigma_z$ de forma análoga ao caso da multiplicação. Nesse caso vamos obter que $\overline{z}=\overline{x}/\overline{y}$ e
+$$\sigma_z=\frac{|\overline{y}|\sigma_x+|\overline{x}|\sigma_y}{\overline{y}^2}\,.$$
+
+\paragraph{Algarismos significativos:}
+\begin{enumerate}
+	\item Todo algarismo diferente de zero é significativo; por exemplo, $1,23$ tem $3$ algarismos significativos.
+	\item Todo zero à direita de um algarismo diferente de zero é significativo; por exemplo, $1,005$ e $1,300$ têm ambos $4$ algarismos significativos. Usando notação científica, as potências de dez não são analisadas; por exemplo, $1,2\times 10^2$ tem 2 algarismos significativos e $1,20\times10^2$ tem $3$.
+	\item Todo zero à esquerda do primeiro algarismo diferente de zero não é significativo; por exemplo $0,0035$ e $0,15$ têm ambos $2$ algarismos significativos.
+\end{enumerate}
+
+Ao expressarmos medidas na forma $\overline{x}\pm \sigma_x$ devemos levar em conta as seguintes regras:
+\begin{enumerate}
+	\item $\sigma_x$ deve ter no máximo 2 algarismos significativos.
+	\item $\overline{x}$ deve ter o mesmo número de casas decimais que $\sigma_x$.
+\end{enumerate}
+Por exemplo, se depois de nossos cálculos obtemos que $\overline{x}=3,71560\,\un{mm}$ e $\sigma_x=0,04723\,\un{mm}$, nosso resultado será expresso como $(3,716\pm 0,047)\,\un{mm}$ ($\sigma_x$ com $2$ algarismos significativos) ou como $(3,72\pm 0,05)\,\un{mm}$ ($\sigma_x$ com um algarismo significativo).
+
+Ao multiplicarmos dois números com diferente quantidade de algarismos significativos, o número de algarismos significativos do resultado deve ser igual ao do número com a menor quantidade de algarismos significativos. Por exemplo, $1,2305\times 0,0025=0,00307625$ e, por conseguinte, o resultado correto deve ser $0,0031$, com dois algarismos significativos. Ao somarmos dois números, o que devemos levar em conta é que o número de casas decimais do resultado deve ser igual ao do somando com a menor quantidade de casas decimais. Por exemplo, $1,2376+10,58=11,8176$ e, por conseguinte, o resultado correto é $11,82$.
+\end{document}
