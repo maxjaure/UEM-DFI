@@ -1,8 +1,10 @@
 # Calendário
 
 [11-17 março] Conversão de unidades; vetores; adição de vetores; multiplicação de um vetor por um número.
+
 [18-24 março] Componentes de vetores; produto escalar.
-[25-31 março] Produto vetorial; definições de velocidade média e instantânea; gráficos de posição verus tempo. 
+
+[25-31 março] Produto vetorial; definições de velocidade média e instantânea; gráficos de posição versus tempo. (Lista 1 entregue).
 
 # Forma de avaliação
 

@@ -1,5 +1,6 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[portuguese]{babel}
+\usepackage[margin=1in]{geometry}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -89,19 +90,53 @@ $$\vec A+\vec B=(A_x+B_x)\hat i+(A_y+B_y)\hat j+(A_z+B_z)\hat k\,.$$
 Por outro lado, podemos verificar geometricamente que, para qualquer número $c$, 
 $$c\vec A=cA_x\hat i+cA_y\hat j+cA_z\hat k\,.$$
 
+\section{Produto escalar}
+
+Definimos o \textbf{ângulo} $\theta$ entre dois vetores $\vec A$ e $\vec B$ como sendo o menor dos ângulos obtidos ao fazer coincidir as origens de $\vec A$ e $\vec B$. Dessa maneira, temos que $0º\le \theta\le 180º$.
+
 Dados dois vetores $\vec A$ e $\vec B$ que formam um ângulo $\theta$ entre eles, definimos o \textbf{produto escalar} deles por
 $$\vec A\cdot\vec B=|\vec A||\vec B|\cos\theta\,.$$
 Observamos que o produto escalar de dois vetores é um número. Também vemos imediatamente da definição que $\vec A\cdot\vec B=\vec B\cdot\vec A$.
 
-Dependendo do ângulo formado entre os vetores $\vec A$ e $\vec B$, o produto escalar desses vetores pode ser positivo, negativo ou zero. Em particular, vemos que $\vec A\cdot\vec B=0$ quando $\vec A$ e $\vec B$ são perpendiculares (lembre que $\cos 90º=0$). Por outro lado, se $\vec A$ e $\vec B$ são vetores paralelos, então $\vec A\cdot\vec B=|\vec A||\vec B|$ (lembre que $\cos 0º=1$) e, em particular, $\vec A\cdot\vec A=|\vec A|^2$.
+Dependendo do ângulo formado entre os vetores $\vec A$ e $\vec B$, o produto escalar desses vetores pode ser positivo, negativo ou zero. Em particular, vemos que $\vec A\cdot\vec B=0$ quando $\vec A$ e $\vec B$ são perpendiculares (lembre que $\cos 90º=0$). Por outro lado, se $\vec A$ e $\vec B$ são vetores paralelos, então $\vec A\cdot\vec B=|\vec A||\vec B|$ (lembre que $\cos 0º=1$) e, em particular, $\vec A\cdot\vec A=|\vec A|^2$. Se $\vec A$ e $\vec B$ são vetores antiparalelos, então $\vec A\cdot\vec B=-|\vec A||\vec B|$ (lembre que $\cos180º=-1$). Usando essas propriedades vemos que $\hat i\cdot\hat i=\hat j\cdot\hat j=\hat k\cdot\hat k=1$ e $\hat i\cdot\hat j=\hat i\cdot \hat k=\hat j\cdot\hat k=0$.
 
-Vamos provar agora que o produto escalar é distributivo em relação à adição, ou seja, $\vec A\cdot (\vec B+\vec C)=\vec A\cdot\vec B+\vec A\cdot\vec C$. Primeiramente, podemos verificar imediatamente que essa igualdade é verdadeira quando $\vec B$ e $\vec C$ são paralelos ou antiparalelos a $\vec A$ ou quando $\vec B$ e $\vec C$ são perpendiculares a $\vec A$. Se $\vec B$ é um vetor paralelo a $\vec A$ e $\vec C$ é um vetor perpendicular a $\vec A$, então vamos ter que $\vec A\cdot(\vec B+\vec C)=\vec A\cdot\vec B$. Com efeito, se $\theta$ é o ângulo entre $\vec A$ e $\vec B+\vec C$, podemos verificar graficamente que $|\vec B+\vec C|\cos\theta=|\vec B|$
+Se $\vec A=A_x\hat i+A_y\hat j+A_z\hat k$ e $\vec B=B_x\hat i+B_y\hat j+B_z\hat k$, então, usando a distributividade do produto escalar ($\vec A\cdot(\vec B+\vec C)=\vec A\cdot\vec B+\vec A\cdot\vec C$), encontramos que $\vec A\cdot\vec B=A_xB_x+A_yB_y+A_zB_z$.
 
-No caso geral, podemos escrever $\vec B=\vec B_\parallel+\vec B_\perp$ e $\vec C=\vec C_\parallel+\vec C_\perp$, onde $\vec B_\parallel$ e $\vec C_\parallel$ são vetores paralelos a $\vec A$ e os vetores $\vec B_\perp$ e $\vec C_\perp$ são perpendiculares a $\vec A$. Logo,
-\begin{equation*}
-\begin{split}
-\vec A\cdot(\vec B+\vec C)&=\vec A\cdot(\vec B_\parallel+\vec B_\perp+\vec C_\parallel+\vec C_\perp)\\
-&=\vec A\cdot[(\vec B_\parallel+\vec C_\parallel)+(\vec B_\perp+\vec C_\perp)]
-\end{split}
-\end{equation*}
+Usando o produto escalar podemos encontrar o ângulo $\theta$ entre dois vetores $\vec A$ e $\vec B$. Por exemplo, se $\vec A=\hat i-2\hat j+\hat k$ e $\vec B=3\hat i+\hat j-2\hat k$, então $\vec A\cdot\vec B=3-2-2=-1$. Por outro lado, $|\vec A|=\sqrt{6}$ e $|\vec B|=\sqrt{14}$. Logo, $\sqrt{6}\sqrt{14}\cos\theta=\vec A\cdot\vec B=-1$ e, por conseguinte, $\cos\theta=-1/\sqrt{84}$. Portanto, $\theta=\arccos(-1/\sqrt{84})$.
+
+\section{Produto vetorial}
+O \textbf{produto vetorial} de dois vetores $\vec A$ e $\vec B$, denotado por $\vec A\times \vec B$, é definido como sendo um vetor perpendicular ao plano formado pelos vetores $\vec A$ e $\vec B$ cujo módulo é $|\vec A||\vec B|\sen\theta$, onde $\theta$ é o ângulo formado por $\vec A$ e $\vec B$. Como existe mais de um vetor perpendicular ao plano formado pelos vetores $\vec A$ e $\vec B$, para determinar de forma única o produto vetorial $\vec A\times \vec B$, usamos a chamada \textbf{regra da mão direita}. Para descrever essa regra, consideremos que os vetores $\vec A$ e $\vec B$ estão no plano desta folha de papel. Logo,
+\begin{enumerate}
+	\item fazemos coincidir a origem dos vetores $\vec A$ e $\vec B$;
+	\item giramos o vetor $\vec A$ barrendo o ângulo $\theta$ até chegar no vetor $\vec B$;
+	\item se o giro é anti-horário, $\vec A\times \vec B$ será um vetor que sai perpendicularmente da folha; se o giro é horário, $\vec A\times\vec B$ será um vetor que entra perpendicularmente na folha.
+\end{enumerate}
+
+Segue da regra da mão direita que $\vec B\times\vec A=-\vec A\times\vec B$ para quaisquer vetores $\vec A$ e $\vec B$. Por outro lado, da relação $|\vec A\times\vec B|=|\vec A||\vec B|\sen\theta$ segue que $\vec A\times\vec B=\vec 0$ se $\vec A$ e $\vec B$ são paralelos ou antiparalelos, pois em ambos os casos $\sen\theta=0$. Em particular, temos então que $\hat i\times \hat i=\hat j\times \hat j=\hat k\times \hat k=\vec 0$. Além disso, podemos verificar facilmente que $\hat i\times \hat j=\hat k$, $\hat j\times \hat k=\hat i$ e $\hat k\times \hat i=\hat j$.
+
+Se $\vec A=A_x\hat i+A_y\hat j+A_z\hat k$ e $\vec B=B_x\hat i+B_y\hat j+B_z\hat k$, então, usando a distributividade do produto vetorial ($\vec A\times(\vec B+\vec C)=\vec A\times\vec B+\vec A\times\vec C$), encontramos que
+$$\vec A\times\vec B=(A_yB_z-A_zB_y)\hat i+(A_zB_x-A_xB_z)\hat j+(A_xB_y-A_yB_x)\hat k\,,$$
+o que pode ser escrito também na forma de determinante:
+$$\vec A\times\vec B=\left|
+\begin{array}{ccc}
+\hat i&\hat j&\hat k\\
+A_x&A_y&A_z\\
+B_x&B_y&B_z
+\end{array}\right|\,.$$
+
+
+\section*{Apêndice$^*$}
+Vamos provar que o produto escalar é distributivo em relação à adição, ou seja, 
+\begin{equation}
+\label{pe.dist}
+\vec A\cdot (\vec B+\vec C)=\vec A\cdot\vec B+\vec A\cdot\vec C
+\end{equation}
+Para isso vamos provar primeiro que se $\vec B$ é paralelo ou antiparalelo a $\vec A$ e $\vec C$ é per\-pen\-di\-cu\-lar a $\vec A$, então $\vec A\cdot (\vec B+\vec C)=\vec A\cdot\vec B$. Denotemos por $\theta$ o ângulo que $\vec B+\vec C$ forma com $\vec A$. Se $\vec B$ é paralelo a $\vec A$, fazendo um desenho vamos ver que $|\vec B+\vec C|\cos\theta=|\vec B|$ e, por conseguinte, $\vec A\cdot(\vec B+\vec C)=|\vec A||\vec B+\vec C|\cos\theta=|\vec A||\vec B|=\vec A\cdot \vec B$. Analogamente, se $\vec B$ é antiparalelo a $\vec A$, vamos ter que $|\vec B+\vec C|\cos\theta=-|\vec B|$ e, por conseguinte, $\vec A\cdot(\vec B+\vec C)=-|\vec A||\vec B|=\vec A\cdot \vec B$. Vamos obter agora a Eq.~(\ref*{pe.dist}). O vetor arbitrário $\vec B$ pode ser decomposto como a soma de um vetor $\vec B_\parallel$, que é paralelo ou antiparalelo a $\vec A$, e um vetor $\vec B_\perp$ que é perpendicular a $\vec A$. De forma análoga, o vetor $C$ pode ser escrito como $\vec C=\vec C_\parallel+\vec C_\perp$. Logo,
+$$\vec A\cdot(\vec B+\vec C)=\vec A\cdot(\vec B_\parallel+\vec B_\perp+\vec C_\parallel+\vec C_\perp)=\vec A\cdot[(\vec B_\parallel+\vec C_\parallel)+(\vec B_\perp+\vec C_\perp)]\,.$$
+Como $\vec B_\parallel+\vec C_\parallel$ é paralelo ou antiparalelo a $\vec A$ e $\vec B_\perp+\vec C_\perp$ é perpendicular a $\vec A$, vamos ter que $\vec A\cdot(\vec B+\vec C)=\vec A\cdot(\vec B_\parallel+\vec C_\parallel)$. É fácil de se verificar que $\vec A\cdot(\vec B_\parallel+\vec C_\parallel)=\vec A\cdot\vec B_\parallel+\vec A\cdot\vec C_\parallel$. Portanto, $\vec A\cdot(\vec B+\vec C)=\vec A\cdot\vec B_\parallel+\vec A\cdot\vec C_\parallel=\vec A\cdot\vec B+\vec A\cdot\vec C$.
+
+O produto vetorial também é distributivo em relação à adição, ou seja,
+$$\vec A\times(\vec B+\vec C)=\vec A\times\vec B+\vec A\times\vec C$$
+A demonstração dessa propriedade é similar à do produto escalar. O primeiro passo é mostrar que $\vec A\times (\vec B+\vec C)=\vec A\times\vec C$ quando $\vec B$ é paralelo ou antiparalelo a $\vec A$ e $\vec C$ é perpendicular a $\vec A$. O caso do produto vetorial apresenta uma pequena dificuldade a mais devido a que a relação $\vec A\times (\vec B_\perp+\vec C_\perp)=\vec A\times \vec B_\perp+\vec A\times\vec C_\perp$ não é evidente e requer demonstração.
+
 \end{document}
