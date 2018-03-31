@@ -46,10 +46,10 @@ $$v(t)=\frac{dx}{dt}=\dpar{15\,\frac{\un m}{\un{s}^3}}t^2-\dpar{20\,\frac{\un m}
 Logo, no instante $t=2\,\un s$, vamos ter que $v(2\,\un s)=60\,\un m/\un s-40\,\un m/\un s=20\,\un m/\un s$.
 
 \section{Gráficos $x$ versus $t$}
-Conhecendo a posição de um corpo, que se move em linha reta, em cada instante de tempo, podemos construir um gráfico $x$ versus $t$ representando os pares ordenados $(t,x(t))$ em um plano cartesiano. O objetivo dessa seção é obter informação sobre o movimento de um corpo a a partit de um gráfico $x$ versus $t$.
+Conhecendo a posição de um corpo, que se move em linha reta, em cada instante de tempo, podemos construir um gráfico $x$ versus $t$ representando os pares ordenados $(t,x(t))$ em um plano cartesiano. O objetivo dessa seção é obter informação sobre o movimento de um corpo a a partir de um gráfico $x$ versus $t$.
 
-Exemplo:
-\begin{figure}[ht]
+\paragraph{Exemplo:}
+\begin{figure}[t]
   \centering
   \includegraphics[width=0.9\textwidth,keepaspectratio]{2-movimento-retilineo-fig1.pdf}
   \caption{Exemplo de um gráfico $x$ versus $t$}
@@ -57,14 +57,14 @@ Exemplo:
 \end{figure}
 Da figura~\ref{fig1} podemos obter a seguinte informação qualitativa sobre o movimento do corpo: O corpo inicialmente está na origem; logo depois se move à direita (assume valores de $x$ maiores do que $x(0\,\un s)$); no instante $t_1$ o corpo atinge a posição $x(t_1)$ e logo depois desse instante, o corpo se move à esquerda (assume valores de $x$ menores do que $x(t_1)$); no instante $t_2$ o corpo passa pela origem e continua se movendo à esquerda; no instante $t_3$ o corpo atinge a posição $x(t_3)$ e depois desse instante se move à direita passando novamente pela origem no instante $t_4$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
   \includegraphics[width=0.9\textwidth,keepaspectratio]{2-movimento-retilineo-fig2.pdf}
   \caption{Cálculo da velocidade média usando um gráfico $x$ versus $t$.}
   \label{fig2}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
   \includegraphics[width=0.9\textwidth,keepaspectratio]{2-movimento-retilineo-fig3.pdf}
   \caption{Cálculo da velocidade instantânea usando um gráfico $x$ versus $t$.}
@@ -72,11 +72,20 @@ Da figura~\ref{fig1} podemos obter a seguinte informação qualitativa sobre o m
 \end{figure}
 
 
-Um grafico $x$ versus $t$ também pode nos dar informação sobre as velocidades média e instantânea. Por exemplo, da figura~\ref{fig2} vemos que
+Um gráfico $x$ versus $t$ também pode nos dar informação sobre as velocidades média e instantânea. Por exemplo, da figura~\ref{fig2} vemos que
 $$\tan\theta=\frac{x(t_2)-x(t_1)}{t_2-t_1}\,.$$
 Portanto, a velocidade média no intervalo $[t_1,t_2]$ é a tangente do ângulo formado entre o eixo $x$ e a reta secante ao gráfico $x$ versus $t$ que passa pelos pontos $(t_1,x(t_1))$ e $(t_2,x(t_2))$.
 
-Na figura~\ref{fig3} consideramos um instante $t_3$, com $t_1<t_3<t_2$. A velocidade média no intervalo $[t_1,t_3]$ será, pelo que vimos, $\tan\beta$. Considerando instantes $t$ cada vez mais próximos de $t_1$, a reta secante ao gráfico $x$ versus $t$ que passa pelos pontos $(t_1,x(t_1))$ e $(t,x(t))$ vai se aproximar da reta tangente ao gráfico que passa pelo ponto $(t_1,x(t_1))$. Se essa reta tangente faz um ângulo $\alpha$ com o eixo $x$, então $\tan\alpha$ será o valor limite da velocidade média, ou seja, $\tan\alpha$ será a velocidade instantânea no instante $t_1$. Como essa velocidade instantânea é a derivada da função $x(t)$ em relação a $t$ avaliada no instante $t_1$, obtemos a seguinte relação que dá uma interpretação geométrica da derivada:
+Na figura~\ref{fig3} consideramos um instante $t_3$, com $t_1<t_3<t_2$. A velocidade média no intervalo $[t_1,t_3]$ será, pelo que vimos, $\tan\beta$, que nesse caso é menor do que $\tan\theta$. Considerando instantes $t$ cada vez mais próximos de $t_1$, a reta secante ao gráfico $x$ versus $t$ que passa pelos pontos $(t_1,x(t_1))$ e $(t,x(t))$ vai se aproximar da reta tangente ao gráfico que passa pelo ponto $(t_1,x(t_1))$. Se essa reta tangente faz um ângulo $\alpha$ com o eixo $x$, então $\tan\alpha$ será o valor limite da velocidade média, ou seja, $\tan\alpha$ será a velocidade instantânea no instante $t_1$. Como essa velocidade instantânea é a derivada da função $x(t)$ em relação a $t$ avaliada no instante $t_1$, obtemos a seguinte relação que dá uma interpretação geométrica da derivada:
 $$v(t_1)=\frac{dx}{dt}(t_1)=\tan\alpha\,.$$.
+
+\section{Acelerações média e instantânea}
+De forma análoga à velocidade média, definimos a \textbf{aceleração média} no intervalo $[t_1,t_2]$ por
+$$a_m=\frac{v(t_2)-v(t_1)}{t_2-t_1}\,,$$
+onde $v(t_2)$ e $v(t_1)$ são as velocidades instantâneas nos instantes $t_2$ e $t_1$ respectivamente. A \textbf{aceleração instantânea} em um instante $t$ será definida então por
+$$a(t)=\lim_{\Delta t\to 0}\frac{v(t+\Delta t)-v(\Delta t)}{\Delta t}=\frac{dv}{dt}\,.$$
+Como $v=\frac{dx}{dt}$, então
+$$a(t)=\frac{d}{dt}\dpar{\frac{dx}{dt}}=\frac{d^2x}{dt^2}\,,$$
+onde a última expressão é chamada de \textbf{segunda derivada} de $x(t)$ em relação a $t$.
 
 \end{document}
