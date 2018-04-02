@@ -51,7 +51,7 @@ Conhecendo a posição de um corpo, que se move em linha reta, em cada instante 
 \paragraph{Exemplo:}
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.9\textwidth,keepaspectratio]{2-movimento-retilineo-fig1.pdf}
+  \includegraphics[width=0.7\textwidth,keepaspectratio]{2-movimento-retilineo-fig1.pdf}
   \caption{Exemplo de um gráfico $x$ versus $t$}
   \label{fig1}
 \end{figure}
@@ -59,18 +59,17 @@ Da figura~\ref{fig1} podemos obter a seguinte informação qualitativa sobre o m
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.9\textwidth,keepaspectratio]{2-movimento-retilineo-fig2.pdf}
+  \includegraphics[width=0.7\textwidth,keepaspectratio]{2-movimento-retilineo-fig2.pdf}
   \caption{Cálculo da velocidade média usando um gráfico $x$ versus $t$.}
   \label{fig2}
 \end{figure}
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.9\textwidth,keepaspectratio]{2-movimento-retilineo-fig3.pdf}
+  \includegraphics[width=0.7\textwidth,keepaspectratio]{2-movimento-retilineo-fig3.pdf}
   \caption{Cálculo da velocidade instantânea usando um gráfico $x$ versus $t$.}
   \label{fig3}
 \end{figure}
-
 
 Um gráfico $x$ versus $t$ também pode nos dar informação sobre as velocidades média e instantânea. Por exemplo, da figura~\ref{fig2} vemos que
 $$\tan\theta=\frac{x(t_2)-x(t_1)}{t_2-t_1}\,.$$
@@ -78,6 +77,16 @@ Portanto, a velocidade média no intervalo $[t_1,t_2]$ é a tangente do ângulo 
 
 Na figura~\ref{fig3} consideramos um instante $t_3$, com $t_1<t_3<t_2$. A velocidade média no intervalo $[t_1,t_3]$ será, pelo que vimos, $\tan\beta$, que nesse caso é menor do que $\tan\theta$. Considerando instantes $t$ cada vez mais próximos de $t_1$, a reta secante ao gráfico $x$ versus $t$ que passa pelos pontos $(t_1,x(t_1))$ e $(t,x(t))$ vai se aproximar da reta tangente ao gráfico que passa pelo ponto $(t_1,x(t_1))$. Se essa reta tangente faz um ângulo $\alpha$ com o eixo $x$, então $\tan\alpha$ será o valor limite da velocidade média, ou seja, $\tan\alpha$ será a velocidade instantânea no instante $t_1$. Como essa velocidade instantânea é a derivada da função $x(t)$ em relação a $t$ avaliada no instante $t_1$, obtemos a seguinte relação que dá uma interpretação geométrica da derivada:
 $$v(t_1)=\frac{dx}{dt}(t_1)=\tan\alpha\,.$$.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.7\textwidth,keepaspectratio]{2-movimento-retilineo-fig4.pdf}
+  \caption{Sinais da velocidade instantânea.}
+  \label{fig4}
+\end{figure}
+
+A figura~\ref{fig4} ilustra como podemos obter o sinal da velocidade instantânea em qualquer instante de tempo a partir de um gráfico $x$ versus $t$. Além disso, da figura~\ref{fig4} também podemos obter que $|v(t_1)|<|v(t_2)|$, pois a tangente que passa pelo ponto $(t_2,x(t_2))$ é mais vertical (mais inclinada) do que a que passa pelo ponto $(t_1,x(t_1))$. Analogamente, vamos ter que $v(t_3)<v(t_4)$. Nesse caso ambas as velocidades são positivas e, por conseguinte, não precisamos considerar o valor absoluto.
+
 
 \section{Acelerações média e instantânea}
 De forma análoga à velocidade média, definimos a \textbf{aceleração média} no intervalo $[t_1,t_2]$ por
@@ -87,5 +96,17 @@ $$a(t)=\lim_{\Delta t\to 0}\frac{v(t+\Delta t)-v(\Delta t)}{\Delta t}=\frac{dv}{
 Como $v=\frac{dx}{dt}$, então
 $$a(t)=\frac{d}{dt}\dpar{\frac{dx}{dt}}=\frac{d^2x}{dt^2}\,,$$
 onde a última expressão é chamada de \textbf{segunda derivada} de $x(t)$ em relação a $t$.
+
+Suponhamos que a posição de um corpo em cada instante de tempo esteja dada por $x(t)=(5\,\un m/\un{s}^3)t^3-(10\,\un m/\un {s}^2)t^2+20\,\un m$. A velocidade isntantânea em qualquer instante $t$ está dada por $v(t)=(15\,\un m/\un{s}^3)t^2-(20\,\un m/\un{s}^2)t$. Logo, $v(0\,\un s)=0\,\un m/\un s$ e $v(1\,\un s)=-5\,\un m/\un s$. Com essa informação podemos encontrar que a aceleração média no intervalo $[0\,\un s,1\,\un s]$ é
+$$a_m=\frac{v(1\,\un s)-v(0\,\un s)}{1\,\un s-0\,\un s}=-5\,\un m/\un{s}^2\,.$$
+Por outro lado, a aceleração instantânea em um instante $t$ qualquer está dada por
+$$a(t)=\frac{dv}{dt}=(30\,\un m/\un{s}^3)t-20\,\un m/\un{s}^2\,.$$
+Em particular, a aceleração instantânea no instante $t=1\,\un s$ será $a(1\,\un s)=10\,\un m/\un{s}^2$.
+
+Assim como obtivemos as velocidades média e instantânea a partir de um gráfico $x$ versus $t$, as acelerações média e instantânea podem ser obtidas exatamente da mesma forma a partir de um gráfico $v$ versus $t$. A situação é diferente usando um gráfico $x$ versus $t$; porém, nesse caso é possível pelo menos determinar os sinais das acelerações média e instantânea. Por exemplo, consideremos o gráfico $x$ versus $t$ dado na figura~\ref{fig4}. Nele podemos determinar o sinal da velocidade instantânea em qualquer instante e, mais ainda, estimar o módulo dela. Logo, a aceleração média no intervalo $[0\,\un s,t_1]$ vai ser negativa, pois $v(t_1)<0\,\un m/\un s$ e $v(0\,\un s)=0\,\un m/\un s$; enquanto que a aceleração média no intervalo $[0\,\un s,t_3]$ vai ser positiva, pois $v(t_3)>0\,\un m/\un s$. Além disso, a aceleração média no intervalo $[t_3,t_4]$ vai ser positiva, pois $v(t_4)>v(t_3)$.
+
+Para determinar o sinal da aceleração instantânea em um determinado instante $t_0$ a partir de um gráfico $x$ versus $t$, precisamos analisar as inclinações das retas tangentes em pontos ao redor de $(t_0,x(t_0))$. Se em uma vizinhança pequena ao redor do instante $t_0$ o gráfico $x$ versus $t$ é aproximadamente uma linha reta, então a aceleração instantânea no ponto $t_0$ será igual a $0\,\un m/\un{s}^2$. Se nessa vizinhança pequena o gráfico tem forma de $\smile$, a aceleração instantânea no instante $t_0$ será positiva. Nesse caso também dizemos que o gráfico $x$ versus $t$ tem \textbf{curvatura positiva} no ponto $t_0$. Por outro lado, se em uma vizinhança pequena de $t_0$ o gráfico de $x$ versus $t$ tem forma de $\frown$, a aceleração instantânea no instante $t_0$ será negativa e diremos também que o gráfico tem \textbf{curvatura negativa} no ponto $t_0$. Por exemplo, da figura~\ref{fig4} podemos ver que $a(0\,\un s)>0\,\un m/\un{s}^2$, $a(t_1)<0\,\un m/\un{s}^2$, $a(t_2)>0\,\un m/\un{s}^2$, $a(t_3)>0\,\un m/\un{s}^2$ e $a(t_4)>0\,\un m/\un{s}^2$. Como o gráfico $x$ versus $t$ tem curvatura negativa ($\frown$) no instante $t_2$ e curvatura positiva ($\smile$) no instante $t_3$, entre os instantes $t_2$ e $t_3$ deve existir um instante $t^*$ para o qual todo instante justo antes de $t^*$ tem curvatura negativa e todo instante justo depois de $t^*$ tem curvatura positiva. O ponto $(t^*,x(t^*))$ é chamado de um \textbf{ponto de inflexão} do gráfico e a aceleração instantânea no instante $t^*$ é $0\,\un m/\un{s}^2$.
+
+\section{Cálculo do deslocamento usando um gráfico $v$ versus $t$}
 
 \end{document}
