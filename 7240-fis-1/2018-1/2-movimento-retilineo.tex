@@ -1,6 +1,5 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[fontsize=12pt]{scrartcl}
 \usepackage[portuguese]{babel}
-\usepackage[margin=1in]{geometry}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -108,5 +107,16 @@ Assim como obtivemos as velocidades média e instantânea a partir de um gráfic
 Para determinar o sinal da aceleração instantânea em um determinado instante $t_0$ a partir de um gráfico $x$ versus $t$, precisamos analisar as inclinações das retas tangentes em pontos ao redor de $(t_0,x(t_0))$. Se em uma vizinhança pequena ao redor do instante $t_0$ o gráfico $x$ versus $t$ é aproximadamente uma linha reta, então a aceleração instantânea no ponto $t_0$ será igual a $0\,\un m/\un{s}^2$. Se nessa vizinhança pequena o gráfico tem forma de $\smile$, a aceleração instantânea no instante $t_0$ será positiva. Nesse caso também dizemos que o gráfico $x$ versus $t$ tem \textbf{curvatura positiva} no ponto $t_0$. Por outro lado, se em uma vizinhança pequena de $t_0$ o gráfico de $x$ versus $t$ tem forma de $\frown$, a aceleração instantânea no instante $t_0$ será negativa e diremos também que o gráfico tem \textbf{curvatura negativa} no ponto $t_0$. Por exemplo, da figura~\ref{fig4} podemos ver que $a(0\,\un s)>0\,\un m/\un{s}^2$, $a(t_1)<0\,\un m/\un{s}^2$, $a(t_2)>0\,\un m/\un{s}^2$, $a(t_3)>0\,\un m/\un{s}^2$ e $a(t_4)>0\,\un m/\un{s}^2$. Como o gráfico $x$ versus $t$ tem curvatura negativa ($\frown$) no instante $t_2$ e curvatura positiva ($\smile$) no instante $t_3$, entre os instantes $t_2$ e $t_3$ deve existir um instante $t^*$ para o qual todo instante justo antes de $t^*$ tem curvatura negativa e todo instante justo depois de $t^*$ tem curvatura positiva. O ponto $(t^*,x(t^*))$ é chamado de um \textbf{ponto de inflexão} do gráfico e a aceleração instantânea no instante $t^*$ é $0\,\un m/\un{s}^2$.
 
 \section{Cálculo do deslocamento usando um gráfico $v$ versus $t$}
+
+Consideremos um corpo que se move em linha reta com velocidade instantânea constante $v(t)=v_0$. O gráfico $v$ versus $t$ está dado na figura~\ref{fig5}. A área da região limitada pelo gráfico entre os instantes $t_1$ e $t_2$ é igual a $v_0(t_2-t_1)$. Por outro lado, como a velocidade instantânea é uma constante $v_0$, a velocidade média em qualquer intervalo de tempo será igual a $v_0$ (ver apêndice). Em particular, no intervalo $[t_1,t_2]$ a velocidade média é
+$$v_m=\frac{x(t_2)-x(t_1)}{t_2-t_1}=v_0\,.$$
+Portanto, $x(t_2)-x(t_1)=v_0(t_2-t_1)$, ou seja, o deslocamento $x(t_2)-x(t_1)$ é igual à área da região limitada pelo gráfico entre os instantes $t_1$ e $t_2$.
+
+
+
+\section*{Apêndice$^*$}
+
+
+
 
 \end{document}
