@@ -4,7 +4,11 @@
 
 [18-24 março] Componentes de vetores; produto escalar.
 
-[25-31 março] Produto vetorial; definições de velocidade média e instantânea; gráficos de posição versus tempo. (Lista 1 entregue).
+[25-31 março] Produto vetorial; velocidades média e instantânea em uma dimensão; gráficos de posição versus tempo. (Lista 1 entregue).
+
+[01-07 abril] Acelerações média e instantânea em uma dimensão; cálculo do deslocamento por integração; movimento retilíneo com aceleração constante.
+
+[08-15 abril] queda livre; velocidades média e instantânea em 3 dimensões; acelerações média e instantânea em 3 dimensões; movimento de projéteis.
 
 # Forma de avaliação
 
