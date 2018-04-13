@@ -217,7 +217,7 @@ instantânea constante $v(t)=v_0$. O gráfico $v$ versus $t$ está dado
 na figura~\ref{fig5}. A área da região limitada pelo gráfico entre os
 instantes $t_1$ e $t_2$ é igual a $v_0(t_2-t_1)$. Por outro lado, como
 a velocidade instantânea é uma constante $v_0$, a velocidade média em
-qualquer intervalo de tempo será igual a $v_0$ (ver apêndice). Em
+qualquer intervalo de tempo será igual a $v_0$.\footnote{Pelo teorema do valor médio.} Em
 particular, no intervalo $[t_1,t_2]$ a velocidade média é
 $$v_m=\frac{x(t_2)-x(t_1)}{t_2-t_1}=v_0\,.$$
 Portanto, $x(t_2)-x(t_1)=v_0(t_2-t_1)$, ou seja, o deslocamento
@@ -271,7 +271,10 @@ que devemos encontrar com o objetivo de calcular
 $\int_{t_1}^{t_2}v(t)\,dt$ deve ser $V(t)=ct^3/3$. Se $v(t)=ct^3$,
 devemos ter $V(t)=ct^4/4$. Portanto, em geral vamos ter a seguinte
 fórmula de integração:
-$$\int_{t_1}^{t_2}ct^n\,dt=\left.\frac{c}{n+1}t^{n+1}\right|_{t_1}^{t_2}\,.$$
+\begin{equation}
+  \label{eq:int.tn}
+  \int_{t_1}^{t_2}ct^n\,dt=\left.\frac{c}{n+1}t^{n+1}\right|_{t_1}^{t_2}\,.
+\end{equation}
 
 Exemplo:
 \begin{equation*}
@@ -285,10 +288,21 @@ Exemplo:
 \end{equation*}
 
 \section{Movimento com aceleração constante}
-
-\section*{Apêndice$^*$}
-
-
+Consideremos um corpo que se move em linha reta com aceleração
+instantânea $a(t)=a_0$, para qualquer instante $t$. Logo, como
+$a(t)=\frac{dv}{dt}$, vamos ter que
+$$\frac{dv}{dt}=a_0\,.$$
+Integrando ambos os lados dessa equação de $0\,\un s$ até $t_1$, temos
+$$\int_{0\,\un s}^{t_1}\frac{dv}{dt}\,dt=\int_{0\,\un s}^{t_1}a_0\,dt\,.$$
+Pelo teorema fundamental do cálculo, o lado esquerdo dessa equação vai
+ser igual a $v(t)|_{0\,\un s}^{t_1}$; no lado direito calculamos a integral
+usando a fórmula~(\ref{eq:int.tn}). Logo, vamos ter
+$$v(t_1)-v(0\,\un s)=a_0(t_1-0\,\un s)\,.$$
+Como $t_1$ é um instante arbitrário, podemos substituir $t_1$ por $t$. dessa maneira, vamos ter a relação
+\begin{equation}
+  \label{eq:1}
+  v(t)=v(0\,\un s)+a_0t\,.
+\end{equation}
 
 
 \end{document}
