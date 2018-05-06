@@ -8,7 +8,16 @@
 
 [01-07 abril] Acelerações média e instantânea em uma dimensão; cálculo do deslocamento por integração; movimento retilíneo com aceleração constante.
 
-[08-15 abril] queda livre; velocidades média e instantânea em 3 dimensões; acelerações média e instantânea em 3 dimensões; movimento de projéteis.
+[08-14 abril] queda livre; velocidades média e instantânea em 3 dimensões; acelerações média e instantânea em 3 dimensões. (Lista 2 entregue)
+
+[15-21 abril] componentes tangencial e normal da aceleração, movimento de projéteis.
+
+[22-28 abril] movimento circular; velocidade relativa. (Lista 3 entregue)
+
+[29 abril - 05 maio] forças e interações; primeira lei de Newton.
+
+[06-12 maio] (Primeira prova)
+
 
 # Forma de avaliação
 
