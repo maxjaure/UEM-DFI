@@ -18,6 +18,18 @@
 
 [06-12 maio] (Primeira prova)
 
+[13-19 maio] segunda lei de Newton; massa e peso; terceira lei de Newton.
+
+[20-26 maio] aplicações das leis de Newton; força de atrito.
+
+[27 maio - 02 junho]  (sem aula)
+
+[02-09 junho] dinâmica do movimento circular. (Lista 4 entregue)
+
+[10-16 junho] relação entre trabalho e energia cinética.
+
+[17-23 junho] forças conservativas; energia potencial. 
+
 
 # Forma de avaliação
 
