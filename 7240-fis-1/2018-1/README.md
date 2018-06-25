@@ -28,7 +28,7 @@
 
 [10-16 junho] relação entre trabalho e energia cinética.
 
-[17-23 junho] forças conservativas; energia potencial gravitacional; relação entre energia total e trabalho.
+[17-23 junho] forças conservativas; energia potencial gravitacional; relação entre energia total e trabalho. (Lista 5 entregue)
 
 [24-30 junho] energia potencial elástica; impulso e momento linear.
 
