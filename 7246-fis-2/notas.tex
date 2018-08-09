@@ -1,6 +1,7 @@
 \documentclass[twocolumn=on,DIV=calc]{scrartcl}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{microtype}
 \usepackage{amsmath,amsfonts}
 
@@ -123,15 +124,26 @@ equações~(\ref{eq:6}) e~(\ref{eq:7}) continuam valendo.
 
 \subsection{Dinâmica do corpo rígido}
 
-Um \textit{corpo rígido} é um corpo não pontual que não se deforma, o
-qual é uma idealização. O fato de um corpo rígido não se deformar
-equivale a dizer que a distância entre dois pontos quaisquer do corpo
-é uma constante.
+Um \textit{corpo rígido} é um corpo não pontual (tem dimensões) que
+não se deforma, o qual é uma idealização. O fato de um corpo rígido
+não se deformar equivale a dizer que a distância entre dois pontos
+quaisquer do corpo é uma constante.
 
 Para estudar a dinâmica de um corpo rígido, podemos dividir ele em $n$
 partes pequenas e assim considerar o corpo rígido como um sistema de
-$n$ corpos. Se a massa da $i$-ésima parte é $\Delta m_i$ e sua posição é $\mathbf{r}_i$, o momentum total do sistema é
+$n$ corpos. Se a massa da $i$-ésima parte é $\Delta m_i$, sua posição
+$\mathbf{r}_i$ e sua velocidade $\mathbf{v}_i$, o momento linear total
+do sistema é
 $$\mathbf{p}=\sum_{i=1}^n\dot{\mathbf{r}}_i\Delta m_i$$
 e o momento angular total do sistema é
-$$\mathbf{L}=\sum_{i=1}^n(\mathbf{r}_i\times\dot{\mathbf{r}}_i)\Delta m_i$$
+$$\mathbf{L}=\sum_{i=1}^n(\mathbf{r}_i\times\dot{\mathbf{v}}_i)\Delta m_i\,.$$
+Fazendo o número de partes $n$ tender ao infinito e ao mesmo tempo a
+massa das partes tender a zero, as somas anteriores tornam-se
+integrais. Dessa maneira, o momento linear do corpo rígido é dado por
+$$\mathbf{p}=\int \mathbf{v}\,dm$$
+e seu momento angular por
+$$\mathbf{L}=\int \mathbf{r}\times\mathbf{v}\,dm\,,$$
+onde as integrais são sobre região limitada pelas dimensões do corpo
+rígido. Com essas definições, as equações~(\ref{eq:6}) e~(\ref{eq:7})
+valem para o corpo rígido.
 \end{document}
