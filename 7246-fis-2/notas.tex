@@ -1,8 +1,16 @@
 \documentclass[twocolumn=on,DIV=calc]{scrartcl}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{microtype}
-\usepackage{amsmath,amsfonts}
+\usepackage{amsmath,amsfonts,amsthm}
+
+\newcommand{\dpar}[1]{\left(#1\right)}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Exemplo}[section]
+
+\DeclareMathOperator{\sen}{sen}
 
 \title{Notas de Física Geral 2}
 
@@ -16,122 +24,170 @@
 
 \subsection{Torque e momento angular}
 
-Considere uma partícula de massa $m$ na posição $\mathbf{r}$ sobre a qual atua uma
-força $\mathbf{F}$. O \textit{torque} da força $\mathbf{F}$ é definido
-por
+Considere uma partícula de massa $m$ na posição $\vec r$ sobre a qual
+atua uma força $\vec F$. O \textit{torque} da força $\vec F$ é
+definido por
 \begin{equation}
   \label{eq:1}
-  \boldsymbol{\tau}=\mathbf{r}\times\mathbf{F}\,,
+  \vec\tau=\vec r\times\vec F\,,
 \end{equation}
 onde $\times$ denota o produto vetorial de dois vetores, o qual é
 definido por
-$$\mathbf{A}\times\mathbf{B}=
+$$\vec A\times\vec B=
 \left|
   \begin{array}{ccc}
-    \mathbf{e}_x&\mathbf{e}_y&\mathbf{e}_z\\
+    \hat i&\hat j&\hat k\\
     A_x&A_y&A_z\\
     B_x&B_y&B_z
   \end{array}
-\right|\,.$$
-A unidade do torque no sistema internacional (SI) é $\mathrm{N}\cdot\mathrm{m}$.
+\right|\,.$$ A unidade do torque no sistema internacional (SI) é
+$\mathrm{N}\cdot\mathrm{m}$.
 
-Pela segunda lei de Newton, sabemos que $\mathbf{F}=\dot{\mathbf{p}}$,
-onde $\mathbf{p}=m\mathbf{v}$ é o momento linear da partícula. Logo, a
-Eq.~(\ref{eq:1}) assume a forma
-$$\boldsymbol{\tau}=\mathbf{r}\times\dot{\mathbf{p}}\,.$$
+\begin{ex}
+  Considere uma partícula de $10\,\mathrm{kg}$ na posição
+  $\vec r=\cos 30^\circ\hat i+\sen 30^\circ\hat j$. O torque do peso
+  da partícula é dado por $\vec\tau=\vec r\times\vec P$, onde
+  $\vec P=-98\hat j$. Logo,
+  $$\vec\tau=\left|
+  \begin{array}{ccc}
+    \hat i&\hat j&\hat k\\
+    \sqrt{3}/2&1/2&0\\
+    0&-98&0
+  \end{array}
+\right|=-49\sqrt{3}\hat k\,.$$  
+\end{ex}
+
+Pela segunda lei de Newton, sabemos que $\vec F=\dot{\vec p}$, onde
+$\vec p=m\vec v$ é o momento linear da partícula ($\vec v$ é a
+velocidade da partícula). Logo, a Eq.~(\ref{eq:1}) assume a forma
+$$\vec\tau=\vec r\times\dot{\vec p}\,.$$
 Usando a identidade
 \begin{equation}
   \label{eq:2}
-  \frac{d}{dt}(\mathbf{r}\times\mathbf{p})=\dot{\mathbf{r}}\times\mathbf{p}+\mathbf{r}\times\dot{\mathbf{p}}
+  \frac{d}{dt}(\vec r\times\vec p)=\dot{\vec r}\times\vec p+\vec r\times\dot{\vec p}
 \end{equation}
-e o fato de que $\dot{\mathbf{r}}\times\mathbf{p}=\mathbf{0}$ (devido
-a que $\dot{\mathbf{r}}$ e $\mathbf{p}$ são paralelos), obtemos que
+e o fato de que $\dot{\vec r}\times\vec p=\vec 0$ (devido a que
+$\dot{\vec r}$ e $\vec p$ são paralelos), obtemos que
 \begin{equation}
   \label{eq:3}
-  \boldsymbol{\tau}=\frac{d}{dt}(\mathbf{r}\times\mathbf{p})\,.
+  \vec\tau=\frac{d}{dt}(\vec r\times\vec p)\,.
 \end{equation}
 
 Definimos o \textit{momento angular} da partícula por
-$$\mathbf{L}=\mathbf{r}\times\mathbf{p}\,.$$
+$$\vec L=\vec r\times\vec p\,.$$
 Usando esse conceito, a Eq.~(\ref{eq:3}) nos diz então que
 \begin{equation}
   \label{eq:4}
-  \boldsymbol{\tau}=\dot{\mathbf{L}}\,,
+  \vec\tau=\dot{\vec L}\,,
 \end{equation}
-ou seja, o torque da força $\mathbf{F}$ é igual à taxa de variação do
+ou seja, o torque da força $\vec F$ é igual à taxa de variação do
 momento angular da partícula (note a semelhança com a segunda lei de
-Newton). A unidade de momento angular no SI é $\mathrm{kg}\cdot\mathrm{m^2/s}$.
+Newton). A unidade de momento angular no SI é
+$\mathrm{kg}\cdot\mathrm{m^2/s}$.
 
 \subsection{Sistemas de partículas}
 Considere duas partículas de massas $m_1$ e $m_2$ sobre as quais atuam
-forças externas $\mathbf{F}_1$ e $\mathbf{F}_2$ respectivamente. Além
-das forças externas, há forças internas $\mathbf{F}_{12}$ (sobre a
-partícula $1$) e $\mathbf{F}_{21}$ (sobre a partícula $2$) devido a
+forças externas $\vec F_1$ e $\vec F_2$ respectivamente. Além
+das forças externas, há forças internas $\vec F_{12}$ (sobre a
+partícula $1$) e $\vec F_{21}$ (sobre a partícula $2$) devido a
 interação das partículas (por exemplo, interação gravitacional ou
 elétrica), as quais são paralelas ao vetor
-$\mathbf{r}_1-\mathbf{r}_2$. Pela segunda lei de Newton vamos ter
+$\vec r_1-\vec r_2$. Pela segunda lei de Newton vamos ter
 então que
 \begin{equation}
   \label{eq:5}
   \begin{split}
-    \mathbf{F}_1+\mathbf{F}_{12}&=\dot{\mathbf{p}_1}\\
-    \mathbf{F}_2+\mathbf{F}_{21}&=\dot{\mathbf{p}_2}\,.
+    \vec F_1+\vec F_{12}&=\dot{\vec p}_1\\
+    \vec F_2+\vec F_{21}&=\dot{\vec p}_2\,.
   \end{split}
 \end{equation}
 Somando essas equações, temos que
-$$\mathbf{F}_1+\mathbf{F}_2+\mathbf{F}_{12}+\mathbf{F}_{21}=\dot{\mathbf{p}_1}+\dot{\mathbf{p}_2}\,.$$
-Como $\mathbf{F}_{12}=-\mathbf{F}_{21}$ pela terceira lei de Newton, a
+$$\vec F_1+\vec F_2+\vec F_{12}+\vec F_{21}=\dot{\vec p}_1+\dot{\vec p}_2\,.$$
+Como $\vec F_{12}=-\vec F_{21}$ pela terceira lei de Newton, a
 equação anterior pode ser escrita como
 \begin{equation}
   \label{eq:6}
-  \mathbf{F}_{\mathrm{ext}}=\dot{\mathbf{p}}\,,
+  \vec F_{\mathrm{ext}}=\dot{\vec p}\,,
 \end{equation}
-onde $\mathbf{F}_{\mathrm{ext}}=\mathbf{F}_1+\mathbf{F}_2$ é a força
+onde $\vec F_{\mathrm{ext}}=\vec F_1+\vec F_2$ é a força
 externa total sobre o sistema composto pelas partículas $1$ e $2$, e
-$\mathbf{p}=\mathbf{p}_1+\mathbf{p}_2$ é o momento linear total do
+$\vec p=\vec p_1+\vec p_2$ é o momento linear total do
 sistema.
 
 Multiplicando vetorialmente as Eqs.~(\ref{eq:5}) pelos vetores posição
-$\mathbf{r}_1$ e $\mathbf{r}_2$ respectivamente, vamos ter que
+$\vec r_1$ e $\vec r_2$ respectivamente, vamos ter que
 \begin{equation*}
   \begin{split}
-    \mathbf{r}_1\times(\mathbf{F}_1+\mathbf{F}_{12})&=\mathbf{r}_1\times\dot{\mathbf{p}_1}\\
-    \mathbf{r}_2\times(\mathbf{F}_2+\mathbf{F}_{21})&=\mathbf{r}_2\times\dot{\mathbf{p}_2}\\
+    \vec r_1\times(\vec F_1+\vec F_{12})&=\vec r_1\times\dot{\vec p}_1\\
+    \vec r_2\times(\vec F_2+\vec F_{21})&=\vec r_2\times\dot{\vec p}_2\\
   \end{split}
 \end{equation*}
 Somando essas duas equações, vamos ter que
-$$\mathbf{r}_1\times\mathbf{F}_1+\mathbf{r}_2\times\mathbf{F}_2+\mathbf{r}_1\times\mathbf{F}_{12}+\mathbf{r}_2\times\mathbf{F}_{21}=\mathbf{r}_1\times\dot{\mathbf{p}_1}+\mathbf{r}_2\times\dot{\mathbf{p}_2}\,.$$
+$$\vec r_1\times\vec F_1+\vec r_2\times\vec F_2+\vec r_1\times\vec F_{12}+\vec r_2\times\vec F_{21}=\vec r_1\times\dot{\vec p}_1+\vec r_2\times\dot{\vec p}_2\,.$$
 Usando a terceira lei de Newton e a identidade~(\ref{eq:2}) vamos ter
 que
-$$\mathbf{r}_1\times\mathbf{F}_1+\mathbf{r}_2\times\mathbf{F}_2+(\mathbf{r}_1-\mathbf{r}_2)\times\mathbf{F}_{12}=\frac{d}{dt}(\mathbf{r}_1\times\mathbf{p}_1+\mathbf{r}_2\times\mathbf{p}_2)\,.$$
-Finalmente, como $\mathbf{F}_{12}$ é paralelo a
-$\mathbf{r}_1-\mathbf{r}_2$,
-$(\mathbf{r}_1-\mathbf{r}_2)\times\mathbf{F}_{12}=\mathbf{0}$ e, por
+$$\vec r_1\times\vec F_1+\vec r_2\times\vec F_2+(\vec r_1-\vec r_2)\times\vec F_{12}=\frac{d}{dt}(\vec r_1\times\vec p_1+\vec r_2\times\vec p_2)\,.$$
+Finalmente, como $\vec F_{12}$ é paralelo a
+$\vec r_1-\vec r_2$,
+$(\vec r_1-\vec r_2)\times\vec F_{12}=\vec 0$ e, por
 conseguinte,
 \begin{equation}
   \label{eq:7}
-  \boldsymbol{\tau}_{\mathrm{ext}}=\dot{\mathbf{L}}\,,
+  \vec\tau_{\mathrm{ext}}=\dot{\vec L}\,,
 \end{equation}
 onde
-$\boldsymbol{\tau}_{\mathrm{ext}}=\boldsymbol{\tau}_1+\boldsymbol{\tau}_2$
+$\vec\tau_{\mathrm{ext}}=\vec\tau_1+\vec\tau_2$
 é o torque externo total sobre o sistema e
-$\mathbf{L}=\mathbf{L}_1+\mathbf{L}_2$ é o momento angular total do
+$\vec L=\vec L_1+\vec L_2$ é o momento angular total do
 sistema.
 
-No caso de sistemas compostos por mais de duas partículas, as
-equações~(\ref{eq:6}) e~(\ref{eq:7}) continuam valendo.
+No caso de sistemas compostos por mais de duas partículas, as Eqs.~(\ref{eq:6}) e~(\ref{eq:7}) continuam valendo.
 
 \subsection{Dinâmica do corpo rígido}
 
-Um \textit{corpo rígido} é um corpo não pontual que não se deforma, o
-qual é uma idealização. O fato de um corpo rígido não se deformar
-equivale a dizer que a distância entre dois pontos quaisquer do corpo
-é uma constante.
+Um \textit{corpo rígido} é um corpo não pontual que não se deforma. O
+fato de um corpo rígido não se deformar equivale a dizer que a
+distância entre dois pontos quaisquer do corpo é uma constante.
 
 Para estudar a dinâmica de um corpo rígido, podemos dividir ele em $n$
 partes pequenas e assim considerar o corpo rígido como um sistema de
-$n$ corpos. Se a massa da $i$-ésima parte é $\Delta m_i$ e sua posição é $\mathbf{r}_i$, o momentum total do sistema é
-$$\mathbf{p}=\sum_{i=1}^n\dot{\mathbf{r}}_i\Delta m_i$$
+$n$ corpos. Se a massa da $i$-ésima parte é $\Delta m_i$, sua posição
+é $\vec r_i$ e sua velocidade é $\vec v_i$, o momentum total do
+sistema é
+$$\vec p=\sum_{i=1}^n\vec v_i\Delta m_i$$
 e o momento angular total do sistema é
-$$\mathbf{L}=\sum_{i=1}^n(\mathbf{r}_i\times\dot{\mathbf{r}}_i)\Delta m_i$$
+$$\vec L=\sum_{i=1}^n(\vec r_i\times\vec v_i)\Delta m_i\,.$$
+Considerando que o número de partes $n$ tende ao infinito e
+simultaneamente a massa de cada parte tende a zero, as somas
+anteriores tornam-se integrais. Dessa maneira, encontramos que o
+\textit{momento linear do corpo rígido} é dado por
+\begin{equation}
+  \label{eq:8}
+  \vec p=\int \vec v\,dm
+\end{equation}
+e o \textit{momento angular do corpo rígido} por
+\begin{equation}
+  \label{eq:9}
+  \vec L=\int (\vec r\times\vec v)\,dm\,,
+\end{equation}
+onde as integrais são sobre toda a massa do corpo rígido.
+
+As Eqs.~(\ref{eq:6}) e~(\ref{eq:7}) continuam valendo da mesma
+forma para um corpo rígido, levando em conta que $\vec p$ e $\vec L$
+são dadas pelas Eqs.~(\ref{eq:8}) e~(\ref{eq:9}).
+
+O movimento de um corpo rígido pode ser estudado analisando
+separadamente os movimentos de translação e de rotação em torno de um
+eixo que passa pelo corpo.
+
+\subsubsection{Movimento de translação}
+Quando um corpo rígido realiza um movimento de translação pura, todos
+os pontos do corpo possuem a mesma velocidade. Dessa forma, a
+velocidade pode sair da integral na Eq.~(\ref{eq:8}) e assim o momento
+linear do corpo rígido vai ser dado por
+$$\vec p=\vec v\int dm=M\vec v\,,$$
+onde $M$ é a massa total do corpo rígido. De forma análoga, na
+Eq.~(\ref{eq:9}) vamos ter
+$$\vec L=\dpar{\int \vec r\,dm}\times\vec v$$
+
 \end{document}
