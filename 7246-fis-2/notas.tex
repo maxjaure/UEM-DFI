@@ -183,11 +183,44 @@ eixo que passa pelo corpo.
 \subsubsection{Movimento de translação}
 Quando um corpo rígido realiza um movimento de translação pura, todos
 os pontos do corpo possuem a mesma velocidade. Dessa forma, a
-velocidade pode sair da integral na Eq.~(\ref{eq:8}) e assim o momento
+velocidade $\vec v$ pode sair da integral na Eq.~(\ref{eq:8}) e assim o momento
 linear do corpo rígido vai ser dado por
-$$\vec p=\vec v\int dm=M\vec v\,,$$
+\begin{equation}
+  \label{eq:10}
+  \vec p=\vec v\int dm=M\vec v\,,
+\end{equation}
 onde $M$ é a massa total do corpo rígido. De forma análoga, na
 Eq.~(\ref{eq:9}) vamos ter
-$$\vec L=\dpar{\int \vec r\,dm}\times\vec v$$
+\begin{equation}
+  \label{eq:11}
+  \vec L=\dpar{\int \vec r\,dm}\times\vec v\,.
+\end{equation}
+Definindo a posição do \textit{centro de massa} do corpo rígido por
+$$\vec R=\frac{1}{M}\int \vec r\,dm\,,$$
+a Eq.~(\ref{eq:11}) pode ser escrita como
+\begin{equation}
+  \label{eq:12}
+  \vec L=M\vec R\times\vec v=\vec R\times\vec p\,.
+\end{equation}
+
+As Eqs.~(\ref{eq:10}) e~(\ref{eq:12}) nos dizem que um corpo rígido
+que realiza um movimento de translação pura se comporta como uma
+partícula de massa $M$ localizada no centro de massa do corpo. em
+outras palavras, as dimensões do corpo rígido não são relevantes no
+movimento de translação.
+
+\subsubsection{Movimento de rotação}
+Diferentemente do caso do movimento de translação, quando um corpo
+rígido realiza um movimento de rotação ao redor de um eixo que passa
+por ele, os pontos do corpo que estão mais próximos do eixo de rotação
+tem velocidade menor do que os pontos mais afastados. Logo, nesse caso
+a velocidade $\vec v$ não pode sair da integral nas Eqs.~(\ref{eq:8})
+e~(\ref{eq:9}).
+
+Para simplificar nosso estudo do movimento de rotação de um corpo
+rígido, vamos considerar um corpo homogêneo (massa distribuída
+uniformemente) e simétrico. Além disso, vamos analisar o caso em que o
+corpo gira em torno de um dos seus eixos de simetria.
+
 
 \end{document}
