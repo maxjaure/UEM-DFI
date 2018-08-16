@@ -6,6 +6,7 @@
 \usepackage{amsmath,amsfonts,amsthm}
 
 \newcommand{\dpar}[1]{\left(#1\right)}
+\newcommand{\dsqr}[1]{\left[#1\right]}
 
 \theoremstyle{definition}
 \newtheorem{ex}{Exemplo}[section]
@@ -220,7 +221,80 @@ e~(\ref{eq:9}).
 Para simplificar nosso estudo do movimento de rotação de um corpo
 rígido, vamos considerar um corpo homogêneo (massa distribuída
 uniformemente) e simétrico. Além disso, vamos analisar o caso em que o
-corpo gira em torno de um dos seus eixos de simetria.
+corpo gira em torno de um dos seus eixos de simetria com velocidade
+angular $\vec\omega$.
 
+Antes de continuar, lembramos que, para uma partícula que realiza um
+movimento circular com velocidade angular $\vec\omega$, vale a relação
+vetorial $\vec v=\vec\omega\times\vec r$, onde $\vec v$ é a velocidade
+da partícula e $\vec r$ é sua posição em relação a um sistema de
+referência fixo ao eixo de rotação.
 
+Continuando nossa análise da rotação de um corpo rígido, vemos que o
+momento angular do corpo é dado por
+$$\vec L=\int [\vec r\times(\vec\omega\times\vec r)]\,dm\,.$$
+Usando a identidade vetorial
+$$\vec a\times(\vec b\times\vec c)=(\vec a\cdot\vec c)\vec b-(\vec a\cdot\vec b)\vec c\,,$$
+temos que
+\begin{equation}
+  \label{eq:13}
+  \vec L=\int [(\vec r\cdot\vec r)\vec\omega-(\vec r\cdot\vec\omega)\vec r]\,dm\,.
+\end{equation}
+Se $\theta$ é o ângulo entre os vetores $\vec\omega$ e $\vec r$, então
+$\vec r\cdot\omega=r\omega\cos\theta$ e, por conseguinte,
+$$\vec L=\int [r^2\vec\omega-(r\omega\cos\theta)\vec r]\,dm\,.$$
+Devido a que o corpo gira em torno de um eixo de simetria, podemos
+inferir que o vetor $\vec L$ deve ter a mesma direção que o vetor
+$\vec\omega$. Isso quer dizer que as direções perpendiculares a
+$\vec\omega$ devem se anular após fazer a integral na
+Eq.~(\ref{eq:13}). Logo, vamos ter
+\begin{equation*}
+  \begin{split}
+    \vec L&=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm\\
+    &=\int (r^2-r^2\cos^2\theta)\vec\omega\,dm\\
+    &=\int (r^2\sen^2\theta)\vec\omega\,dm\,.
+  \end{split}
+\end{equation*}
+Como todo ponto do corpo gira com a mesma velocidade angular, obtemos
+que
+\begin{equation}
+  \label{eq:14}
+  \vec L=I\vec\omega\,,
+\end{equation}
+onde
+\begin{equation}
+  \label{eq:15}
+  I=\int (r\sen\theta)^2\,dm
+\end{equation}
+é o chamado \textit{momento de inércia} do corpo. Cabe ressaltar que
+para cada ponto do corpo, $r\sen\theta$ é a distância do ponto ao eixo
+de rotação.
+
+A Eq.~(\ref{eq:14}) nos diz que o momento angular é um indicador da
+rotação de um corpo rígido.
+
+\subsection{Estática de um corpo rígido}
+Um corpo rígido está em \textit{equilíbrio estático} quando não
+realiza movimento de translação nem de rotação.
+
+Se um corpo rígido está em equilíbrio estático, todo ponto do corpo
+tem velocidade nula. Logo, segue das Eqs.~(\ref{eq:8}) e~(\ref{eq:9})
+que nesse caso vamos ter
+$$\vec p=\vec 0\quad\text{e}\quad\vec L=\vec 0\,,$$
+onde, na segunda condição, $\vec L$ pode ser calculado em relação a
+qualquer ponto. Substituindo isso nas Eqs.~(\ref{eq:6})
+e~(\ref{eq:7}), obtemos as chamadas condições de equilíbrio para o
+corpo rígido:
+\begin{equation}
+  \label{eq:16}
+  {\vec F}_{\mathrm{ext}}=\vec 0\quad\text{e}\quad \vec\tau_{\mathrm{ext}}=\vec 0\,,
+\end{equation}
+onde, na segunda condição, $\vec\tau_{\mathrm{ext}}$ pode ser
+calculado em relação a qualquer ponto.
+
+O fato de um corpo rígido satisfazer uma das condições dadas na
+Eq.~(\ref{eq:16}) não implica que a outra será também satisfeita. Por
+exemplo, se temos uma barra sobre uma mesa e aplicamos forças de
+direções opostas sobre os extremos da barra e perpendiculares a ela, a
+primeira condição em~(\ref{eq:16}) é satisfeita, mas a segunda não.
 \end{document}
