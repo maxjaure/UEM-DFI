@@ -1,15 +1,16 @@
-\documentclass[twocolumn=on,DIV=calc]{scrartcl}
+\documentclass[papersize=a4,DIV=calc,twocolumn=on]{scrartcl}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage{microtype}
 \usepackage{amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
 
 \newcommand{\dpar}[1]{\left(#1\right)}
 \newcommand{\dsqr}[1]{\left[#1\right]}
 
 \theoremstyle{definition}
-\newtheorem{ex}{Exemplo}[section]
+\newtheorem{ex}{Exercício}[section]
 
 \DeclareMathOperator{\sen}{sen}
 
@@ -23,130 +24,108 @@
 
 \section{Equilíbrio de um corpo rígido}
 
-\subsection{Torque e momento angular}
-
 Considere uma partícula de massa $m$ na posição $\vec r$ sobre a qual
-atua uma força $\vec F$. O \textit{torque} da força $\vec F$ é
-definido por
-\begin{equation}
-  \label{eq:1}
-  \vec\tau=\vec r\times\vec F\,,
-\end{equation}
-onde $\times$ denota o produto vetorial de dois vetores, o qual é
-definido por
-$$\vec A\times\vec B=
-\left|
-  \begin{array}{ccc}
-    \hat i&\hat j&\hat k\\
-    A_x&A_y&A_z\\
-    B_x&B_y&B_z
-  \end{array}
-\right|\,.$$ A unidade do torque no sistema internacional (SI) é
+atua uma força $\vec F$. O \textbf{torque} da força $\vec F$ é
+definido por $\vec\tau=\vec r\times\vec F$, onde $\times$ denota o
+\textbf{produto vetorial} de dois vetores, o qual é definido por
+\begin{equation*}
+  \begin{split}
+    \vec A\times\vec B&= \left|
+      \begin{array}{ccc}
+        \hat i&\hat j&\hat k\\
+        A_x&A_y&A_z\\
+        B_x&B_y&B_z
+      \end{array}
+    \right|\\
+    &=(A_yB_z-A_zB_y)\hat i+(A_zB_x-A_xB_z)\hat j\\
+    &\quad+(A_xB_y-A_yB_x)\hat k\,.
+  \end{split}
+\end{equation*}
+
+A unidade do torque no sistema internacional (SI) é
 $\mathrm{N}\cdot\mathrm{m}$.
 
 \begin{ex}
-  Considere uma partícula de $10\,\mathrm{kg}$ na posição
-  $\vec r=\cos 30^\circ\hat i+\sen 30^\circ\hat j$. O torque do peso
-  da partícula é dado por $\vec\tau=\vec r\times\vec P$, onde
-  $\vec P=-98\hat j$. Logo,
-  $$\vec\tau=\left|
-  \begin{array}{ccc}
-    \hat i&\hat j&\hat k\\
-    \sqrt{3}/2&1/2&0\\
-    0&-98&0
-  \end{array}
-\right|=-49\sqrt{3}\hat k\,.$$  
+  Verifique que, para uma partícula de $10\,\mathrm{kg}$ na posição
+  $\vec r=\cos 30^\circ\hat i+\sen 30^\circ\hat j$ (em metros), o
+  torque do peso é igual a $-49\sqrt{3}\hat k$ (em
+  $\mathrm{N}\cdot \mathrm{m}$).
 \end{ex}
 
-Pela segunda lei de Newton, sabemos que $\vec F=\dot{\vec p}$, onde
-$\vec p=m\vec v$ é o momento linear da partícula ($\vec v$ é a
-velocidade da partícula). Logo, a Eq.~(\ref{eq:1}) assume a forma
-$$\vec\tau=\vec r\times\dot{\vec p}\,.$$
-Usando a identidade
-\begin{equation}
-  \label{eq:2}
-  \frac{d}{dt}(\vec r\times\vec p)=\dot{\vec r}\times\vec p+\vec r\times\dot{\vec p}
-\end{equation}
-e o fato de que $\dot{\vec r}\times\vec p=\vec 0$ (devido a que
-$\dot{\vec r}$ e $\vec p$ são paralelos), obtemos que
+Usaremos a notação $\dot{\vec a}$ para representar a derivada de
+$\vec a$ em relação ao tempo, ou seja,
+$\dot{\vec a}=\frac{d\vec a}{dt}$.
+
+\begin{ex}
+  Considere uma partícula de massa $m$ na posição $\vec r$ sobre a
+  qual atua uma força $\vec F$. Definindo o \textbf{momento angular}
+  de uma partícula por $\vec L=\vec r\times\vec p$, onde $\vec p$ é o
+  momento linear da partícula, mostre que $\vec\tau=\dot{\vec
+    L}$. Isso quer dizer que o torque da força $\vec F$ é igual à taxa
+  de variação do momento angular da partícula (note a semelhança com a
+  segunda lei de Newton). A unidade de momento angular no SI é
+  $\mathrm{kg}\cdot\mathrm{m^2/s}$.
+
+  \noindent\textit{Dica:} Na expressão do torque substitua $\vec F$ por
+  $\dot{\vec p}$, em virtude da segunda lei de Newton
+  ($\vec F=\dot{\vec p}$). Logo, utilize a identidade
+  $\frac{d}{dt}(\vec r\times\vec p)=\dot{\vec r}\times\vec p+\vec
+  r\times\dot{\vec p}$ e use o fato de que
+  $\dot{\vec r}\times\vec p=0$, pois o vetor velocidade $\dot{\vec r}$
+  é paralelo a $\vec p$.
+\end{ex}
+
+\begin{ex}
+  Considere duas partículas de massas $m_1$ e $m_2$ sobre as quais
+  atuam forças externas $\vec F_1$ e $\vec F_2$ respectivamente. Além
+  das forças externas, há forças internas $\vec F_{12}$ (sobre a
+  partícula $1$) e $\vec F_{21}$ (sobre a partícula $2$) devido a
+  interação das partículas (por exemplo, interação gravitacional ou
+  elétrica), as quais são paralelas ao vetor $\vec r_1-\vec
+  r_2$. Mostre que
+  \begin{equation}
+    \label{eq:1}
+    \begin{split}
+      \vec F_1+\vec F_2&=\dot{\vec p}_1+\dot{\vec p}_2\\
+      \vec\tau_1+\vec\tau_2&=\dot{\vec L}_1+\dot{\vec L}_2\,.
+    \end{split}
+  \end{equation}
+
+  \noindent\textit{Dica:} Segue da segunda lei de Newton que
+  \begin{equation}
+    \label{eq:2}
+    \begin{split}
+      \vec F_1+\vec F_{12}&=\dot{\vec p}_1\\
+      \vec F_2+\vec F_{21}&=\dot{\vec p}_2\,.
+    \end{split}
+  \end{equation}
+  Somando essas equações e usando a terceira lei de Newton
+  ($\vec F_{12}=-\vec F_{21}$), obtém-se a primeira equação
+  em~(\ref{eq:1}). Para se obter a segunda equação em~(\ref{eq:1}),
+  multiplicam-se vetorialmente à esquerda as equações~(\ref{eq:2})
+  pelos vetores posição $\vec r_1$ e $\vec r_2$ respectivamente. Logo,
+  somam-se as equações obtidas e usa-se o fato de que
+  $(\vec r_1-\vec r_2)\times\vec F_{12}=\vec 0$.
+\end{ex}
+
+O exemplo anterior pode ser generalizado sem realizar nenhuma
+alteração fundamental para o caso de um sistema de $n$
+partículas. Nesse caso vamos ter que
 \begin{equation}
   \label{eq:3}
-  \vec\tau=\frac{d}{dt}(\vec r\times\vec p)\,.
-\end{equation}
-
-Definimos o \textit{momento angular} da partícula por
-$$\vec L=\vec r\times\vec p\,.$$
-Usando esse conceito, a Eq.~(\ref{eq:3}) nos diz então que
-\begin{equation}
-  \label{eq:4}
-  \vec\tau=\dot{\vec L}\,,
-\end{equation}
-ou seja, o torque da força $\vec F$ é igual à taxa de variação do
-momento angular da partícula (note a semelhança com a segunda lei de
-Newton). A unidade de momento angular no SI é
-$\mathrm{kg}\cdot\mathrm{m^2/s}$.
-
-\subsection{Sistemas de partículas}
-Considere duas partículas de massas $m_1$ e $m_2$ sobre as quais atuam
-forças externas $\vec F_1$ e $\vec F_2$ respectivamente. Além
-das forças externas, há forças internas $\vec F_{12}$ (sobre a
-partícula $1$) e $\vec F_{21}$ (sobre a partícula $2$) devido a
-interação das partículas (por exemplo, interação gravitacional ou
-elétrica), as quais são paralelas ao vetor
-$\vec r_1-\vec r_2$. Pela segunda lei de Newton vamos ter
-então que
-\begin{equation}
-  \label{eq:5}
   \begin{split}
-    \vec F_1+\vec F_{12}&=\dot{\vec p}_1\\
-    \vec F_2+\vec F_{21}&=\dot{\vec p}_2\,.
+    \vec F_{\mathrm{ext}}&=\dot{\vec p}\\
+    \vec \tau_{\mathrm{ext}}&=\dot{\vec L}\,,
   \end{split}
 \end{equation}
-Somando essas equações, temos que
-$$\vec F_1+\vec F_2+\vec F_{12}+\vec F_{21}=\dot{\vec p}_1+\dot{\vec p}_2\,.$$
-Como $\vec F_{12}=-\vec F_{21}$ pela terceira lei de Newton, a
-equação anterior pode ser escrita como
-\begin{equation}
-  \label{eq:6}
-  \vec F_{\mathrm{ext}}=\dot{\vec p}\,,
-\end{equation}
-onde $\vec F_{\mathrm{ext}}=\vec F_1+\vec F_2$ é a força
-externa total sobre o sistema composto pelas partículas $1$ e $2$, e
-$\vec p=\vec p_1+\vec p_2$ é o momento linear total do
-sistema.
+onde $\vec F_{\mathrm{ext}}=\vec F_1+\cdots+\vec F_n$ é a força
+externa total sobre o sistema, $\vec p=\vec p_1+\cdots+\vec p_n$ é o
+momento linear total do sistema,
+$\vec\tau_{\mathrm{ext}}=\vec\tau_1+\cdots+\vec\tau_n$ é o torque
+externo total sobre o sistema e $\vec L=\vec L_1+\cdots+\vec L_n$ é o
+momento angular total do sistema.
 
-Multiplicando vetorialmente as Eqs.~(\ref{eq:5}) pelos vetores posição
-$\vec r_1$ e $\vec r_2$ respectivamente, vamos ter que
-\begin{equation*}
-  \begin{split}
-    \vec r_1\times(\vec F_1+\vec F_{12})&=\vec r_1\times\dot{\vec p}_1\\
-    \vec r_2\times(\vec F_2+\vec F_{21})&=\vec r_2\times\dot{\vec p}_2\\
-  \end{split}
-\end{equation*}
-Somando essas duas equações, vamos ter que
-$$\vec r_1\times\vec F_1+\vec r_2\times\vec F_2+\vec r_1\times\vec F_{12}+\vec r_2\times\vec F_{21}=\vec r_1\times\dot{\vec p}_1+\vec r_2\times\dot{\vec p}_2\,.$$
-Usando a terceira lei de Newton e a identidade~(\ref{eq:2}) vamos ter
-que
-$$\vec r_1\times\vec F_1+\vec r_2\times\vec F_2+(\vec r_1-\vec r_2)\times\vec F_{12}=\frac{d}{dt}(\vec r_1\times\vec p_1+\vec r_2\times\vec p_2)\,.$$
-Finalmente, como $\vec F_{12}$ é paralelo a
-$\vec r_1-\vec r_2$,
-$(\vec r_1-\vec r_2)\times\vec F_{12}=\vec 0$ e, por
-conseguinte,
-\begin{equation}
-  \label{eq:7}
-  \vec\tau_{\mathrm{ext}}=\dot{\vec L}\,,
-\end{equation}
-onde
-$\vec\tau_{\mathrm{ext}}=\vec\tau_1+\vec\tau_2$
-é o torque externo total sobre o sistema e
-$\vec L=\vec L_1+\vec L_2$ é o momento angular total do
-sistema.
-
-No caso de sistemas compostos por mais de duas partículas, as Eqs.~(\ref{eq:6}) e~(\ref{eq:7}) continuam valendo.
-
-\subsection{Dinâmica do corpo rígido}
-
-Um \textit{corpo rígido} é um corpo não pontual que não se deforma. O
+Um \textbf{corpo rígido} é um corpo não pontual que não se deforma. O
 fato de um corpo rígido não se deformar equivale a dizer que a
 distância entre dois pontos quaisquer do corpo é uma constante.
 
@@ -161,62 +140,54 @@ $$\vec L=\sum_{i=1}^n(\vec r_i\times\vec v_i)\Delta m_i\,.$$
 Considerando que o número de partes $n$ tende ao infinito e
 simultaneamente a massa de cada parte tende a zero, as somas
 anteriores tornam-se integrais. Dessa maneira, encontramos que o
-\textit{momento linear do corpo rígido} é dado por
+\textbf{momento linear do corpo rígido} é dado por
 \begin{equation}
-  \label{eq:8}
+  \label{eq:4}
   \vec p=\int \vec v\,dm
 \end{equation}
-e o \textit{momento angular do corpo rígido} por
+e o \textbf{momento angular do corpo rígido} por
 \begin{equation}
-  \label{eq:9}
+  \label{eq:5}
   \vec L=\int (\vec r\times\vec v)\,dm\,,
 \end{equation}
 onde as integrais são sobre toda a massa do corpo rígido.
 
-As Eqs.~(\ref{eq:6}) e~(\ref{eq:7}) continuam valendo da mesma
-forma para um corpo rígido, levando em conta que $\vec p$ e $\vec L$
-são dadas pelas Eqs.~(\ref{eq:8}) e~(\ref{eq:9}).
+As Eqs.~(\ref{eq:3}) continuam valendo da mesma forma para um corpo
+rígido, levando em conta que $\vec p$ e $\vec L$ são dadas pelas
+Eqs.~(\ref{eq:4}) e~(\ref{eq:5}).
 
 O movimento de um corpo rígido pode ser estudado analisando
 separadamente os movimentos de translação e de rotação em torno de um
 eixo que passa pelo corpo.
 
-\subsubsection{Movimento de translação}
-Quando um corpo rígido realiza um movimento de translação pura, todos
-os pontos do corpo possuem a mesma velocidade. Dessa forma, a
-velocidade $\vec v$ pode sair da integral na Eq.~(\ref{eq:8}) e assim o momento
-linear do corpo rígido vai ser dado por
-\begin{equation}
-  \label{eq:10}
-  \vec p=\vec v\int dm=M\vec v\,,
-\end{equation}
-onde $M$ é a massa total do corpo rígido. De forma análoga, na
-Eq.~(\ref{eq:9}) vamos ter
-\begin{equation}
-  \label{eq:11}
-  \vec L=\dpar{\int \vec r\,dm}\times\vec v\,.
-\end{equation}
-Definindo a posição do \textit{centro de massa} do corpo rígido por
-$$\vec R=\frac{1}{M}\int \vec r\,dm\,,$$
-a Eq.~(\ref{eq:11}) pode ser escrita como
-\begin{equation}
-  \label{eq:12}
-  \vec L=M\vec R\times\vec v=\vec R\times\vec p\,.
-\end{equation}
+\begin{ex}
+  Considere um corpo rígido de massa $M$ que realiza um movimento de
+  translação pura com velocidade $\vec v$. Mostre que nesse caso
+  \begin{equation}
+    \label{eq:6}
+    \vec p=M\vec v\quad\text{e}\quad \vec L=\vec R\times\vec p\,,
+  \end{equation}
+  onde
+  $$\vec R=\frac{1}{M}\int \vec r\,dm$$
+  é a posição do \textbf{centro de massa} do corpo.
 
-As Eqs.~(\ref{eq:10}) e~(\ref{eq:12}) nos dizem que um corpo rígido
-que realiza um movimento de translação pura se comporta como uma
-partícula de massa $M$ localizada no centro de massa do corpo. em
-outras palavras, as dimensões do corpo rígido não são relevantes no
-movimento de translação.
+  \noindent\textit{Dica:} Quando um corpo rígido realiza um movimento de translação pura, todos os pontos do corpo possuem a mesma velocidade. Dessa forma, a
+  velocidade $\vec v$ pode sair das integrais nas Eqs.~(\ref{eq:4})
+  e~(\ref{eq:5}).
+\end{ex}
 
-\subsubsection{Movimento de rotação}
-Diferentemente do caso do movimento de translação, quando um corpo
+O exercício anterior nos diz que um corpo rígido que realiza um
+movimento de translação pura se comporta como uma partícula de massa
+$M$ localizada no centro de massa do corpo. Em outras palavras, as
+dimensões do corpo rígido não são relevantes no movimento de
+translação.
+
+Diferentemente do caso do movimento de trans\-la\-ção, quando um corpo
 rígido realiza um movimento de rotação ao redor de um eixo que passa
 por ele, os pontos do corpo que estão mais próximos do eixo de rotação
 tem velocidade menor do que os pontos mais afastados. Logo, nesse caso
-a velocidade $\vec v$ não pode sair da integral nas Eqs.~(\ref{eq:8})
-e~(\ref{eq:9}).
+a velocidade $\vec v$ não pode sair da integral nas Eqs.~(\ref{eq:4})
+e~(\ref{eq:5}).
 
 Para simplificar nosso estudo do movimento de rotação de um corpo
 rígido, vamos considerar um corpo homogêneo (massa distribuída
@@ -232,12 +203,13 @@ referência fixo ao eixo de rotação.
 
 Continuando nossa análise da rotação de um corpo rígido, vemos que o
 momento angular do corpo é dado por
-$$\vec L=\int [\vec r\times(\vec\omega\times\vec r)]\,dm\,.$$
-Usando a identidade vetorial
+$$\vec L=\int [\vec r\times(\vec\omega\times\vec r)]\,dm\,,$$
+onde a posição $\vec r$ é em relação a um sistema de referência fixo
+ao eixo de rotação.  Usando a identidade vetorial
 $$\vec a\times(\vec b\times\vec c)=(\vec a\cdot\vec c)\vec b-(\vec a\cdot\vec b)\vec c\,,$$
 temos que
 \begin{equation}
-  \label{eq:13}
+  \label{eq:10}
   \vec L=\int [(\vec r\cdot\vec r)\vec\omega-(\vec r\cdot\vec\omega)\vec r]\,dm\,.
 \end{equation}
 Se $\theta$ é o ângulo entre os vetores $\vec\omega$ e $\vec r$, então
@@ -247,7 +219,7 @@ Devido a que o corpo gira em torno de um eixo de simetria, podemos
 inferir que o vetor $\vec L$ deve ter a mesma direção que o vetor
 $\vec\omega$. Isso quer dizer que as direções perpendiculares a
 $\vec\omega$ devem se anular após fazer a integral na
-Eq.~(\ref{eq:13}). Logo, vamos ter
+Eq.~(\ref{eq:10}). Logo, vamos ter
 \begin{equation*}
   \begin{split}
     \vec L&=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm\\
@@ -255,46 +227,117 @@ Eq.~(\ref{eq:13}). Logo, vamos ter
     &=\int (r^2\sen^2\theta)\vec\omega\,dm\,.
   \end{split}
 \end{equation*}
-Como todo ponto do corpo gira com a mesma velocidade angular, obtemos
-que
+Como todo ponto do corpo rígido gira com a mesma velocidade angular,
+obtemos que
 \begin{equation}
-  \label{eq:14}
+  \label{eq:11}
   \vec L=I\vec\omega\,,
 \end{equation}
 onde
 \begin{equation}
-  \label{eq:15}
+  \label{eq:12}
   I=\int (r\sen\theta)^2\,dm
 \end{equation}
-é o chamado \textit{momento de inércia} do corpo. Cabe ressaltar que
+é o chamado \textbf{momento de inércia} do corpo. Cabe ressaltar que
 para cada ponto do corpo, $r\sen\theta$ é a distância do ponto ao eixo
 de rotação.
 
-A Eq.~(\ref{eq:14}) nos diz que o momento angular é um indicador da
+A Eq.~(\ref{eq:11}) nos diz que o momento angular é um indicador da
 rotação de um corpo rígido.
 
-\subsection{Estática de um corpo rígido}
-Um corpo rígido está em \textit{equilíbrio estático} quando não
+Um corpo rígido está em \textbf{equilíbrio estático} quando não
 realiza movimento de translação nem de rotação.
 
 Se um corpo rígido está em equilíbrio estático, todo ponto do corpo
-tem velocidade nula. Logo, segue das Eqs.~(\ref{eq:8}) e~(\ref{eq:9})
+tem velocidade nula. Logo, segue das Eqs.~(\ref{eq:4}) e~(\ref{eq:5})
 que nesse caso vamos ter
 $$\vec p=\vec 0\quad\text{e}\quad\vec L=\vec 0\,,$$
 onde, na segunda condição, $\vec L$ pode ser calculado em relação a
-qualquer ponto. Substituindo isso nas Eqs.~(\ref{eq:6})
-e~(\ref{eq:7}), obtemos as chamadas condições de equilíbrio para o
-corpo rígido:
+qualquer ponto. Substituindo isso nas Eqs.~(\ref{eq:3}), obtemos as
+chamadas condições de equilíbrio para o corpo rígido:
 \begin{equation}
-  \label{eq:16}
+  \label{eq:13}
   {\vec F}_{\mathrm{ext}}=\vec 0\quad\text{e}\quad \vec\tau_{\mathrm{ext}}=\vec 0\,,
 \end{equation}
 onde, na segunda condição, $\vec\tau_{\mathrm{ext}}$ pode ser
 calculado em relação a qualquer ponto.
 
 O fato de um corpo rígido satisfazer uma das condições dadas na
-Eq.~(\ref{eq:16}) não implica que a outra será também satisfeita. Por
+Eq.~(\ref{eq:13}) não implica que a outra será também satisfeita. Por
 exemplo, se temos uma barra sobre uma mesa e aplicamos forças de
 direções opostas sobre os extremos da barra e perpendiculares a ela, a
-primeira condição em~(\ref{eq:16}) é satisfeita, mas a segunda não.
+primeira condição em~(\ref{eq:13}) é satisfeita, mas a segunda não.
+
+\begin{ex}
+  \label{ex:1}
+  Considere um corpo rígido de massa $M$. Se a aceleração da gravidade
+  $\vec g$ é constante, mostre que o torque do peso do corpo é dado
+  por $\vec\tau_P=\vec R\times(M\vec g)$, onde $\vec R$ é a posição do
+  centro de massa do corpo. Em outras palavras, o torque do peso do
+  corpo rígido pode ser calculado considerando o corpo como uma
+  partícula de massa $M$ localizada no centro de massa do corpo.
+
+  \noindent\textit{Dica:} O torque do peso de um corpo rígido é igual
+  à soma de todos os torques dos pesos das partes do corpo. Quando o
+  número de partes tende a infinito e a massa de cada parte tende a
+  zero, essa soma torna-se uma integral. Dessa forma,
+  $\vec\tau_P=\int (\vec r\times\vec g)\,dm$.
+\end{ex}
+
+Define-se o \textbf{centro de gravidade} de um corpo rígido de massa
+$M$ como o ponto no qual uma partícula de massa $M$ teria um torque do
+peso igual ao torque do peso do corpo rígido. O exercício anterior
+mostra que, se $\vec g$ é constante (por exemplo, na superfície da
+Terra), o centro de gravidade de um corpo rígido coincide com seu
+centro de massa. Para nossos fins, centro de gravidade e centro de
+massa serão equivalentes.
+
+Se um corpo rígido é homogêneo e tem um eixo de simetria, o centro de
+massa do corpo estará localizado em algum ponto desse eixo.
+
+Se um corpo rígido é pendurado a partir de um ponto arbitrário e está
+em equilíbrio, o centro de massa do corpo deve estar localizado em
+algum ponto da linha vertical que passa pelo ponto de suspensão. Com
+efeito, como nesse caso o torque do peso deve ser nulo, segue do
+exercício~\ref{ex:1} que $\vec R$ e $\vec g$ devem ser vetores
+paralelos, ou seja, $\vec R$ deve ser um vetor vertical.
+
+Se consideramos uma pessoa como um corpo rígido, quando a pessoa se
+equilibra em um pé só, o centro de massa dela deve estar na linha
+vertical que passa pelo pé de suporte. Para isso é necessário realizar
+um deslocamento do centro de massa, o qual pode não ser possível se a
+pessoa está junto a uma parede.
+
+\begin{ex}
+  Considere um corpo rígido em um plano inclinado de superfície
+  rugosa, como ilustrado na figura~\ref{fig:tombo}A. Dê argumentos que
+  indiquem que o corpo pode de fato estar em equilíbrio (não vai
+  tombar).
+
+  \noindent\textit{Dica:} Desenhe as forças que atuam sobre o
+  corpo. As forças normais e de atrito podem assumir valores de tal
+  forma que a força resultante sobre o corpo seja nula. Para calcular
+  os torques das forças escolha o ponto de apoio mais baixo, pois, em
+  relação a esse ponto, os torques das forças de atrito e da normal
+  que atua nesse ponto são nulos. Logo, mostre que o torque externo
+  total pode ser escrito como
+  $\vec \tau_{\mathrm{ext}}=\vec\tau_P+\vec\tau_N$, onde $\vec\tau_P$
+  e $\vec\tau_N$ têm direções opostas.
+  \begin{figure}[ht]
+    \centering \includegraphics[width=0.45\textwidth,keepaspectratio]{tombo.pdf}
+    \caption{Estudo do tombo de um corpo rígido.}
+    \label{fig:tombo}
+  \end{figure}
+\end{ex}
+
+\begin{ex}
+  Considere um corpo rígido em um plano inclinado de superfície
+  rugosa, como ilustrado na figura~\ref{fig:tombo}B. Dê argumentos que indiquem que o
+  corpo não pode estar em equilíbrio (vai tombar).
+
+  \noindent\textit{Dica:} Proceda da mesma forma que no exercício
+  anterior. Mostre que o torque externo total pode ser escrito como
+  $\vec\tau_{\mathrm{ext}}=\vec\tau_P+\vec\tau_N$, onde $\vec\tau_P$ e
+  $\vec\tau_N$ têm a mesma direção.
+\end{ex}
 \end{document}
