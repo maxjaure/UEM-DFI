@@ -324,7 +324,8 @@ pessoa está junto a uma parede.
   $\vec \tau_{\mathrm{ext}}=\vec\tau_P+\vec\tau_N$, onde $\vec\tau_P$
   e $\vec\tau_N$ têm direções opostas.
   \begin{figure}[ht]
-    \centering \includegraphics[width=0.45\textwidth,keepaspectratio]{tombo.pdf}
+    \centering
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{tombo.pdf}
     \caption{Estudo do tombo de um corpo rígido.}
     \label{fig:tombo}
   \end{figure}
@@ -332,12 +333,46 @@ pessoa está junto a uma parede.
 
 \begin{ex}
   Considere um corpo rígido em um plano inclinado de superfície
-  rugosa, como ilustrado na figura~\ref{fig:tombo}B. Dê argumentos que indiquem que o
-  corpo não pode estar em equilíbrio (vai tombar).
+  rugosa, como ilustrado na figura~\ref{fig:tombo}B. Dê argumentos que
+  indiquem que o corpo não pode estar em equilíbrio (vai tombar).
 
   \noindent\textit{Dica:} Proceda da mesma forma que no exercício
   anterior. Mostre que o torque externo total pode ser escrito como
   $\vec\tau_{\mathrm{ext}}=\vec\tau_P+\vec\tau_N$, onde $\vec\tau_P$ e
   $\vec\tau_N$ têm a mesma direção.
+\end{ex}
+
+Suponhamos que queremos calcular o torque de uma força $\vec F$
+aplicada sobre um ponto de um corpo rígido que se encontra na posição
+$\vec r$ em relação a um ponto arbitrário $O$. Por definição esse
+torque estará dado por $\vec\tau=\vec r\times\vec F$. Porém, às vezes
+o módulo de $\vec r$ ou sua direção podem ser difíceis de se
+conhecer. Para dar conta desse problema, observamos que se $\vec r'$ é
+um vetor qualquer paralelo a $\vec F$, então $\vec r'\times\vec F=0$
+e, por conseguinte, $\vec\tau=(\vec r+\vec r')\times \vec F$. Dessa
+maneira, escolhendo o vetor $\vec r'$ de forma conveniente podemos
+calcular $\vec\tau$ de forma mais simples. Em particular, se
+$\vec r+\vec r'$ é um vetor perpendicular a $\vec F$, então
+$\tau=|\vec r+\vec r'|F$.
+
+\begin{ex}
+  Uma escada homogênea de $8\,\mathrm{m}$ de comprimento e
+  $5\,\mathrm{kg}$ de massa é apoiada em uma parede vertical lisa
+  fazendo um ângulo de $60^\circ$ com o chão. Se uma pessoa de
+  $70\,\mathrm{kg}$ está sobre a escada e ela se encontra em
+  equilíbrio estático, determine o valor da força de atrito sobre a
+  base da escada quando a pessoa andou na escada (i) $4\,\mathrm{m}$ e
+  (ii) $6\,\mathrm{m}$.
+
+  \noindent\textit{Dica:} Usando a primeira condição de~(\ref{eq:13}), obtenha
+  que o valor da força normal sobre a base da escada é
+  $735\,\mathrm{N}$. Use a segunda condição de~(\ref{eq:13}) para
+  encontrar o valor da força de atrito, tomando como ponto de
+  referência para o cálculo de torques o ponto de apoio da escada na
+  parede.
+\end{ex}
+
+\begin{ex}
+  
 \end{ex}
 \end{document}
