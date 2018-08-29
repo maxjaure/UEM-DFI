@@ -2,8 +2,9 @@
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
-\usepackage{microtype}
 \usepackage{amsmath,amsfonts,amsthm}
+\usepackage{mathabx}
+\usepackage{microtype}
 \usepackage{graphicx}
 
 \newcommand{\dpar}[1]{\left(#1\right)}
@@ -209,7 +210,7 @@ ao eixo de rotação.  Usando a identidade vetorial
 $$\vec a\times(\vec b\times\vec c)=(\vec a\cdot\vec c)\vec b-(\vec a\cdot\vec b)\vec c\,,$$
 temos que
 \begin{equation}
-  \label{eq:10}
+  \label{eq:7}
   \vec L=\int [(\vec r\cdot\vec r)\vec\omega-(\vec r\cdot\vec\omega)\vec r]\,dm\,.
 \end{equation}
 Se $\theta$ é o ângulo entre os vetores $\vec\omega$ e $\vec r$, então
@@ -219,7 +220,7 @@ Devido a que o corpo gira em torno de um eixo de simetria, podemos
 inferir que o vetor $\vec L$ deve ter a mesma direção que o vetor
 $\vec\omega$. Isso quer dizer que as direções perpendiculares a
 $\vec\omega$ devem se anular após fazer a integral na
-Eq.~(\ref{eq:10}). Logo, vamos ter
+Eq.~(\ref{eq:7}). Logo, vamos ter
 \begin{equation*}
   \begin{split}
     \vec L&=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm\\
@@ -230,19 +231,19 @@ Eq.~(\ref{eq:10}). Logo, vamos ter
 Como todo ponto do corpo rígido gira com a mesma velocidade angular,
 obtemos que
 \begin{equation}
-  \label{eq:11}
+  \label{eq:8}
   \vec L=I\vec\omega\,,
 \end{equation}
 onde
 \begin{equation}
-  \label{eq:12}
+  \label{eq:9}
   I=\int (r\sen\theta)^2\,dm
 \end{equation}
 é o chamado \textbf{momento de inércia} do corpo. Cabe ressaltar que
 para cada ponto do corpo, $r\sen\theta$ é a distância do ponto ao eixo
 de rotação.
 
-A Eq.~(\ref{eq:11}) nos diz que o momento angular é um indicador da
+A Eq.~(\ref{eq:8}) nos diz que o momento angular é um indicador da
 rotação de um corpo rígido.
 
 Um corpo rígido está em \textbf{equilíbrio estático} quando não
@@ -256,17 +257,17 @@ onde, na segunda condição, $\vec L$ pode ser calculado em relação a
 qualquer ponto. Substituindo isso nas Eqs.~(\ref{eq:3}), obtemos as
 chamadas condições de equilíbrio para o corpo rígido:
 \begin{equation}
-  \label{eq:13}
+  \label{eq:10}
   {\vec F}_{\mathrm{ext}}=\vec 0\quad\text{e}\quad \vec\tau_{\mathrm{ext}}=\vec 0\,,
 \end{equation}
 onde, na segunda condição, $\vec\tau_{\mathrm{ext}}$ pode ser
 calculado em relação a qualquer ponto.
 
 O fato de um corpo rígido satisfazer uma das condições dadas na
-Eq.~(\ref{eq:13}) não implica que a outra será também satisfeita. Por
+Eq.~(\ref{eq:10}) não implica que a outra será também satisfeita. Por
 exemplo, se temos uma barra sobre uma mesa e aplicamos forças de
 direções opostas sobre os extremos da barra e perpendiculares a ela, a
-primeira condição em~(\ref{eq:13}) é satisfeita, mas a segunda não.
+primeira condição em~(\ref{eq:10}) é satisfeita, mas a segunda não.
 
 \begin{ex}
   \label{ex:1}
@@ -379,9 +380,9 @@ $\tau=|\vec r+\vec r'|F$.
   base da escada quando a pessoa andou na escada (i) $4\,\mathrm{m}$ e
   (ii) $6\,\mathrm{m}$.
 
-  \noindent\textit{Dica:} Usando a primeira condição de~(\ref{eq:13}), obtenha
+  \noindent\textit{Dica:} Usando a primeira condição de~(\ref{eq:10}), obtenha
   que o valor da força de atrito é igual à força normal devido à
-  parede. Use a segunda condição de~(\ref{eq:13}) para encontrar o
+  parede. Use a segunda condição de~(\ref{eq:10}) para encontrar o
   valor dessa força normal, tomando como ponto de referência para o
   cálculo de torques o ponto mais baixo da escada.
 \end{ex}
@@ -443,8 +444,8 @@ $\tau=|\vec r+\vec r'|F$.
 Estudando o movimento da Lua e dos planetas, Newton concluiu que
 existe uma força atrativa entre dois corpos quaisquer, chamada de
 \textbf{força gravitacional}. Mais precisamente, ele encontrou a
-seguinte expressão para a força gravitacional entre duas partículas de
-massas $m_1$ e $m_2$ separadas por uma distância $r$:
+seguinte expressão para o valor da força gravitacional entre duas
+partículas de massas $m_1$ e $m_2$ separadas por uma distância $r$:
 $$F_g=\frac{Gm_1m_2}{r^2}\,,$$
 onde $G$ é uma constante chamada de \textbf{constante gravitacional}.
 Sobre cada partícula atua uma força de módulo $F_g$ que aponta na
@@ -456,8 +457,130 @@ $$\vec F_{12}=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec r_1)$$
 e a força sobre a partícula $2$ devido à partícula $1$ é
 $$\vec F_{21}=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_1-\vec r_2)\,.$$
 
-A força gravitacional é uma força conservativa pois ela pode ser derivada a partir de uma energia potencial. De fato, se definimos a \textbf{energia potencial gravitacional} por
-$$V_g=-\frac{Gm_1m_2}{|r_1-r_2|}\,,$$
+O valor da constante gravitacional $G$ pode ser encontrado
+experimentalmente. Quase 100 anos depois de Newton publicar sua lei da
+gravitação (junto com as três leis de Newton), Cavendish conseguiu
+medir o valor de $G$ usando uma balança de torsão (ver livro). O valor
+que ele ncontrou estava próximo do valor atualmente aceito, que é
+$G=6{,}67\times 10^{-11}\,\mathrm{N}\cdot\mathrm{m}^2/\mathrm{kg}$.
+
+Como toda a força, as forças gravitacionais obedecem o princípio de
+superposição. Por exemplo, se temos três partículas, sobre cada
+partícula atuaram duas forças gravitacionais devido às duas partículas
+restantes. Logo, se as partículas tem massas $m_1$, $m_2$ e $m_3$, a
+força gravitacional resultante sobre a partícula $1$ será
+\begin{equation*}
+  \begin{split}
+    \vec F_1&=\vec F_{12}+\vec F_{13}\\
+    &=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec
+    r_1)+\frac{Gm_1m_3}{|\vec r_1-\vec r_3|^3}(\vec r_3-\vec r_1)\,.
+  \end{split}
+\end{equation*}
+
+Consideremos uma partícula de massa $m$ na posição
+$\vec r=x\hat i+y\hat j+z\hat k$ sobre a qual atua uma força
+gravitacional devido a uma partícula de massa $M$ que se encontra na
+origem do nosso sistema de coordenadas. Essa força gravitacional está
+dada por
+$$\vec F_g=-\frac{GMm}{r^3}\vec r\,.$$
+Essa força é conservativa pois ela pode ser derivada a partir de uma
+energia potencial. De fato, se definimos a \textbf{energia potencial
+  gravitacional} da partícula de massa $m$ por
+\begin{equation}
+  \label{eq:11}
+  V_g=-\frac{GMm}{r}\,,
+\end{equation}
 vemos que
-$$\frac{\partial V_g}{\partial x}=\frac{Gm_1m_2}{}$$
+\begin{equation*}
+  \begin{split}
+    \frac{\partial V_g}{\partial x}&=\frac{\partial}{\partial x}\dpar{-\frac{GMm}{\sqrt{x^2+y^2+z^2}}}\\
+    &=-\frac{GMmx}{(x^2+y^2+z^2)^{3/2}}\\
+    &=-\frac{GMmx}{r^3}\,.\\
+  \end{split}
+\end{equation*}
+Analogamente vamos ter que
+$$\frac{\partial V_g}{\partial y}=-\frac{GMmy}{r^3}\quad\text{e}\quad\frac{\partial V_g}{\partial z_1}=-\frac{GMmz}{r^3}\,.$$
+Portanto, notamos que
+$$-\dpar{\frac{\partial V_g}{\partial x}\hat i+\frac{\partial V_g}{\partial y}\hat j+\frac{\partial V_g}{\partial z}\hat k}=\vec F_g\,.$$
+O vetor que está entre parêntesis no lado esquerdo dessa equação é
+chamado de \textbf{gradiente} de $V_g$ e é usualmente denotado em
+cálculo por $\nabla V_g$. Assim, temos que
+\begin{equation}
+  \label{eq:12}
+  \vec F_g=-\nabla V_g\,.
+\end{equation}
+
+A Eq.~(\ref{eq:12}) nos diz que sabendo a energia potencial de uma
+partícula de massa $m$ devido a uma outra partícula, podemos encontrar
+o módulo e a direção da força gravitacional aplicada sobre ela. Se
+temos três partículas de massas $m_1$, $m_2$ e $m_3$ nas posições
+$\vec r_1$, $\vec r_2$ e $\vec r_3$, sabemos que as forças
+gravitacionais sobre a partícula $1$ devido às outras partículas se
+somam. Logo, podemos inferir que a energia potencial gravitacional da
+partícula $1$ nesse caso vai ser dada por
+$$V_g=-\frac{Gm_1m_2}{|\vec r_1-\vec r_2|}-\frac{Gm_1m_3}{|\vec r_1-\vec r_3|}\,.$$
+Podemos generalizar esse fato para um número arbitrário de
+partículas. Além disso, podemos inferir que a energia potencial
+gravitacional de uma partícula de massa $m$ na posição $\vec r$ devido
+a um corpo rígido é dado por
+$$V_g=\int -\frac{Gm}{|\vec r-\vec r'|}\,dM\,,$$
+onde a integral é sobre todos os pontos do corpo rígido, cujas
+posições são dadas pelo vetor $\vec r'$.
+
+\begin{ex}
+  Considere uma partícula de massa $m$ e um arame circular homogêneo
+  de massa $M$ e raio $R$ como ilustrado na
+  figura~\ref{fig:potencial_espira}). Mostre que a energia potencial
+  gravitacional da partícula é dada por
+  $$V_g=-\frac{GMm}{\sqrt{R^2+z^2}}\,.$$
+
+  \noindent\textit{Dica:} Como o arame é homogêneo, podemos definir a
+  densidade de massa $\lambda=M/2\pi R$. Um pedaço do arame de tamanho
+  $\Delta s$ tem massa $\Delta M=\lambda\Delta s$. Por geometria
+  sabe-se que $\Delta s=R\Delta\phi$. Logo,
+  $\Delta M=\lambda R\Delta\phi$. Por outro lado, a distância entre um
+  pedaço do arame e a partícula é $\sqrt{R^2+z^2}$. Usando esses fatos
+  conclua que a energia potencial gravitacional da partícula é dada
+  por
+  $$V_g=-\int_0^{2\pi}\frac{Gm}{\sqrt{R^2+z^2}}\lambda R\,d\phi\,.$$
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{potencial_espira.pdf}
+    \caption{Partícula de massa $m$ sobre um arame circular homogêneo
+      de massa $M$.}
+    \label{fig:potencial_espira}
+  \end{figure}
+\end{ex}
+
+\begin{ex}
+  Considere uma partícula de massa $m$ e uma casca esférica homogênea
+  de massa $M$ e raio $R$ como ilustrado na
+  figura~\ref{fig:potencial_esfera}). Mostre que a energia potencial
+  gravitacional da partícula é dada por
+  $$V_g=
+  \begin{cases}
+    -\frac{GMm}{z}&\text{se $z\ge R$}\\
+    -\frac{GMm}{R}&\text{se $z<R$.}
+  \end{cases}
+  $$
+
+  \noindent\textit{Dica:} Defina a densidade de massa
+  $\sigma=M/4\pi R^2$. Considere uma fita circular de raio
+  $R\sen\theta$ e largura $R\Delta\theta$, onde $\theta$ é o ângulo
+  que eixo vertical e o raio da casca fazem quando ele aponta para um
+  ponto da fita. A massa dessa fita é
+  $\Delta M=\sigma(2\pi R\sen\theta)R\Delta\theta$. A distância entre
+  o centro da fita e a partícula é $z-R\cos\theta$. Mostre que a
+  energia potencial gravitacional da partícula é dada por
+  $$V_g=-\int_0^{\pi}\frac{2\pi Gm\sigma R^2\sin\theta}{\sqrt{R^2\sen^2\theta+(z-\cos\theta)^2}}\,d\theta\,.$$
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{potencial_esfera.pdf}
+    \caption{Partícula de massa $m$ sobre uma casca esférica homogênea
+      de massa $M$.}
+    \label{fig:potencial_esfera}
+  \end{figure}
+
+\end{ex}
+
 \end{document}
