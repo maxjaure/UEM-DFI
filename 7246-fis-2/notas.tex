@@ -326,7 +326,7 @@ pessoa está junto a uma parede.
   e $\vec\tau_N$ têm direções opostas.
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth,keepaspectratio]{tombo.pdf}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{tombo.pdf}
     \caption{Estudo do tombo de um corpo rígido.}
     \label{fig:tombo}
   \end{figure}
@@ -356,6 +356,17 @@ calcular $\vec\tau$ de forma mais simples. Em particular, se
 $\vec r+\vec r'$ é um vetor perpendicular a $\vec F$, então
 $\tau=|\vec r+\vec r'|F$.
 
+Na maioria dos exercícios lidaremos com problemas onde as posições e
+as forças se encontram em um plano; específicamente, o plano do
+papel. Dessa forma, os torques das forças sempre serão vetores
+perpendiculares ao papel. Devido a isso, podemos adotar a seguinte
+convenção: se o vetor torque aponta para fora do papel, consideraremos
+ele como positivo; caso contrário, consideraremos ele como
+negativo. Uma regra prática para determinar o sinal do torque de uma
+força é a seguinte: se a força tende a fazer girar o corpo em sentido
+antihorário em relação ao ponto de referência, o torque será positivo;
+caso contrário, será negativo.
+
 \begin{ex}
   Uma barra homogênea de $12\,\mathrm{kg}$ está em equilíbrio
   estático. Um extremo dela está apoiada em uma parede rugosa e o
@@ -365,7 +376,7 @@ $\tau=|\vec r+\vec r'|F$.
   à parede.
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth,keepaspectratio]{barra_equilibrio.pdf}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{barra_equilibrio.pdf}
     \caption{Barra homogênea em equilíbrio estático.}
     \label{fig:barra_equilibrio}
   \end{figure}
@@ -400,7 +411,7 @@ $\tau=|\vec r+\vec r'|F$.
   desnível como ponto de referência para o cálculo de torques.
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth,keepaspectratio]{roda_obstaculo.pdf}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{roda_obstaculo.pdf}
     \caption{Roda atascada devido a um desnível do chão.}
     \label{fig:roda_obstaculo}
   \end{figure}
@@ -461,12 +472,12 @@ O valor da constante gravitacional $G$ pode ser encontrado
 experimentalmente. Quase 100 anos depois de Newton publicar sua lei da
 gravitação (junto com as três leis de Newton), Cavendish conseguiu
 medir o valor de $G$ usando uma balança de torsão (ver livro). O valor
-que ele ncontrou estava próximo do valor atualmente aceito, que é
+que ele encontrou estava próximo do valor atualmente aceito, que é
 $G=6{,}67\times 10^{-11}\,\mathrm{N}\cdot\mathrm{m}^2/\mathrm{kg}$.
 
 Como toda a força, as forças gravitacionais obedecem o princípio de
 superposição. Por exemplo, se temos três partículas, sobre cada
-partícula atuaram duas forças gravitacionais devido às duas partículas
+partícula atuarão duas forças gravitacionais devido às duas partículas
 restantes. Logo, se as partículas tem massas $m_1$, $m_2$ e $m_3$, a
 força gravitacional resultante sobre a partícula $1$ será
 \begin{equation*}
@@ -510,7 +521,7 @@ cálculo por $\nabla V_g$. Assim, temos que
   \vec F_g=-\nabla V_g\,.
 \end{equation}
 
-A Eq.~(\ref{eq:12}) nos diz que sabendo a energia potencial de uma
+A Eq.~(\ref{eq:12}) nos diz que, sabendo a energia potencial de uma
 partícula de massa $m$ devido a uma outra partícula, podemos encontrar
 o módulo e a direção da força gravitacional aplicada sobre ela. Se
 temos três partículas de massas $m_1$, $m_2$ e $m_3$ nas posições
@@ -545,7 +556,7 @@ posições são dadas pelo vetor $\vec r'$.
   $$V_g=-\int_0^{2\pi}\frac{Gm}{\sqrt{R^2+z^2}}\lambda R\,d\phi\,.$$
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth,keepaspectratio]{potencial_espira.pdf}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{potencial_espira.pdf}
     \caption{Partícula de massa $m$ sobre um arame circular homogêneo
       de massa $M$.}
     \label{fig:potencial_espira}
@@ -575,7 +586,7 @@ posições são dadas pelo vetor $\vec r'$.
   $$V_g=-\int_0^{\pi}\frac{2\pi Gm\sigma R^2\sin\theta}{\sqrt{R^2\sen^2\theta+(z-\cos\theta)^2}}\,d\theta\,.$$
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.45\textwidth,keepaspectratio]{potencial_esfera.pdf}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{potencial_esfera.pdf}
     \caption{Partícula de massa $m$ sobre uma casca esférica homogênea
       de massa $M$.}
     \label{fig:potencial_esfera}
