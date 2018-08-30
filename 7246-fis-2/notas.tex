@@ -564,6 +564,7 @@ posições são dadas pelo vetor $\vec r'$.
 \end{ex}
 
 \begin{ex}
+  \label{ex:potencial.casca}
   Considere uma partícula de massa $m$ e uma casca esférica homogênea
   de massa $M$ e raio $R$ como ilustrado na
   figura~\ref{fig:potencial_esfera}). Mostre que a energia potencial
@@ -581,9 +582,13 @@ posições são dadas pelo vetor $\vec r'$.
   que eixo vertical e o raio da casca fazem quando ele aponta para um
   ponto da fita. A massa dessa fita é
   $\Delta M=\sigma(2\pi R\sen\theta)R\Delta\theta$. A distância entre
-  o centro da fita e a partícula é $z-R\cos\theta$. Mostre que a
-  energia potencial gravitacional da partícula é dada por
-  $$V_g=-\int_0^{\pi}\frac{2\pi Gm\sigma R^2\sin\theta}{\sqrt{R^2\sen^2\theta+(z-\cos\theta)^2}}\,d\theta\,.$$
+  o centro da fita e a partícula é $z-R\cos\theta$. Usando o resultado
+  do exercício anterior, mostre que a energia potencial gravitacional
+  da partícula é dada por
+  $$V_g=-\int_0^{\pi}\frac{2\pi Gm\sigma R^2\sin\theta}{\sqrt{R^2+z^2-2Rz\cos\theta}}\,d\theta\,.$$
+  Use a mudança de variável $u=R^2+z^2-2Rz\cos\theta$ na integral para
+  chegar na expressão
+  $$V_g=-\frac{\pi Gm\sigma R}{z}\int_{R^2+z^2-2Rz}^{R^2+z^2+2Rz}\frac{du}{\sqrt{u}}\,.$$
   \begin{figure}[ht]
     \centering
     \includegraphics[width=0.4\textwidth,keepaspectratio]{potencial_esfera.pdf}
@@ -591,7 +596,84 @@ posições são dadas pelo vetor $\vec r'$.
       de massa $M$.}
     \label{fig:potencial_esfera}
   \end{figure}
-
 \end{ex}
+
+\begin{ex}
+  \label{ex:potencial.esfera}
+  Considere agora que a figura~\ref{fig:potencial_esfera} se refere a
+  uma esfera sólida de massa $M$ e raio $R$. Mostre que a energia
+  potencial gravitacional da partícula é dada por
+  $$V_g=
+  \begin{cases}
+    -\frac{GMm}{z}&\text{se $z\ge R$}\\
+    2\pi Gm\sigma(\frac{z^2}{3}-R^2)&\text{se $z<R$.}
+  \end{cases}
+  $$
+
+  \noindent\textit{Dica:} Defina a densidade de massa
+  $\rho=\frac{M}{(4/3)\pi R^3}$. Considere uma casca esférica de raio
+  $r$ e espessura $\Delta r$. A massa dessa casca é
+  $\Delta M=\rho(4\pi r^2)\Delta r$. Usando o resultado do exercício
+  anterior, mostre que, se $z\ge R$,
+  $$V_g=-\int_0^R\frac{4\pi Gm\sigma r^2}{z}\,dr\,;$$
+  se $z<R$,
+  $$V_g=-\int_0^z\frac{4\pi Gm\sigma r^2}{z}\,dr-\int_z^R\frac{4\pi Gm\sigma r^2}{r}\,dr\,.$$
+\end{ex}
+
+\begin{ex}
+  \label{ex:forca.esfera}
+  Determine o módulo e a direção da força gravitacional sobre uma
+  partícula de massa $m$ na situação dada no
+  exercício~\ref{ex:potencial.casca} quando $z\ge R$ e quando
+  $z<R$. Repita o mesmo para o caso do
+  exercício~\ref{ex:potencial.esfera}. Mostre que seus resultados
+  podem ser escritos de forma unificada como
+  $$\vec F_g=-\frac{GM_{\mathrm{enc}}m}{z^2}\hat k\,,$$
+  onde $M_{\mathrm{enc}}$ é a massa do corpo esférico encerrada por
+  uma esfera de raio $z$.
+\end{ex}
+
+Nos exercícios~\ref{ex:potencial.casca}, \ref{ex:potencial.esfera}
+e~\ref{ex:forca.esfera} consideramos que a partícula se encontrava em
+um ponto de uma linha vertical. No entanto, devido à simetria de um
+corpo esférico, os resultados desses exercícios continuam valendo da
+mesma forma desde que escolhamos o eixo $z$ como a semirreta que sai
+do centro do corpo esférico e passa pela partícula.
+
+Dos exercícios~\ref{ex:potencial.casca}, \ref{ex:potencial.esfera}
+e~\ref{ex:forca.esfera} concluímos que para obter a energia potencial
+ou a força gravitacional de um corpo qualquer localizado fora de um
+outro corpo esférico homogêneo podemos considerar o segundo como uma
+partícula localizada no seu centro de massa. Em particular, se
+consideramos a Terra como uma esfera sólida homogênea, a energia
+potencial gravitacional de uma partícula de massa $m$ que se encontra
+a uma altura $h$ da superfície da Terra será
+$$V_g=-\frac{GM_Tm}{R_T+h}\,,$$
+onde $M_T$ e $R_T$ são respectivamente a massa e o raio da
+Terra. Também podemos obter imediatamente que o valor da força
+gravitacional sobre a partícula é
+\begin{equation}
+  \label{eq:13}
+  F_g=\frac{GM_Tm}{(R_T+h)^2}\,,
+\end{equation}
+a qual aponta para o centro da Terra.
+
+Considerando a Terra como uma esfera, o raio dela pode ser medido
+experimentalmente de várias formas. Nós vamos considerar que o raio da
+Terra é $R_T=6380\,\mathrm{km}$.
+
+Se uma partícula de massa $m$ se encontra a uma altura $h\ll R_T$ em
+relação à superfície da Terra, a força gravitacional sobre a partícula
+é chamada de \textbf{peso}. Nesse caso, o peso da partícula segundo a
+Eq.~(\ref{eq:13}) vai ser aproximadamente
+$$F_g=\frac{GM_Tm}{R_T^2}\,.$$
+Por outro lado, nessa aproximação sabemos que $F_g=mg$, onde
+$g=9{,}8\,\mathrm{m}/\mathrm{s}^2$. Logo, a partir dessas relações
+podemos obter o valor da massa da Terra. De fato, vamos obter que
+$M_T=5{,}98\times 10^{24}\,\mathrm{kg}$. O valor atualmente aceito para a massa da Terra é
+$$M_T=5.974\times 10^{24}\,\mathrm{kg}\,.$$
+
+
+
 
 \end{document}
