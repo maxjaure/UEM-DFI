@@ -719,9 +719,10 @@ planetas, obteve as seguintes leis empíricas:
   qual está localizado em um dos focos da elipse (ver
   figura~\ref{fig:orbitaeliptica}).
 \item O vetor posição de um planeta em relação ao Sol varre áreas
-  iguais em tempos iguais (ver figura~\ref{fig:leikepler2}).
+  iguais em intervalos de tempo iguais (ver
+  figura~\ref{fig:leikepler2}).
 \item O período de um planeta é diretamente proprocional ao semi-eixo
-  maior da sua órbita elíptica elevado à potencia $3/2$.
+  maior da sua órbita elíptica elevado ao expoente $3/2$.
 \end{enumerate}
 \begin{figure}[ht]
   \centering
@@ -754,5 +755,46 @@ conserva, ou seja, $\vec L$ é um vetor constante (módulo e direção
 constantes). Em particular, isso implica que o vetor $\vec L$ vai ser
 sempre perpendicular aos vetores $\vec r$ e $\dot{\vec r}$ e, por
 conseguinte, o movimento da partícula é realizado em um plano que é
-perpendicular a $\vec L$.
+perpendicular a $\vec L$. Assim, podemos considerar convenientemente
+que o plano do movimento é o plano $xy$ (ver
+figura~\ref{fig:leikepler2r}).
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{leikepler2r.pdf}
+  \caption{O movimento da partícula é realizado no plano $xy$.}
+  \label{fig:leikepler2r}
+\end{figure}
+
+Da figura~\ref{fig:leikepler2r} vemos que
+$\vec r=r\cos\theta\hat i+r\sen\theta\hat j$ e, por conseguinte,
+$\dot{\vec r}=-r\dot\theta\sen\theta\hat i+r\dot\theta\cos\theta\hat
+j$. Logo,
+$$\vec L=m\vec r\times\dot{\vec r}=m\left|
+  \begin{array}{ccc}
+    \hat i&\hat j&\hat k\\
+    r\cos\theta& r\sen\theta& 0\\
+    -r\dot\theta\sen\theta& r\dot\theta\cos\theta&0
+  \end{array}
+\right|\,.$$ Portanto,
+$$\vec L=mr^2\dot\theta\hat k\,.$$
+Como esse vetor é constante, seu módulo $L=mr^2\dot\theta$ é uma
+constante. Por outro lado, sabe-se dos cursos de cálculo que a área da
+região limitada pela elipse e os vetores $\vec r(\theta_1)$ e
+$\vec r(\theta_2)$ é dada por
+$$A=\frac{1}{2}\int_{\theta_1}^{\theta_2}r^2\,d\theta\,.$$
+Se $\theta_1=\theta(t_1)$ e $\theta_2=\theta(t_2)$, mudando a variável
+de integração para $t$, temos que
+$$A=\frac{1}{2}\int_{t_1}^{t_2}r^2\frac{d\theta}{dt}\,dt=\frac{1}{2}\int_{t_1}^{t_2}r^2\dot\theta\,dt=\frac{1}{2}\int_{t_1}^{t_2}\frac{L}{m}\,dt$$
+Logo, como $L$ é constante, temos que
+$$A=\frac{L}{2m}(t_2-t_1)\,.$$
+Dessa maneira fica provada a segunda lei de Kepler, pois a área
+varrida pelo vetor posição da partícula entre dois instantes de tempo
+$t_1$ e $t_2$, só depende da diferença $t_2-t_1$ e não dos instantes
+individuais.
+
+\section{Movimento periódico}
+
+
+
 \end{document}
