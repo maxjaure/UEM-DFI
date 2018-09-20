@@ -2,10 +2,15 @@
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
-\usepackage{amsmath,amsfonts,amsthm}
-\usepackage{mathabx}
+\usepackage{amsmath,amsthm}
+\usepackage{unicode-math}
+\setmainfont{STIX Two Text}
+\setsansfont{DejaVu Sans}
+\setmathfont{STIX Two Math}[StylisticSet=1]
 \usepackage{microtype}
 \usepackage{graphicx}
+
+%\addtokomafont{disposition}{\rmfamily}
 
 \newcommand{\dpar}[1]{\left(#1\right)}
 \newcommand{\dsqr}[1]{\left[#1\right]}
@@ -727,7 +732,9 @@ planetas, obteve as seguintes leis empíricas:
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.45\textwidth,keepaspectratio]{orbitaeliptica.pdf}
-  \caption{Primeira lei de Kepler.}
+  \caption{Primeira lei de Kepler. Uma elipse tem a propriedade de
+    que, para qualquer ponto dela, a soma das distâncias entre o ponto
+    e os focos é uma constante.}
   \label{fig:orbitaeliptica}
 \end{figure}
 \begin{figure}[ht]
@@ -741,20 +748,20 @@ Tendo formulado a lei da gravitação universal, Newton descobriu que a
 partir dessa lei podem ser deduzidas as três leis de Kepler. As
 deduções da primeira e da terceira leis usam manipulações de equações
 diferenciais que estão fora do escopo do curso. A dedução da segunda
-lei é mais elementar e veremos que é equivalente à conservação do
+lei é mais elementar e veremos que é consequência da conservação do
 momento angular.
 
-Consideremos uma partícula de massa $m$ a uma distância $r$ do centro
-da Terra. Se $\vec F_g$ é a força gravitacional sobre a partícula,
-devido à Terra, então o vetor $\vec F_g$ é proporcional ao vetor
-$-\vec r$. Dessa maneira, o torque de $\vec F_g$ vai ser nulo, pois é
-o produto vetorial de vetores paralelos. Se $\vec F_g$ é a única força
-que atua sobre a partícula, segue então da Eq.~(\ref{eq:3}) que o
-momento angular da partícula $\vec L=\vec r\times (m\dot{\vec r})$ se
-conserva, ou seja, $\vec L$ é um vetor constante (módulo e direção
-constantes). Em particular, isso implica que o vetor $\vec L$ vai ser
-sempre perpendicular aos vetores $\vec r$ e $\dot{\vec r}$ e, por
-conseguinte, o movimento da partícula é realizado em um plano que é
+Consideremos um planeta de massa $m$ a uma distância $r$ do centro do
+Sol. Se $\vec F_g$ é a força gravitacional sobre o planeta devido ao
+Sol, então o vetor $\vec F_g$ é proporcional ao vetor $-\vec r$. Dessa
+maneira, o torque de $\vec F_g$ vai ser nulo, pois é o produto
+vetorial de vetores paralelos. Se $\vec F_g$ é a única força que atua
+sobre a planeta, segue então da Eq.~(\ref{eq:3}) que o momento angular
+do planeta $\vec L=\vec r\times (m\dot{\vec r})$ se conserva, ou seja,
+$\vec L$ é um vetor constante (módulo e direção constantes). Em
+particular, isso implica que o vetor $\vec L$ vai ser sempre
+perpendicular aos vetores $\vec r$ e $\dot{\vec r}$ e, por
+conseguinte, o movimento do planeta é realizado em um plano que é
 perpendicular a $\vec L$. Assim, podemos considerar convenientemente
 que o plano do movimento é o plano $xy$ (ver
 figura~\ref{fig:leikepler2r}).
@@ -762,22 +769,39 @@ figura~\ref{fig:leikepler2r}).
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.45\textwidth,keepaspectratio]{leikepler2r.pdf}
-  \caption{O movimento da partícula é realizado no plano $xy$.}
+  \caption{O movimento do planeta é realizado no plano $xy$.}
   \label{fig:leikepler2r}
 \end{figure}
 
 Da figura~\ref{fig:leikepler2r} vemos que
-$\vec r=r\cos\theta\hat i+r\sen\theta\hat j$ e, por conseguinte,
-$\dot{\vec r}=-r\dot\theta\sen\theta\hat i+r\dot\theta\cos\theta\hat
-j$. Logo,
-$$\vec L=m\vec r\times\dot{\vec r}=m\left|
-  \begin{array}{ccc}
-    \hat i&\hat j&\hat k\\
-    r\cos\theta& r\sen\theta& 0\\
-    -r\dot\theta\sen\theta& r\dot\theta\cos\theta&0
-  \end{array}
-\right|\,.$$ Portanto,
-$$\vec L=mr^2\dot\theta\hat k\,.$$
+$\vec r=r\cos\theta\hat i+r\sen\theta\hat j$. Logo,
+\begin{equation*}
+  \begin{split}
+    \dot{\vec r}=(\dot r\cos\theta-r\dot\theta\sen\theta)\hat i+(\dot
+    r\sen\theta+r\dot\theta\cos\theta)\hat j
+  \end{split}
+\end{equation*}
+e, por conseguinte,
+\begin{equation*}
+  \begin{split}
+    \vec L&=m\vec r\times\dot{\vec r}\\
+    &=m\left|
+      \begin{array}{ccc}
+        \hat i&\hat j&\hat k\\
+        r\cos\theta& r\sen\theta& 0\\
+        \dot r\cos\theta-r\dot\theta\sen\theta& \dot r\sen\theta+r\dot\theta\cos\theta&0
+      \end{array}
+    \right|\,.
+  \end{split}
+\end{equation*}
+Portanto,
+\begin{equation*}
+  \begin{split}
+    \vec L&=m[r\cos\theta(\dot r\sen\theta+r\dot\theta\cos\theta)\\
+    &\quad\quad-r\sen\theta(\dot r\cos\theta-r\dot\theta\sen\theta)]\hat k\\
+    &=mr^2\dot\theta\hat k\,.
+  \end{split}
+\end{equation*}
 Como esse vetor é constante, seu módulo $L=mr^2\dot\theta$ é uma
 constante. Por outro lado, sabe-se dos cursos de cálculo que a área da
 região limitada pela elipse e os vetores $\vec r(\theta_1)$ e
@@ -789,7 +813,7 @@ $$A=\frac{1}{2}\int_{t_1}^{t_2}r^2\frac{d\theta}{dt}\,dt=\frac{1}{2}\int_{t_1}^{
 Logo, como $L$ é constante, temos que
 $$A=\frac{L}{2m}(t_2-t_1)\,.$$
 Dessa maneira fica provada a segunda lei de Kepler, pois a área
-varrida pelo vetor posição da partícula entre dois instantes de tempo
+varrida pelo vetor posição do planeta entre dois instantes de tempo
 $t_1$ e $t_2$, só depende da diferença $t_2-t_1$ e não dos instantes
 individuais.
 
