@@ -8,7 +8,7 @@
 \setmainfont{TeX Gyre Termes}
 \setmathfont{texgyretermes-math.otf}
 \setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
-% \setsansfont{TeX Gyre Heros}
+%\setsansfont{TeX Gyre Heros}
 %\setmathfont{texgyretermes-math.otf}
 %\setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
 
@@ -1016,10 +1016,10 @@ Eq.~(\ref{eq:19}) que $|x|\le A$ para qualquer instante $t$, pois a
 função cosseno não excede $1$. Logo, a posição do oscilador só pode
 assumir valores no intervalo $[-A,A]$. Por essa razão, a constante $A$
 é chamada de \textbf{amplitude} do oscilador harmônico. Por outro
-lado, as funções cosseno e seno tem período $2\pi$, ou seja, o menor
-valor de $p$ tal que $\cos(z+p)=\cos z$ e $\sen(z+p)=\sen z$ para
-qualquer $z$ é $p=2\pi$. Logo, segue da Eq.~(\ref{eq:19}) que, para
-qualquer $t$,
+lado, as funções cosseno e seno tem período $2\pi$ (ver
+figura~\ref{fig:senocosseno}), ou seja, o menor valor de $p$ tal que
+$\cos(z+p)=\cos z$ e $\sen(z+p)=\sen z$ para qualquer $z$ é
+$p=2\pi$. Logo, segue da Eq.~(\ref{eq:19}) que, para qualquer $t$,
 \begin{equation*}
   \begin{split}
     x\dpar{t+\frac{2\pi}{\omega}}&=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}\\
@@ -1028,5 +1028,60 @@ qualquer $t$,
     &=x(t)\,.
   \end{split}
 \end{equation*}
+De forma análoga vamos podemos verificar que $v(t+2\pi/\omega)=v(t)$
+para qualquer $t$. Logo, o oscilador harmônico realiza um movimento
+periódico com período
+\begin{equation}
+  \label{eq:24}
+  T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}\,.
+\end{equation}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{senocosseno.pdf}
+  \caption{Gráficos das funções cosseno e seno.}
+  \label{fig:senocosseno}
+\end{figure}
+
+O movimento que o oscilador realiza em um período é chamado de uma
+única \textbf{oscilação} (ver figura). Lembrando que a frequência é o
+inverso do período, segue que a frequência do oscilador é
+\begin{equation}
+  \label{eq:25}
+  f=\frac{\omega}{2\pi}=\frac{1}{2\pi}\sqrt{\frac{k}{m}}\,.
+\end{equation}
+A frequência do oscilador nos dá o número de oscilações que o
+oscilador realiza por unidade de tempo. Por outro lado, vemos da
+Eq.~(\ref{eq:25}) que $\omega=2\pi f$. Se interpretamos $2\pi$ como o
+ângulo associado a uma única oscilação, $\omega$ nos daria a variação
+do ângulo associado por unidade de tempo. Isso justifica chamar a
+grandeza $\omega$ de \textbf{frequência angular} do oscilador
+harmônico.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.4\textwidth,keepaspectratio]{oscilador_periodo.pdf}
+  \caption{Ilustração de uma única oscilação.}
+  \label{fig:oscilador_periodo}
+\end{figure}
+
+A Eq.~(\ref{eq:24}) revela que o período de um oscilador harmônico é
+diretamente proporcional à massa do oscilador elevada ao expoente
+$1/2$. Isso faz sentido, pois, se o oscilador tem uma massa grande,
+ele vai oferecer uma grande resistência a se mover e assim o tempo que
+demorará para realizar uma única oscilação será também grande. Por
+outro lado, a Eq.~(\ref{eq:24}) também expressa o fato de que o
+período do oscilador é inversamente proporcional à constante elástica
+da mola elevada ao expoente $1/2$. Isso também faz sentido, pois uma
+constante elástica grande favorece o movimento do oscilador.
+
+As Eqs.~(\ref{eq:24}) e~(\ref{eq:25}) nos dizem que o período e a
+frequência (a frequência angular também) do oscilador harmônico não
+dependem das condições iniciais, pois nessas equações não aparecem as
+constantes $A$ e $\phi$. Isso quer dizer que, dados um oscilador de
+massa $m$ e uma mola de constante $k$, não é possível mudar o tempo
+que o oscilador demora em realizar uma única oscilação mudando a
+posição e a velocidade iniciais do oscilador. No entanto, deve-se
+ressaltar que a amplitude do oscilador depende das condições iniciais,
+como fica evidente da Eq.~(\ref{eq:22}).
 
 \end{document}
