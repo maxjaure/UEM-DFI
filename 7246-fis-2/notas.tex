@@ -1,24 +1,29 @@
 \documentclass[papersize=a4,DIV=calc,twocolumn=on]{scrartcl}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[colorlinks,allcolors=blue]{hyperref}
-\usepackage{amsmath,amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmathfont{STIX Two Math}[StylisticSet={1,8}]
-\setmathfont{TeX Gyre Termes Math}[range={up,it}]
+\setmathfont{texgyretermes-math.otf}
+\setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
+% \setsansfont{TeX Gyre Heros}
+%\setmathfont{texgyretermes-math.otf}
+%\setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
+
+\addtokomafont{disposition}{\rmfamily}
+
 \usepackage{microtype}
 \usepackage{graphicx}
-
-%\addtokomafont{disposition}{\rmfamily}
 
 \newcommand{\dpar}[1]{\left(#1\right)}
 \newcommand{\dsqr}[1]{\left[#1\right]}
 
-\newtheoremstyle{example}{}{}{}{}{}{.}{ }{}
-\theoremstyle{example}
-\newtheorem{ex}{EXERCÍCIO}[section]
+% \newtheoremstyle{example}{}{}{}{}{}{.}{ }{}
+% \theoremstyle{example}
+\theoremstyle{definition}
+\newtheorem{ex}{Exercício}[section]
 
 \DeclareMathOperator{\sen}{sen}
 
@@ -33,9 +38,9 @@
 \section{Equilíbrio de um corpo rígido}
 
 Considere uma partícula de massa $m$ na posição $\vec r$ sobre a qual
-atua uma força $\vec F$. O \emph{torque} da força $\vec F$ é
-definido por $\vec\tau=\vec r\times\vec F$, onde $\times$ denota o
-\emph{produto vetorial} de dois vetores, o qual é definido por
+atua uma força $\vec F$. O \textbf{torque} da força $\vec F$ é definido
+por $\vec\tau=\vec r\times\vec F$, onde $\times$ denota o
+\textbf{produto vetorial} de dois vetores, o qual é definido por
 \begin{equation*}
   \begin{split}
     \vec A\times\vec B&= \left|
@@ -66,8 +71,8 @@ $\dot{\vec a}=\frac{d\vec a}{dt}$.
 
 \begin{ex}
   Considere uma partícula de massa $m$ na posição $\vec r$ sobre a
-  qual atua uma força $\vec F$. Definindo o \emph{momento angular}
-  de uma partícula por $\vec L=\vec r\times\vec p$, onde $\vec p$ é o
+  qual atua uma força $\vec F$. Definindo o \textbf{momento angular} de
+  uma partícula por $\vec L=\vec r\times\vec p$, onde $\vec p$ é o
   momento linear da partícula, mostre que $\vec\tau=\dot{\vec
     L}$. Isso quer dizer que o torque da força $\vec F$ é igual à taxa
   de variação do momento angular da partícula (note a semelhança com a
@@ -133,7 +138,7 @@ $\vec\tau_{\mathrm{ext}}=\vec\tau_1+\cdots+\vec\tau_n$ é o torque
 externo total sobre o sistema e $\vec L=\vec L_1+\cdots+\vec L_n$ é o
 momento angular total do sistema.
 
-Um \emph{corpo rígido} é um corpo não pontual que não se deforma. O
+Um \textbf{corpo rígido} é um corpo não pontual que não se deforma. O
 fato de um corpo rígido não se deformar equivale a dizer que a
 distância entre dois pontos quaisquer do corpo é uma constante.
 
@@ -148,12 +153,12 @@ $$\vec L=\sum_{i=1}^n(\vec r_i\times\vec v_i)\Delta m_i\,.$$
 Considerando que o número de partes $n$ tende ao infinito e
 simultaneamente a massa de cada parte tende a zero, as somas
 anteriores tornam-se integrais. Dessa maneira, encontramos que o
-\emph{momento linear do corpo rígido} é dado por
+\textbf{momento linear do corpo rígido} é dado por
 \begin{equation}
   \label{eq:4}
   \vec p=\int \vec v\,dm
 \end{equation}
-e o \emph{momento angular do corpo rígido} por
+e o \textbf{momento angular do corpo rígido} por
 \begin{equation}
   \label{eq:5}
   \vec L=\int (\vec r\times\vec v)\,dm\,,
@@ -177,7 +182,7 @@ eixo que passa pelo corpo.
   \end{equation}
   onde
   $$\vec R=\frac{1}{M}\int \vec r\,dm$$
-  é a posição do \emph{centro de massa} do corpo.
+  é a posição do \textbf{centro de massa} do corpo.
 
   \noindent\textit{Dica:} Quando um corpo rígido realiza um movimento de translação pura, todos os pontos do corpo possuem a mesma velocidade. Dessa forma, a
   velocidade $\vec v$ pode sair das integrais nas Eqs.~(\ref{eq:4})
@@ -246,15 +251,15 @@ onde
   \label{eq:9}
   I=\int (r\sen\theta)^2\,dm
 \end{equation}
-é o chamado \emph{momento de inércia} do corpo. Cabe ressaltar que
+é o chamado \textbf{momento de inércia} do corpo. Cabe ressaltar que
 para cada ponto do corpo, $r\sen\theta$ é a distância do ponto ao eixo
 de rotação.
 
 A Eq.~(\ref{eq:8}) nos diz que o momento angular é um indicador da
 rotação de um corpo rígido.
 
-Um corpo rígido está em \emph{equilíbrio estático} quando não
-realiza movimento de translação nem de rotação.
+Um corpo rígido está em \textbf{equilíbrio estático} quando não realiza
+movimento de translação nem de rotação.
 
 Se um corpo rígido está em equilíbrio estático, todo ponto do corpo
 tem velocidade nula. Logo, segue das Eqs.~(\ref{eq:4}) e~(\ref{eq:5})
@@ -292,8 +297,8 @@ primeira condição em~(\ref{eq:10}) é satisfeita, mas a segunda não.
   $\vec\tau_P=\int (\vec r\times\vec g)\,dm$.
 \end{ex}
 
-Define-se o \emph{centro de gravidade} de um corpo rígido de massa
-$M$ como o ponto no qual uma partícula de massa $M$ teria um torque do
+Define-se o \textbf{centro de gravidade} de um corpo rígido de massa $M$
+como o ponto no qual uma partícula de massa $M$ teria um torque do
 peso igual ao torque do peso do corpo rígido. O exercício anterior
 mostra que, se $\vec g$ é constante (por exemplo, na superfície da
 Terra), o centro de gravidade de um corpo rígido coincide com seu
@@ -461,11 +466,11 @@ caso contrário, será negativo.
 
 Estudando o movimento da Lua e dos planetas, Newton concluiu que
 existe uma força atrativa entre dois corpos quaisquer, chamada de
-\emph{força gravitacional}. Mais precisamente, ele encontrou a
+\textbf{força gravitacional}. Mais precisamente, ele encontrou a
 seguinte expressão para o valor da força gravitacional entre duas
 partículas de massas $m_1$ e $m_2$ separadas por uma distância $r$:
 $$F_g=\frac{Gm_1m_2}{r^2}\,,$$
-onde $G$ é uma constante chamada de \emph{constante gravitacional}.
+onde $G$ é uma constante chamada de \textbf{constante gravitacional}.
 Sobre cada partícula atua uma força de módulo $F_g$ que aponta na
 direção da outra partícula, ou seja, as partículas se atraem. Dessa
 maneira, se as partículas estão nas posições $\vec r_1$ e $\vec r_2$,
@@ -502,7 +507,7 @@ origem do nosso sistema de coordenadas. Essa força gravitacional está
 dada por
 $$\vec F_g=-\frac{GMm}{r^3}\vec r\,.$$
 Essa força é conservativa pois ela pode ser derivada a partir de uma
-energia potencial. De fato, se definimos a \emph{energia potencial
+energia potencial. De fato, se definimos a \textbf{energia potencial
   gravitacional} da partícula de massa $m$ por
 \begin{equation}
   \label{eq:11}
@@ -521,7 +526,7 @@ $$\frac{\partial V_g}{\partial y}=-\frac{GMmy}{r^3}\quad\text{e}\quad\frac{\part
 Portanto, notamos que
 $$-\dpar{\frac{\partial V_g}{\partial x}\hat i+\frac{\partial V_g}{\partial y}\hat j+\frac{\partial V_g}{\partial z}\hat k}=\vec F_g\,.$$
 O vetor que está entre parêntesis no lado esquerdo dessa equação é
-chamado de \emph{gradiente} de $V_g$ e é usualmente denotado em
+chamado de \textbf{gradiente} de $V_g$ e é usualmente denotado em
 cálculo por $\nabla V_g$. Assim, temos que
 \begin{equation}
   \label{eq:12}
@@ -671,7 +676,7 @@ Terra é $R_T=6380\,\mathrm{km}$.
 
 Se uma partícula de massa $m$ se encontra a uma altura $h\ll R_T$ em
 relação à superfície da Terra, a força gravitacional sobre a partícula
-é chamada de \emph{peso}. Nesse caso, o peso da partícula segundo a
+é chamada de \textbf{peso}. Nesse caso, o peso da partícula segundo a
 Eq.~(\ref{eq:13}) vai ser aproximadamente
 $$F_g=\frac{GM_Tm}{R_T^2}\,.$$
 Por outro lado, nessa aproximação sabemos que $F_g=mg$, onde
@@ -685,7 +690,7 @@ $$M_T=5.974\times 10^{24}\,\mathrm{kg}\,.$$
   Determine a velocidade mínima que deve ser proporcionada a uma
   partícula de massa $m$, inicialmente sobre a superfície da Terra,
   para que ela se afaste da Terra e nunca volte. Essa velocidade é
-  chamada de \emph{velocidade de escape}.
+  chamada de \textbf{velocidade de escape}.
 
   \noindent\textit{Dica:} A energia inicial da partícula é
   $$E_i=\frac{1}{2}mv^2-\frac{GM_Tm}{R_T}\,.$$
@@ -698,13 +703,13 @@ $$M_T=5.974\times 10^{24}\,\mathrm{kg}\,.$$
   circular de raio $r$ em relação ao centro da Terra. Mostre que o
   módulo da velocidade da partícula deve ser dado por
   $$v=\sqrt{\frac{GM_T}{r}}\,.$$
-  Definindo o \emph{período} $T$ como o tempo que a partícula demora
+  Definindo o \textbf{período} $T$ como o tempo que a partícula demora
   em dar uma volta na órbita, mostre que
   $$T=\frac{2\pi r^{3/2}}{\sqrt{GM_T}}\,.$$
 
   \noindent\textit{Dica:} A força gravitacional sobre a partícula é a
   força centrípeta. Logo,
-  $$\frac{GM_Tm}{r^2}=ma_c\,,$$ 
+  $$\frac{GM_Tm}{r^2}=ma_c\,,$$
   onde $a_c$ é a aceleração centrípeta.
 \end{ex}
 
@@ -829,9 +834,9 @@ massa do Sol.
 \begin{ex}
   O cometa Halley se move em uma órbita elíptica ao redor do Sol. No
   instante em que o cometa está mais próximo do Sol
-  (\emph{perihélio}), a distância entre o cometa e o Sol é de
+  (\textbf{perihélio}), a distância entre o cometa e o Sol é de
   $8{,}75\times 10^7\,\mathrm{km}$. No instante em que o cometa está
-  mais afastado do Sol (\emph{afélio}), a distância entre o cometa e
+  mais afastado do Sol (\textbf{afélio}), a distância entre o cometa e
   o sol é de $5{,}26\times 10^9\,\mathrm{km}$. Encontre o comprimento
   do semi-eixo maior da órbita e o período do cometa.
 \end{ex}
@@ -850,7 +855,178 @@ $$T=\frac{2\pi a^{3/2}}{\sqrt{G(M_S+m)}}$$
 onde $m$ é a massa do planeta.
 
 \section{Movimento periódico}
+Uma partícula realiza um movimento \textbf{periódico} se para qualquer
+instante $t$ seus vetores posição e velocidade satisfazem as condições
+\begin{equation}
+  \label{eq:14}
+  \begin{split}
+    \vec r(t+c)&=\vec r(t)\\
+    \vec v(t+c)&=\vec v(t)
+  \end{split}
+\end{equation}
+para algum número $c\ne 0$. O menor número $c\ne 0$ para o qual as
+Eqs.~(\ref{eq:14}) são satisfeitas é chamado de \textbf{período} da
+partícula (ou do movimento) e é usualmente denotado por $T$. A unidade
+de período no SI é o segundo ($s$).
 
+Define-se a \textbf{frequência} do movimento como o inverso do
+período, ou seja, $f=1/T$. A unidade de frequência no SI é o
+\textbf{Hertz} ($\mathrm{Hz}$).
 
+Exemplos de movimentos periódicos são os seguintes:
+\begin{enumerate}
+\item O movimento circular uniforme de uma partícula.
+\item O movimento de um planeta em uma órbita ao redor do Sol.
+\item O movimento horizontal de um bloco, acoplado a uma mola fixa
+  sobre uma superfície lisa.
+\item O movimento de uma partícula suspensa por uma corda unicamente
+  sob o efeito da gravidade da Terra.
+\item O movimento de um corpo rígido suspenso a partir de um ponto
+  unicamente sob o efeito da gravidade da Terra.
+\end{enumerate}
+
+Vamos estudar o movimento oscilatório (vaivém) de um bloco acoplado a
+uma mola fixa, como mostrado na figura~\ref{fig:massamola}. A posição
+de equilíbrio indicada na figura representa a posição do bloco quando
+a mola não está deformada (não está esticada nem comprimida). Quando o
+bloco está à direita da posição de equilíbrio, ele estica a mola e,
+por conseguinte, a mola exerce uma força sobre o bloco orientada para
+a esquerda. Quando o bloco está à esquerda da posição de equilíbrio,
+ele comprime a mola e devido a isso a mola exerce uma força sobre o
+bloco orientada para a direita. Em ambos os casos a força aplicada
+pela mola tenta restituir a forma da mola, por isso às vezes essa
+força é chamada de \textbf{força de restituição}.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{massamola.pdf}
+  \caption{Movimento oscilatório de um bloco acoplado a uma mola
+    fixa.}
+  \label{fig:massamola}
+\end{figure}
+
+Se o bloco está em uma posição $x$, segundo a lei de Hooke, a força de
+restituição sobre a o bloco é dada por $F=-kx$. Essa expressão vale
+quando o bloco estica a mola ($x>0$) assim como quando o bloco
+comprime a mola ($x<0$). Como a força de restituição é a força
+resultante sobre o bloco, pela segunda lei de Newton, temos que
+$$-kx=ma\,,$$
+onde $a$ é a aceleração do bloco. Como $a=\dot v$ e $v=\dot x$, segue
+que $a=\ddot x$ (segunda derivada de $x$ em relação a $t$). Logo,
+obtemos a equação diferencial
+\begin{equation}
+  \label{eq:15}
+  \ddot x+\frac{k}{m}x=0\,,
+\end{equation}
+que é chamada de equação do \textbf{oscilador harmônico
+  simples}. Nesses termos, o bloco da figura~\ref{fig:massamola} é
+chamado de um \textbf{oscilador harmônico}.
+
+Existem vários métodos para resolver a Eq.~(\ref{eq:15}) que podem ser
+estudados nos cursos de cálculo. No entanto, é possível obter-se a
+forma de uma solução dessa equação de uma maneira simples relacionando
+o movimento do oscilador harmônico com o movimento circular uniforme
+de uma partícula.
+
+Consideremos uma partícula que descreve uma trajetoria circular de
+raio $A$ e se move uniformemente com velocidade $v$, como mostrado na
+figura~\ref{fig:ociladoranalogia}. Nota-se dessa figura que a sombra
+da partícula realiza um movimento horizontal oscilatório. Se $x=0$ é a
+posição da origem do círculo e a partícula se encontra na posição
+indicada na figura, vemos que sua sombra estará localizada na posição
+\begin{equation}
+  \label{eq:16}
+  x=A\cos\theta\,.
+\end{equation}
+Como a partícula se move com velocidade angular constante
+$\omega=\Delta\theta/\Delta t$, segue que
+\begin{equation}
+  \label{eq:17}
+  \theta=\omega t+\phi\,,
+\end{equation}
+onde $\phi=\theta(0)$ é o ângulo de partida. Logo, segue das
+Eqs.~(\ref{eq:16}) e~(\ref{eq:17}) que
+\begin{equation}
+  \label{eq:18}
+  x=A\cos(\omega t+\phi).
+\end{equation}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{osciladoranalogia.pdf}
+  \caption{Relação entre movimento circular uniforme e movimento de um
+    oscilador harmônico.}
+  \label{fig:ociladoranalogia}
+\end{figure}
+
+Pode-se perceber que o movimento descrito pela sombra da partícula da
+figura~\ref{fig:ociladoranalogia} é similar ao movimento do oscilador
+harmônico da figura~\ref{fig:massamola}. Como o último é descrito pela
+Eq.~(\ref{eq:15}), podemos procurar uma solução dessa equação da forma
+dada na Eq.~(\ref{eq:18}). Substituindo então~(\ref{eq:18})
+em~(\ref{eq:15}) temos que
+$$-A\omega^2\cos(\omega t+\phi)+\frac{k}{m}A\cos(\omega t+\phi)=0\,,$$
+o qual é verdadeiro para quaisquer valores de $x$ e $t$ se, e somente
+se, $\omega=\sqrt{k/m}$. Portanto, uma solução da equação do oscilador
+harmônico~(\ref{eq:15}) é
+\begin{equation}
+  \label{eq:19}
+  x=A\cos(\omega t+\phi)\,,\quad \text{com}\quad \omega=\sqrt{\frac{k}{m}}\,.
+\end{equation}
+De acordo com a teoria de equações diferenciais ordinárias, a solução
+dada na Eq.~(\ref{eq:19}) é a chamada \textbf{solução geral} da
+Eq.~(\ref{eq:15}), pois depende de duas constantes $A$ e $\phi$ a
+serem determinadas. Como veremos depois, essas constantes podem ser
+obtidas a partir do conhecimento da posição e da velocidade iniciais
+do bloco, as quais são chamadas de \textbf{condições iniciais}.
+
+Se a Eq.~(\ref{eq:19}) é a posição de um oscilador harmônico, sua
+velocidade é dada por
+\begin{equation}
+  \label{eq:20}
+  v=\dot x=-A\omega\sen(\omega t+\phi)\,.
+\end{equation}
+Se no instante inicial o oscilador está na posição $x_0$ e tem
+velocidade $v_0$, segue das Eqs.~(\ref{eq:19}) e~(\ref{eq:20}) que
+$$x_0=A\cos\phi\quad\text{e}\quad v_0=-A\omega\sen\phi\,,$$
+ou, escrito de outra forma,
+\begin{equation}
+  \label{eq:21}
+  x_0=A\cos\phi\quad\text{e}\quad \frac{v_0}{\omega}=-A\sen\phi\,.
+\end{equation}
+Elevando essas equações ao quadrado e somando-as, obtemos que
+$$x_0^2+\frac{v_0^2}{\omega^2}=A^2(\cos^2\phi+\sen^2\phi)=A^2\,.$$
+Portanto,
+\begin{equation}
+  \label{eq:22}
+  A=\sqrt{x_0^2+\frac{v_0^2}{\omega^2}}\,.
+\end{equation}
+Vemos que $A\ge 0$ e que a igualdade acontece se $x_0=0$ e $v_0=0$
+(nesse caso o bloco não se move e fica na posição de
+equilíbrio). Logo, se $A>0$, segue da Eq.~(\ref{eq:21}) que
+\begin{equation}
+  \label{eq:23}
+  \phi=\arccos\frac{x_0}{A}\,.
+\end{equation}
+
+A Eq.~(\ref{eq:19}) junto com as condições iniciais contêm toda a
+informação sobre o movimento de um oscilador harmônico. Em particular,
+deve ser possível verificar a partir daqui que o movimento do
+oscilador é limitado e periódico. Com efeito, segue da
+Eq.~(\ref{eq:19}) que $|x|\le A$ para qualquer instante $t$, pois a
+função cosseno não excede $1$. Logo, a posição do oscilador só pode
+assumir valores no intervalo $[-A,A]$. Por essa razão, a constante $A$
+é chamada de \textbf{amplitude} do oscilador harmônico. Por outro
+lado, as funções cosseno e seno tem período $2\pi$, ou seja, o menor
+valor de $p$ tal que $\cos(z+p)=\cos z$ e $\sen(z+p)=\sen z$ para
+qualquer $z$ é $p=2\pi$. Logo, segue da Eq.~(\ref{eq:19}) que, para
+qualquer $t$,
+\begin{equation*}
+  \begin{split}
+    x\dpar{t+\frac{2\pi}{\omega}}&=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}\\
+    &=A\cos(\omega t+\phi+2\pi)\\
+    &=A\cos(\omega t+\phi)\\
+    &=x(t)\,.
+  \end{split}
+\end{equation*}
 
 \end{document}
