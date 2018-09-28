@@ -5,12 +5,13 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{unicode-math}
-\setmainfont{TeX Gyre Termes}
-\setmathfont{texgyretermes-math.otf}
-\setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
-%\setsansfont{TeX Gyre Heros}
+%\setmainfont{TeX Gyre Termes}
 %\setmathfont{texgyretermes-math.otf}
 %\setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
+\setmainfont{STIX Two Text}
+\setmathfont{STIX Two Math}[StylisticSet={1}]
+%\setsansfont{TeX Gyre Heros}
+%\setmathfont{texgyretermes-math.otf}
 
 \addtokomafont{disposition}{\rmfamily}
 
@@ -1013,13 +1014,14 @@ informação sobre o movimento de um oscilador harmônico. Em particular,
 deve ser possível verificar a partir daqui que o movimento do
 oscilador é limitado e periódico. Com efeito, segue da
 Eq.~(\ref{eq:19}) que $|x|\le A$ para qualquer instante $t$, pois a
-função cosseno não excede $1$. Logo, a posição do oscilador só pode
-assumir valores no intervalo $[-A,A]$. Por essa razão, a constante $A$
-é chamada de \textbf{amplitude} do oscilador harmônico. Por outro
-lado, as funções cosseno e seno tem período $2\pi$ (ver
-figura~\ref{fig:senocosseno}), ou seja, o menor valor de $p$ tal que
-$\cos(z+p)=\cos z$ e $\sen(z+p)=\sen z$ para qualquer $z$ é
-$p=2\pi$. Logo, segue da Eq.~(\ref{eq:19}) que, para qualquer $t$,
+$-1\le \cos z\le 1$ para qualquer $z$. Logo, a posição do oscilador só
+pode assumir valores no intervalo $[-A,A]$. Por essa razão, a
+constante $A$ é chamada de \textbf{amplitude} do oscilador harmônico
+(maior valor para a posição do oscilador). Por outro lado, as funções
+cosseno e seno tem período $2\pi$ (ver figura~\ref{fig:senocosseno}),
+ou seja, o menor valor de $p$ tal que $\cos(z+p)=\cos z$ e
+$\sen(z+p)=\sen z$ para qualquer $z$ é $p=2\pi$. Logo, segue da
+Eq.~(\ref{eq:19}) que, para qualquer $t$,
 \begin{equation*}
   \begin{split}
     x\dpar{t+\frac{2\pi}{\omega}}&=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}\\
@@ -1083,5 +1085,53 @@ que o oscilador demora em realizar uma única oscilação mudando a
 posição e a velocidade iniciais do oscilador. No entanto, deve-se
 ressaltar que a amplitude do oscilador depende das condições iniciais,
 como fica evidente da Eq.~(\ref{eq:22}).
+
+\begin{ex}
+  Um bloco de $5\,\mathrm{kg}$ de massa está acoplado a uma mola fixa
+  de constante elástica igual a $200\,\mathrm{N/m}$. Se inicialmente o
+  bloco está esticando a mola e é liberado do repouso a uma distância
+  de $0{,}5\,\mathrm{m}$ em relação à posição de equilíbrio da mola,
+  encontre o período, a frequência e a frequência angular do
+  bloco. Determine também a expressão da posição do bloco para
+  qualquer instante de tempo $t$.
+\end{ex}
+
+\begin{ex}
+  Considere o bloco e a mola do exercício anterior, mas agora suponha
+  que no instante inicial o bloco está comprimindo a mola na posição
+  $x_0=-0{,}2\,\mathrm{m}$ e tem velocidade
+  $v_0=2\,\mathrm{m/s}$. Encontre o período, a frequência, a
+  frequência angular e a amplitude do bloco.
+\end{ex}
+
+As forças que atuam sobre um oscilador harmônico são conservativas e,
+por conseguinte, a energia total se conserva. Se a massa do oscilador
+é $m$, a constante da mola é $k$, a posição do oscilador em relação à
+posição de equlíbrio é $x$ e a velocidade do oscilador é $v$, então a
+energia total do oscilador em um instante qualquer é dada por
+$$E_T=\frac{mv^2}{2}+\frac{kx^2}{2}\,,$$
+onde o segundo termo da direita corresponde à energia potencial
+elástica. Como $x=A\cos(\omega t+\phi)$ e
+$v=-A\omega\sen(\omega t+\phi)$, com $\omega=\sqrt{k/m}$, temos que
+\begin{equation*}
+  \begin{split}
+    E_T&=\frac{m\omega^2A^2}{2}\sen^2(\omega t+\phi)+\frac{kA^2}{2}\cos^2(\omega t+\phi)\\
+    &=\frac{kA^2}{2}[\sen^2(\omega t+\phi)+\cos^2(\omega t+\phi)]\,.
+  \end{split}
+\end{equation*}
+Portanto,
+\begin{equation}
+  E_T=\frac{kA^2}{2}\,,
+\end{equation}
+que é uma constante.
+
+\begin{ex}
+  Um bloco de $2\,\mathrm{kg}$ de massa está acoplado a uma mola fixa
+  de constante elástica igual a $100\,\mathrm{N/m}$. Se inicialmente o
+  bloco está esticando a mola e é liberado do repouso a uma distância
+  de $0{,}2\,\mathrm{m}$ em relação à posição de equilíbrio da mola,
+  determine as velocidades que o bloco pode ter quando está nas
+  posições $x=0$ e $x=0{,}1$.
+\end{ex}
 
 \end{document}
