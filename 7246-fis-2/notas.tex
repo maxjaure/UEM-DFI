@@ -1,20 +1,9 @@
-\documentclass[papersize=a4,DIV=calc,twocolumn=on]{scrartcl}
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,margin=1in]{geometry}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[hidelinks]{hyperref}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{unicode-math}
-%\setmainfont{TeX Gyre Termes}
-%\setmathfont{texgyretermes-math.otf}
-%\setmathfont{STIX Two Math}[StylisticSet={1},range={\int}]
-\setmainfont{STIX Two Text}
-\setmathfont{STIX Two Math}[StylisticSet={1}]
-%\setsansfont{TeX Gyre Heros}
-%\setmathfont{texgyretermes-math.otf}
-
-\addtokomafont{disposition}{\rmfamily}
-
+\usepackage{amsmath,amsfonts,amsthm}
 \usepackage{microtype}
 \usepackage{graphicx}
 
@@ -36,31 +25,24 @@
 \maketitle
 \tableofcontents
 
-\section{Equilíbrio de um corpo rígido}
+\section{Equilíbrio de um corpo rí\-gi\-do}
 
 Considere uma partícula de massa $m$ na posição $\vec r$ sobre a qual
 atua uma força $\vec F$. O \textbf{torque} da força $\vec F$ é definido
 por $\vec\tau=\vec r\times\vec F$, onde $\times$ denota o
 \textbf{produto vetorial} de dois vetores, o qual é definido por
-\begin{equation*}
-  \begin{split}
-    \vec A\times\vec B&= \left|
+$$\vec A\times\vec B= \left|
       \begin{array}{ccc}
         \hat i&\hat j&\hat k\\
         A_x&A_y&A_z\\
         B_x&B_y&B_z
       \end{array}
-    \right|\\
-    &=(A_yB_z-A_zB_y)\hat i+(A_zB_x-A_xB_z)\hat j\\
-    &\quad+(A_xB_y-A_yB_x)\hat k\,.
-  \end{split}
-\end{equation*}
-
+    \right|=(A_yB_z-A_zB_y)\hat i+(A_zB_x-A_xB_z)\hat j+(A_xB_y-A_yB_x)\hat k\,.$$
 A unidade do torque no sistema internacional (SI) é
 $\mathrm{N}\cdot\mathrm{m}$.
 
 \begin{ex}
-  Verifique que, para uma partícula de $10\,\mathrm{kg}$ na posição
+  Verifique que, para uma par\-tí\-cu\-la de $10\,\mathrm{kg}$ na posição
   $\vec r=\cos 30^\circ\hat i+\sen 30^\circ\hat j$ (em metros), o
   torque do peso é igual a $-49\sqrt{3}\hat k$ (em
   $\mathrm{N}\cdot \mathrm{m}$).
@@ -73,8 +55,9 @@ $\dot{\vec a}=\frac{d\vec a}{dt}$.
 \begin{ex}
   Considere uma partícula de massa $m$ na posição $\vec r$ sobre a
   qual atua uma força $\vec F$. Definindo o \textbf{momento angular} de
-  uma partícula por $\vec L=\vec r\times\vec p$, onde $\vec p$ é o
-  momento linear da partícula, mostre que $\vec\tau=\dot{\vec
+  uma partícula por
+  $$\vec L=\vec r\times\vec p\,,$$
+   onde $\vec p$ é o  momento linear da partícula, mostre que $\vec\tau=\dot{\vec
     L}$. Isso quer dizer que o torque da força $\vec F$ é igual à taxa
   de variação do momento angular da partícula (note a semelhança com a
   segunda lei de Newton). A unidade de momento angular no SI é
@@ -99,19 +82,13 @@ $\dot{\vec a}=\frac{d\vec a}{dt}$.
   r_2$. Mostre que
   \begin{equation}
     \label{eq:1}
-    \begin{split}
-      \vec F_1+\vec F_2&=\dot{\vec p}_1+\dot{\vec p}_2\\
-      \vec\tau_1+\vec\tau_2&=\dot{\vec L}_1+\dot{\vec L}_2\,.
-    \end{split}
+    \vec F_1+\vec F_2=\dot{\vec p}_1+\dot{\vec p}_2\quad\text{e}\quad\vec\tau_1+\vec\tau_2=\dot{\vec L}_1+\dot{\vec L}_2\,.
   \end{equation}
 
   \noindent\textit{Dica:} Segue da segunda lei de Newton que
   \begin{equation}
     \label{eq:2}
-    \begin{split}
-      \vec F_1+\vec F_{12}&=\dot{\vec p}_1\\
-      \vec F_2+\vec F_{21}&=\dot{\vec p}_2\,.
-    \end{split}
+      \vec F_1+\vec F_{12}=\dot{\vec p}_1\quad\text{e}\quad\vec F_2+\vec F_{21}=\dot{\vec p}_2\,.
   \end{equation}
   Somando essas equações e usando a terceira lei de Newton
   ($\vec F_{12}=-\vec F_{21}$), obtém-se a primeira equação
@@ -127,10 +104,8 @@ alteração fundamental para o caso de um sistema de $n$
 partículas. Nesse caso vamos ter que
 \begin{equation}
   \label{eq:3}
-  \begin{split}
-    \vec F_{\mathrm{ext}}&=\dot{\vec p}\\
-    \vec \tau_{\mathrm{ext}}&=\dot{\vec L}\,,
-  \end{split}
+    \vec F_{\mathrm{ext}}=\dot{\vec p}\quad\text{e}\quad
+    \vec \tau_{\mathrm{ext}}=\dot{\vec L}\,,
 \end{equation}
 onde $\vec F_{\mathrm{ext}}=\vec F_1+\cdots+\vec F_n$ é a força
 externa total sobre o sistema, $\vec p=\vec p_1+\cdots+\vec p_n$ é o
@@ -146,7 +121,7 @@ distância entre dois pontos quaisquer do corpo é uma constante.
 Para estudar a dinâmica de um corpo rígido, podemos dividir ele em $n$
 partes pequenas e assim considerar o corpo rígido como um sistema de
 $n$ corpos. Se a massa da $i$-ésima parte é $\Delta m_i$, sua posição
-é $\vec r_i$ e sua velocidade é $\vec v_i$, o momentum total do
+é $\vec r_i$ e sua velocidade é $\vec v_i$, então o momentum total do
 sistema é
 $$\vec p=\sum_{i=1}^n\vec v_i\Delta m_i$$
 e o momento angular total do sistema é
@@ -177,10 +152,7 @@ eixo que passa pelo corpo.
 \begin{ex}
   Considere um corpo rígido de massa $M$ que realiza um movimento de
   translação pura com velocidade $\vec v$. Mostre que nesse caso
-  \begin{equation}
-    \label{eq:6}
-    \vec p=M\vec v\quad\text{e}\quad \vec L=\vec R\times\vec p\,,
-  \end{equation}
+  $$\vec p=M\vec v\quad\text{e}\quad\vec L=\vec R\times\vec p\,,$$
   onde
   $$\vec R=\frac{1}{M}\int \vec r\,dm$$
   é a posição do \textbf{centro de massa} do corpo.
@@ -234,13 +206,7 @@ inferir que o vetor $\vec L$ deve ter a mesma direção que o vetor
 $\vec\omega$. Isso quer dizer que as direções perpendiculares a
 $\vec\omega$ devem se anular após fazer a integral na
 Eq.~(\ref{eq:7}). Logo, vamos ter
-\begin{equation*}
-  \begin{split}
-    \vec L&=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm\\
-    &=\int (r^2-r^2\cos^2\theta)\vec\omega\,dm\\
-    &=\int (r^2\sen^2\theta)\vec\omega\,dm\,.
-  \end{split}
-\end{equation*}
+$$\vec L=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm=\int (r^2-r^2\cos^2\theta)\vec\omega\,dm=\int (r^2\sen^2\theta)\vec\omega\,dm\,.$$
 Como todo ponto do corpo rígido gira com a mesma velocidade angular,
 obtemos que
 \begin{equation}
@@ -259,16 +225,15 @@ de rotação.
 A Eq.~(\ref{eq:8}) nos diz que o momento angular é um indicador da
 rotação de um corpo rígido.
 
-Um corpo rígido está em \textbf{equilíbrio estático} quando não realiza
+Um corpo rígido está em \textbf{equi\-lí\-brio es\-tá\-ti\-co} quando não realiza
 movimento de translação nem de rotação.
 
 Se um corpo rígido está em equilíbrio estático, todo ponto do corpo
 tem velocidade nula. Logo, segue das Eqs.~(\ref{eq:4}) e~(\ref{eq:5})
-que nesse caso vamos ter
-$$\vec p=\vec 0\quad\text{e}\quad\vec L=\vec 0\,,$$
+que nesse caso vamos ter $\vec p=\vec 0$ e $\vec L=\vec 0$,
 onde, na segunda condição, $\vec L$ pode ser calculado em relação a
 qualquer ponto. Substituindo isso nas Eqs.~(\ref{eq:3}), obtemos as
-chamadas condições de equilíbrio para o corpo rígido:
+chamadas \textbf{condições de equilíbrio} para o corpo rígido:
 \begin{equation}
   \label{eq:10}
   {\vec F}_{\mathrm{ext}}=\vec 0\quad\text{e}\quad \vec\tau_{\mathrm{ext}}=\vec 0\,,
@@ -286,7 +251,9 @@ primeira condição em~(\ref{eq:10}) é satisfeita, mas a segunda não.
   \label{ex:1}
   Considere um corpo rígido de massa $M$. Se a aceleração da gravidade
   $\vec g$ é constante, mostre que o torque do peso do corpo é dado
-  por $\vec\tau_P=\vec R\times(M\vec g)$, onde $\vec R$ é a posição do
+  por
+  $$\vec\tau_P=\vec R\times(M\vec g)\,,$$
+  onde $\vec R$ é a posição do
   centro de massa do corpo. Em outras palavras, o torque do peso do
   corpo rígido pode ser calculado considerando o corpo como uma
   partícula de massa $M$ localizada no centro de massa do corpo.
@@ -337,9 +304,9 @@ pessoa está junto a uma parede.
   total pode ser escrito como
   $\vec \tau_{\mathrm{ext}}=\vec\tau_P+\vec\tau_N$, onde $\vec\tau_P$
   e $\vec\tau_N$ têm direções opostas.
-  \begin{figure}[ht]
+  \begin{figure}[t]
     \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{tombo.pdf}
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{tombo.pdf}
     \caption{Estudo do tombo de um corpo rígido.}
     \label{fig:tombo}
   \end{figure}
@@ -370,7 +337,7 @@ $\vec r+\vec r'$ é um vetor perpendicular a $\vec F$, então
 $\tau=|\vec r+\vec r'|F$.
 
 Na maioria dos exercícios lidaremos com problemas onde as posições e
-as forças se encontram em um plano; específicamente, o plano do
+as forças se encontram em um plano; especificamente, o plano do
 papel. Dessa forma, os torques das forças sempre serão vetores
 perpendiculares ao papel. Devido a isso, podemos adotar a seguinte
 convenção: se o vetor torque aponta para fora do papel, consideraremos
@@ -387,9 +354,11 @@ caso contrário, será negativo.
   figura~\ref{fig:barra_equilibrio}. (i) Encontre o valor da tensão na
   corda. (ii) Encontre o valor da força de atrito sobre a barra devido
   à parede.
-  \begin{figure}[ht]
+
+  \noindent\textit{Dica:} Considere o ponto de apoio da barra na parede como o ponto de referência para o cálculo de torques. Com isso, encontre o valor da tensão na corda.
+  \begin{figure}[t]
     \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{barra_equilibrio.pdf}
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{barra_equilibrio.pdf}
     \caption{Barra homogênea em equilíbrio estático.}
     \label{fig:barra_equilibrio}
   \end{figure}
@@ -404,9 +373,9 @@ caso contrário, será negativo.
   base da escada quando a pessoa andou na escada (i) $4\,\mathrm{m}$ e
   (ii) $6\,\mathrm{m}$.
 
-  \noindent\textit{Dica:} Usando a primeira condição de~(\ref{eq:10}), obtenha
+  \noindent\textit{Dica:} Usando a condição de equilíbrio $\vec F_{\textrm{ext}}=\vec 0$, obtenha
   que o valor da força de atrito é igual à força normal devido à
-  parede. Use a segunda condição de~(\ref{eq:10}) para encontrar o
+  parede. Use a condição $\vec\tau_\textrm{ext}=\vec 0$ para encontrar o
   valor dessa força normal, tomando como ponto de referência para o
   cálculo de torques o ponto mais baixo da escada.
 \end{ex}
@@ -422,9 +391,9 @@ caso contrário, será negativo.
   normal devido ao chão é nula. Use a condição de equilíbrio
   $\vec\tau_{\mathrm{ext}}=0$ considerando o ponto mais alto do
   desnível como ponto de referência para o cálculo de torques.
-  \begin{figure}[ht]
+  \begin{figure}[t]
     \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{roda_obstaculo.pdf}
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{roda_obstaculo.pdf}
     \caption{Roda atascada devido a um desnível do chão.}
     \label{fig:roda_obstaculo}
   \end{figure}
@@ -435,20 +404,20 @@ caso contrário, será negativo.
   ele esteja em equilíbrio estático, o centro de massa do bloco deve
   se encontrar dentro da mesa. Considere agora dois blocos homogêneos
   de comprimento $l$. (i) Determine as condições para que ao se
-  colocar um bloco sobre o outro na borda de mesa eles estejam em
+  colocar um bloco sobre o outro na borda da mesa eles estejam em
   equilíbrio estático. (ii) Determine a distância máxima entre o
   extremo da mesa ao extremo do bloco superior.
 
   \noindent\textit{Dica:} Se $x_1$ e $x_2$ são as posições horizontais
   dos centros de massa dos blocos em relação ao bordo da mesa
-  (origem), deve-se ter $x_1\le 0$, $x_2\le l+x_1$ e $x_1+x_2\le
+  (origem), deve-se ter $x_1\le 0$, $x_2\le l/2+x_1$ e $x_1+x_2\le
   0$. Para maximizar a distância entre o extremo da mesa e o extremo
   do bloco $2$, nas condições anteriores devemos considerar
-  $x_2=l+x_1$ e $x_1+x_2=0$.
+  $x_2=l/2+x_1$ e $x_1+x_2=0$.
 \end{ex}
 
 \begin{ex}
-  No espíritu do exercício anterior, considere agora três blocos
+  No espírito do exercício anterior, considere agora três blocos
   homogêneos de comprimento $l$ e determine a distância máxima entre o
   extremo da mesa ao extremo do bloco superior. Generalizando seu
   resultado, infira que ao empilhar $n$ blocos, a distância máxima
@@ -475,7 +444,7 @@ onde $G$ é uma constante chamada de \textbf{constante gravitacional}.
 Sobre cada partícula atua uma força de módulo $F_g$ que aponta na
 direção da outra partícula, ou seja, as partículas se atraem. Dessa
 maneira, se as partículas estão nas posições $\vec r_1$ e $\vec r_2$,
-a força gravitacional sobre a partícula $1$ devido à particula $2$ é
+a força gravitacional sobre a partícula $1$ devido à partícula $2$ é
 dada vetorialmente por
 $$\vec F_{12}=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec r_1)$$
 e a força sobre a partícula $2$ devido à partícula $1$ é
@@ -484,9 +453,9 @@ $$\vec F_{21}=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_1-\vec r_2)\,.$$
 O valor da constante gravitacional $G$ pode ser encontrado
 experimentalmente. Quase 100 anos depois de Newton publicar sua lei da
 gravitação (junto com as três leis de Newton), Cavendish conseguiu
-medir o valor de $G$ usando uma balança de torsão (ver livro). O valor
+medir o valor de $G$ usando uma balança de torção (ver livro). O valor
 que ele encontrou estava próximo do valor atualmente aceito, que é
-$G=6{,}67\times 10^{-11}\,\mathrm{N}\cdot\mathrm{m}^2/\mathrm{kg}$.
+$$G=6{,}67\times 10^{-11}\,\mathrm{N}\cdot\mathrm{m}^2/\mathrm{kg}\,.$$
 
 Como toda a força, as forças gravitacionais obedecem o princípio de
 superposição. Por exemplo, se temos três partículas, sobre cada
@@ -494,11 +463,8 @@ partícula atuarão duas forças gravitacionais devido às duas partículas
 restantes. Logo, se as partículas tem massas $m_1$, $m_2$ e $m_3$, a
 força gravitacional resultante sobre a partícula $1$ será
 \begin{equation*}
-  \begin{split}
-    \vec F_1&=\vec F_{12}+\vec F_{13}\\
-    &=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec
+  \vec F_1=\vec F_{12}+\vec F_{13}=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec
     r_1)+\frac{Gm_1m_3}{|\vec r_1-\vec r_3|^3}(\vec r_3-\vec r_1)\,.
-  \end{split}
 \end{equation*}
 
 Consideremos uma partícula de massa $m$ na posição
@@ -516,11 +482,7 @@ energia potencial. De fato, se definimos a \textbf{energia potencial
 \end{equation}
 vemos que
 \begin{equation*}
-  \begin{split}
-    \frac{\partial V_g}{\partial x}&=\frac{\partial}{\partial x}\dpar{-\frac{GMm}{\sqrt{x^2+y^2+z^2}}}\\
-    &=-\frac{GMmx}{(x^2+y^2+z^2)^{3/2}}\\
-    &=-\frac{GMmx}{r^3}\,.\\
-  \end{split}
+  \frac{\partial V_g}{\partial x}=\frac{\partial}{\partial x}\dpar{-\frac{GMm}{\sqrt{x^2+y^2+z^2}}}=-\frac{GMmx}{(x^2+y^2+z^2)^{3/2}}=-\frac{GMmx}{r^3}\,.
 \end{equation*}
 Analogamente vamos ter que
 $$\frac{\partial V_g}{\partial y}=-\frac{GMmy}{r^3}\quad\text{e}\quad\frac{\partial V_g}{\partial z_1}=-\frac{GMmz}{r^3}\,.$$
@@ -567,9 +529,9 @@ posições são dadas pelo vetor $\vec r'$.
   conclua que a energia potencial gravitacional da partícula é dada
   por
   $$V_g=-\int_0^{2\pi}\frac{Gm}{\sqrt{R^2+z^2}}\lambda R\,d\phi\,.$$
-  \begin{figure}[ht]
+  \begin{figure}[t]
     \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{potencial_espira.pdf}
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{potencial_espira.pdf}
     \caption{Partícula de massa $m$ sobre um arame circular homogêneo
       de massa $M$.}
     \label{fig:potencial_espira}
@@ -602,9 +564,9 @@ posições são dadas pelo vetor $\vec r'$.
   Use a mudança de variável $u=R^2+z^2-2Rz\cos\theta$ na integral para
   chegar na expressão
   $$V_g=-\frac{\pi Gm\sigma R}{z}\int_{R^2+z^2-2Rz}^{R^2+z^2+2Rz}\frac{du}{\sqrt{u}}\,.$$
-  \begin{figure}[ht]
+  \begin{figure}[t]
     \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{potencial_esfera.pdf}
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{potencial_esfera.pdf}
     \caption{Partícula de massa $m$ sobre uma casca esférica homogênea
       de massa $M$.}
     \label{fig:potencial_esfera}
@@ -673,7 +635,8 @@ a qual aponta para o centro da Terra.
 
 Considerando a Terra como uma esfera, o raio dela pode ser medido
 experimentalmente de várias formas. Nós vamos considerar que o raio da
-Terra é $R_T=6380\,\mathrm{km}$.
+Terra é
+$$R_T=6380\,\mathrm{km}\,.$$
 
 Se uma partícula de massa $m$ se encontra a uma altura $h\ll R_T$ em
 relação à superfície da Terra, a força gravitacional sobre a partícula
@@ -688,7 +651,7 @@ para a massa da Terra é
 $$M_T=5.974\times 10^{24}\,\mathrm{kg}\,.$$
 
 \begin{ex}
-  Determine a velocidade mínima que deve ser proporcionada a uma
+  Determine a velocidade mí\-ni\-ma que deve ser proporcionada a uma
   partícula de massa $m$, inicialmente sobre a superfície da Terra,
   para que ela se afaste da Terra e nunca volte. Essa velocidade é
   chamada de \textbf{velocidade de escape}.
@@ -734,20 +697,20 @@ planetas, obteve as seguintes leis empíricas:
 \item O vetor posição de um planeta em relação ao Sol varre áreas
   iguais em intervalos de tempo iguais (ver
   figura~\ref{fig:leikepler2}).
-\item O período de um planeta é diretamente proprocional ao semi-eixo
+\item O período de um planeta é diretamente proporcional ao semi-eixo
   maior da sua órbita elíptica elevado ao expoente $3/2$.
 \end{enumerate}
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{orbitaeliptica.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{orbitaeliptica.pdf}
   \caption{Primeira lei de Kepler. Uma elipse tem a propriedade de
     que, para qualquer ponto dela, a soma das distâncias entre o ponto
     e os focos é uma constante.}
   \label{fig:orbitaeliptica}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{leikepler2.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{leikepler2.pdf}
   \caption{Segunda lei de Kepler.}
   \label{fig:leikepler2}
 \end{figure}
@@ -774,9 +737,9 @@ perpendicular a $\vec L$. Assim, podemos considerar convenientemente
 que o plano do movimento é o plano $xy$ (ver
 figura~\ref{fig:leikepler2r}).
 
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{leikepler2r.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{leikepler2r.pdf}
   \caption{O movimento do planeta é realizado no plano $xy$.}
   \label{fig:leikepler2r}
 \end{figure}
@@ -790,26 +753,15 @@ $\vec r=r\cos\theta\hat i+r\sen\theta\hat j$. Logo,
   \end{split}
 \end{equation*}
 e, por conseguinte,
-\begin{equation*}
-  \begin{split}
-    \vec L&=m\vec r\times\dot{\vec r}\\
-    &=m\left|
-      \begin{array}{ccc}
-        \hat i&\hat j&\hat k\\
-        r\cos\theta& r\sen\theta& 0\\
-        \dot r\cos\theta-r\dot\theta\sen\theta& \dot r\sen\theta+r\dot\theta\cos\theta&0
-      \end{array}
-    \right|\,.
-  \end{split}
-\end{equation*}
+$$\vec L=m\vec r\times\dot{\vec r}=m\left|
+  \begin{array}{ccc}
+    \hat i&\hat j&\hat k\\
+    r\cos\theta& r\sen\theta& 0\\
+    \dot r\cos\theta-r\dot\theta\sen\theta& \dot r\sen\theta+r\dot\theta\cos\theta&0
+  \end{array}
+  \right|\,.$$
 Portanto,
-\begin{equation*}
-  \begin{split}
-    \vec L&=m[r\cos\theta(\dot r\sen\theta+r\dot\theta\cos\theta)\\
-    &\quad\quad-r\sen\theta(\dot r\cos\theta-r\dot\theta\sen\theta)]\hat k\\
-    &=mr^2\dot\theta\hat k\,.
-  \end{split}
-\end{equation*}
+$$\vec L=m[r\cos\theta(\dot r\sen\theta+r\dot\theta\cos\theta)-r\sen\theta(\dot r\cos\theta-r\dot\theta\sen\theta)]\hat k=mr^2\dot\theta\hat k\,.$$
 Como esse vetor é constante, seu módulo $L=mr^2\dot\theta$ é uma
 constante. Por outro lado, sabe-se dos cursos de cálculo que a área da
 região limitada pela elipse e os vetores $\vec r(\theta_1)$ e
@@ -860,10 +812,7 @@ Uma partícula realiza um movimento \textbf{periódico} se para qualquer
 instante $t$ seus vetores posição e velocidade satisfazem as condições
 \begin{equation}
   \label{eq:14}
-  \begin{split}
-    \vec r(t+c)&=\vec r(t)\\
-    \vec v(t+c)&=\vec v(t)
-  \end{split}
+  \vec r(t+c)=\vec r(t)\quad\text{e}\quad\vec v(t+c)=\vec v(t)
 \end{equation}
 para algum número $c\ne 0$. O menor número $c\ne 0$ para o qual as
 Eqs.~(\ref{eq:14}) são satisfeitas é chamado de \textbf{período} da
@@ -897,9 +846,9 @@ ele comprime a mola e devido a isso a mola exerce uma força sobre o
 bloco orientada para a direita. Em ambos os casos a força aplicada
 pela mola tenta restituir a forma da mola, por isso às vezes essa
 força é chamada de \textbf{força de restituição}.
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{massamola.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{massamola.pdf}
   \caption{Movimento oscilatório de um bloco acoplado a uma mola
     fixa.}
   \label{fig:massamola}
@@ -953,7 +902,7 @@ Eqs.~(\ref{eq:16}) e~(\ref{eq:17}) que
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{osciladoranalogia.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{osciladoranalogia.pdf}
   \caption{Relação entre movimento circular uniforme e movimento de um
     oscilador harmônico.}
   \label{fig:ociladoranalogia}
@@ -987,8 +936,7 @@ velocidade é dada por
   v=\dot x=-A\omega\sen(\omega t+\phi)\,.
 \end{equation}
 Se no instante inicial o oscilador está na posição $x_0$ e tem
-velocidade $v_0$, segue das Eqs.~(\ref{eq:19}) e~(\ref{eq:20}) que
-$$x_0=A\cos\phi\quad\text{e}\quad v_0=-A\omega\sen\phi\,,$$
+velocidade $v_0$, segue das Eqs.~(\ref{eq:19}) e~(\ref{eq:20}) que $x_0=A\cos\phi$ e $v_0=-A\omega\sen\phi$,
 ou, escrito de outra forma,
 \begin{equation}
   \label{eq:21}
@@ -1022,14 +970,7 @@ cosseno e seno tem período $2\pi$ (ver figura~\ref{fig:senocosseno}),
 ou seja, o menor valor de $p$ tal que $\cos(z+p)=\cos z$ e
 $\sen(z+p)=\sen z$ para qualquer $z$ é $p=2\pi$. Logo, segue da
 Eq.~(\ref{eq:19}) que, para qualquer $t$,
-\begin{equation*}
-  \begin{split}
-    x\dpar{t+\frac{2\pi}{\omega}}&=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}\\
-    &=A\cos(\omega t+\phi+2\pi)\\
-    &=A\cos(\omega t+\phi)\\
-    &=x(t)\,.
-  \end{split}
-\end{equation*}
+$$x\dpar{t+\frac{2\pi}{\omega}}=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}=A\cos(\omega t+\phi+2\pi)=A\cos(\omega t+\phi)=x(t)\,.$$
 De forma análoga vamos podemos verificar que $v(t+2\pi/\omega)=v(t)$
 para qualquer $t$. Logo, o oscilador harmônico realiza um movimento
 periódico com período
@@ -1037,15 +978,15 @@ periódico com período
   \label{eq:24}
   T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}\,.
 \end{equation}
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.45\textwidth,keepaspectratio]{senocosseno.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{senocosseno.pdf}
   \caption{Gráficos das funções cosseno e seno.}
   \label{fig:senocosseno}
 \end{figure}
 
 O movimento que o oscilador realiza em um período é chamado de uma
-única \textbf{oscilação} (ver figura). Lembrando que a frequência é o
+única \textbf{oscilação} (ver figura~\ref{fig:oscilador_periodo}). Lembrando que a frequência é o
 inverso do período, segue que a frequência do oscilador é
 \begin{equation}
   \label{eq:25}
@@ -1059,9 +1000,9 @@ do ângulo associado por unidade de tempo. Isso justifica chamar a
 grandeza $\omega$ de \textbf{frequência angular} do oscilador
 harmônico.
 
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=0.4\textwidth,keepaspectratio]{oscilador_periodo.pdf}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{oscilador_periodo.pdf}
   \caption{Ilustração de uma única oscilação.}
   \label{fig:oscilador_periodo}
 \end{figure}
@@ -1113,12 +1054,7 @@ $$E_T=\frac{mv^2}{2}+\frac{kx^2}{2}\,,$$
 onde o segundo termo da direita corresponde à energia potencial
 elástica. Como $x=A\cos(\omega t+\phi)$ e
 $v=-A\omega\sen(\omega t+\phi)$, com $\omega=\sqrt{k/m}$, temos que
-\begin{equation*}
-  \begin{split}
-    E_T&=\frac{m\omega^2A^2}{2}\sen^2(\omega t+\phi)+\frac{kA^2}{2}\cos^2(\omega t+\phi)\\
-    &=\frac{kA^2}{2}[\sen^2(\omega t+\phi)+\cos^2(\omega t+\phi)]\,.
-  \end{split}
-\end{equation*}
+$$E_T=\frac{m\omega^2A^2}{2}\sen^2(\omega t+\phi)+\frac{kA^2}{2}\cos^2(\omega t+\phi)=\frac{kA^2}{2}[\sen^2(\omega t+\phi)+\cos^2(\omega t+\phi)]\,.$$
 Portanto,
 \begin{equation}
   E_T=\frac{kA^2}{2}\,,
