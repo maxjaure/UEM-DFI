@@ -1054,9 +1054,7 @@ elástica. Como $x=A\cos(\omega t+\phi)$ e
 $v=-A\omega\sen(\omega t+\phi)$, com $\omega=\sqrt{k/m}$, temos que
 $$E_T=\frac{m\omega^2A^2}{2}\sen^2(\omega t+\phi)+\frac{kA^2}{2}\cos^2(\omega t+\phi)=\frac{kA^2}{2}[\sen^2(\omega t+\phi)+\cos^2(\omega t+\phi)]\,.$$
 Portanto,
-\begin{equation}
-  E_T=\frac{kA^2}{2}\,,
-\end{equation}
+$$E_T=\frac{kA^2}{2}\,,$$
 que é uma constante.
 
 \begin{ex}
@@ -1105,4 +1103,114 @@ que é uma constante.
   oscilam juntos. Determine o período e a amplitude do movimento.
 \end{ex}
 
+\begin{ex}
+  Um \textbf{pêndulo simples} é composto por uma partícula de massa
+  $m$ suspensa por uma corda sem massa de comprimento $l$, a qual tem
+  um dos seus extremos fixo (no teto, por exemplo). Usando a segunda
+  lei de Newton, mostre que a equação diferencial que descreve o
+  movimento da partícula é
+  $$\ddot\theta+\frac{g}{l}\sen\theta=0\,,$$
+  onde $\theta$ é o ângulo que a corda faz com a vertical. Se $\theta$
+  é pequeno ($\le 15º$), podemos usar a aproximação
+  $\sen\theta\approx \theta$. Nesse caso, a equação diferencial
+  anterior pode ser escrita de forma aproximada como
+  $$\ddot\theta+\frac{g}{l}\theta=0\,.$$
+  Conclua daqui que o movimento da partícula é oscilatório e
+  periódico. Além disso, mostre que o período do movimento é dado por
+  $$T=2\pi\sqrt{\frac{l}{g}}\,,$$
+  o qual não depende da massa da partícula e nem das condições
+  iniciais.
+\end{ex}
+
+\begin{ex}
+  Um \textbf{pêndulo físico} consiste em um corpo rígido de massa $M$
+  e momento de inércia $I$ suspenso por um ponto $O$ do corpo,
+  diferente do centro de massa. Se $\theta$ é o ângulo que o segmento
+  que une os pontos $O$ e o centro de massa faz com a vertical, usando
+  as equações $\vec\tau_\mathrm{ext}=\dot{\vec L}$ e $L=I\dot\theta$,
+  mostre que a equação que descreve o movimento do pêndulo físico é
+  $$\ddot\theta+\frac{MgR}{I}\sen\theta=0\,,$$
+  onde $R$ é o comprimento de tal segmento. Mostre que se $\theta$ é
+  pequeno, o movimento do pêndulo físico é oscilatório e
+  aproximadamente periódico, com período
+  $$T=2\pi\sqrt{\frac{I}{MgR}}\,.$$
+\end{ex}
+
+\begin{ex}
+  Considere uma barra homogênea de comprimento $l$ suspensa por um dos
+  seus extremos. Se a barra é liberada do repouso fazendo um ângulo
+  pequeno com a vertical, mostre que o movimento da barra é
+  oscilatório e periódico, com período
+  $$T=2\pi\sqrt{\frac{2l}{3g}}$$
+\end{ex}
+
+Em situações do dia a dia, quando um corpo realiza um movimento
+oscilatório, observa-se que a amplitude do movimento diminui com o
+tempo. Isso se deve à presença de forças de atrito ou forças de
+resistência (forças dissipativas) que atuam sobre o corpo. Em
+determinados casos, por exemplo quando o corpo está embebido em um
+fluido (por exemplo, ar, óleo, etc.) a força de atrito sobre o corpo
+tem módulo proporcional à velocidade do corpo. Consideremos, por
+exemplo, um bloco de massa $m$, sobre uma mesa lisa, acoplado a um dos
+extremos de uma mola sem massa de constante elástica $k$, cujo outro
+extremo está fixo. Suponhamos que o ar aplica sobre o bloco uma força
+de resistência $-bv$ ($b>0$), onde $v$ é a velocidade do bloco. Logo,
+aplicando a segunda lei de Newton, vamos obter que
+\begin{equation}
+  \label{eq:24}
+  \ddot x+\frac{b}{m}\dot x+\frac{k}{m}x=0\,.
+\end{equation}
+Vemos que a única diferença entre essa equação e a do oscilador
+harmônico simples é o termo $b\dot x/m$. Pode-se provar, usando a
+teoria de equações diferenciais que, se $b<2\sqrt{km}$, a solução da
+Eq.~(\ref{eq:24}) é
+\begin{equation}
+  \label{eq:25}
+  x=Ae^{-bt/2m}\cos(\omega' t+\phi)\,,
+\end{equation}
+onde $A$ e $\phi$ são constantes a serem determinadas pelas condições
+iniciais e
+\begin{equation}
+  \label{eq:26}
+  \omega'=\sqrt{\frac{k}{m}-\frac{b^2}{4m^2}}\,.
+\end{equation}
+
+A Eq.~(\ref{eq:25}) nos diz que, no caso em que a força de atrito é
+pouco intensa ($b<2\sqrt{km}$), o bloco realizará oscilações com
+amplitudes cada vez menores. Mais precisamente a amplitude do bloco
+decairá de forma exponencial, devido ao fator $e^{-bt/2m}$ na
+Eq.~(\ref{eq:25}).  Se incrementamos o valor de $b$ de tal forma que
+tenhamos $b=2\sqrt{km}$, vemos da Eq.~(\ref{eq:26}) que $\omega'=0$ o
+que significa que o bloco não oscila mais e a posição do bloco vai
+rapidamente à posição de equilíbrio. A condição $b=2\sqrt{km}$ é
+chamada de \textbf{amortecimento crítico}. Essa situação e a ideal
+para o funcionamento do amortecedor de um carro.
+
+Se $b>2\sqrt{km}$, a Eq.~(\ref{eq:25}) não é mais solução da
+Eq.~(\ref{eq:24}) devido a que, na Eq.~(\ref{eq:26}), $\omega'$
+torna-se um número imaginário. Nesse caso, a teoria das equações
+diferenciais nos diz que a solução da Eq.~(\ref{eq:24}) é da forma
+\begin{equation}
+  \label{eq:27}
+  x=Ae^{-a_1t}+Be^{-a_2t}\,,
+\end{equation}
+onde $A$ e $B$ são constantes determinadas pelas condições iniciais e
+$a_1$ e $a_2$ são constantes determinadas por $k,m$ e $b$. Segue da
+Eq.~(\ref{eq:27}) que, similarmente ao caso do amortecimento crítico,
+o bloco não oscila. No entanto, a posição do bloco assume a posição de
+equilíbrio com uma rapidez menor do que no caso anterior. A condição
+$k>2\sqrt{km}$ é chamada de \textbf{superamortecimento}. Nessa
+direção, a condição $k<2\sqrt{km}$ é chamada de
+\textbf{subamortecimento}. A figura~\ref{fig:osciladoramortecido}
+ilustra a posição de um oscilador harmônico amortecido para cada
+instante de tempo nas três condições de amortecimento.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/osciladoramortecido.pdf}
+  \caption{Gráfico da posição de um oscilador harmônico amortecido nos
+    casos subamortecido ($b=0.2\sqrt{km}$), críticamente amortecido
+    ($b=2\sqrt{km}$) e superamortecido ($b=6\sqrt{km}$).}
+  \label{fig:osciladoramortecido}
+\end{figure}
 \end{document}
