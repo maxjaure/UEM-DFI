@@ -1183,7 +1183,7 @@ Eq.~(\ref{eq:25}).  Se incrementamos o valor de $b$ de tal forma que
 tenhamos $b=2\sqrt{km}$, vemos da Eq.~(\ref{eq:26}) que $\omega'=0$ o
 que significa que o bloco não oscila mais e a posição do bloco vai
 rapidamente à posição de equilíbrio. A condição $b=2\sqrt{km}$ é
-chamada de \textbf{amortecimento crítico}. Essa situação e a ideal
+chamada de \textbf{amortecimento crítico}. Essa situação é a ideal
 para o funcionamento do amortecedor de um carro.
 
 Se $b>2\sqrt{km}$, a Eq.~(\ref{eq:25}) não é mais solução da
@@ -1209,8 +1209,68 @@ instante de tempo nas três condições de amortecimento.
   \centering
   \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/osciladoramortecido.pdf}
   \caption{Gráfico da posição de um oscilador harmônico amortecido nos
-    casos subamortecido ($b=0.2\sqrt{km}$), críticamente amortecido
+    casos subamortecido ($b=0{,}2\sqrt{km}$), críticamente amortecido
     ($b=2\sqrt{km}$) e superamortecido ($b=6\sqrt{km}$).}
   \label{fig:osciladoramortecido}
 \end{figure}
+
+Vejamos o que acontece com a energia total de um oscilador harmônico
+amortecido, descrito pela Eq.~(\ref{eq:24}). A energia total em um
+instante qualquer é dada por
+$$E_T=\frac{mv^2}{2}+\frac{kx^2}{2}\,.$$
+Logo, a derivada da energia total em relação ao tempo é
+$$\dot E_T=mv\dot v+kx\dot x\,.$$
+Usando o fato de que $v=\dot x$, temos que
+$$\dot E_T=\dot x(m\ddot x+kx)\,.$$
+Finalmente usando a Eq.~(\ref{eq:24}) obtemos que
+$$\dot E_T=-b\dot x^2<0\,,$$
+o que quer dizer que a energia total diminui com o tempo, o qual é
+esperado devido à presença de forças dissipativas.
+
+Para acabar com essa seção vamos considerar o caso em que uma força
+externa $F$ é aplicada sobre um oscilador harmônico amortecido. Nesse
+caso, a Eq.~(\ref{eq:24}) assume a forma
+$$\ddot x+\frac{b}{m}\dot x+\frac{k}{m}x=\frac{F}{m}\,.$$
+O caso mais interessante é quando o valor da força $F$ oscila no tempo
+com uma frequência angular $\omega_F$, ou seja,
+$F=F_0\cos\omega_Ft$. Pode-se mostrar que nesse caso, a amplitude do
+oscilador é dada por
+$$A=\frac{F_0}{\sqrt{(k-m\omega_F^2)^2+b^2\omega_F^2}}\,.$$
+Vemos daqui que a amplitude é máxima quando $\omega_F=\sqrt{k/m}$, e
+nesse caso, $A=\frac{F_0}{b}\sqrt{\frac{m}{k}}$. Se $b$ é pequeno (por
+exemplo, no caso de subamortecimento) o valor máximo da amplitude pode
+ser bastante grande e corresponde a um pico pronunciado no gráfico $A$
+versus $\omega_F$. Quando o sistema se encontra nessa situação
+extrema, dizemos que ocorreu \textbf{ressonância}.
+
+\section{Ondas mecânicas}
+
+Uma \textbf{onda mecânica} é uma perturbação que se desloca através de
+um material, chamado de \textbf{meio} de propagação da onda. Conforme
+a onda se propaga através do meio, as partículas do meio sofrem
+deslocamentos. Esses deslocamentos podem ser perpendiculares à direção
+de propagação da onda, como no caso de uma onda que se propaga através
+de uma corda tensionada, podem ser paralelos, como no caso do som que
+se propaga no ar, ou a combinação dos dois, como no caso de uma onda
+que se propaga através superfície de um líquido. No primeiro caso a
+onda é chamada de uma \textbf{onda transversal} e no segundo de uma
+\textbf{onda longitudinal} (no último caso a onda tem uma componente
+tranversal e outra longitudinal).
+
+Antes de uma onda se propagar através de um méio, as partículas do
+meio não foram perturbadas ainda e se encontram em posições de
+equilíbrio. Quando a onda se propaga, as partículas do meio se
+deslocam e aparecem forças de restituição que tentam fazer as
+partículas do meio voltarem às suas respectivas posições de
+equilíbrio. Dessa maneira, as partículas do meio realizam movimentos
+oscilatórios. Deve-se ressaltar que as velocidades das partículas do
+meio são diferentes da velocidade de propagação da onda. Por outro
+lado, como o movimento das partículas do meio é oscilatório, uma onda
+não transporta matéria de uma região do meio para outra. No entanto,
+como para gerar uma onda (ou qualquer tipo de movimento) é preciso
+fornecer energia ao sistema, a onda transfere essa energia de uma
+região do meio para outra.
+
+
+
 \end{document}
