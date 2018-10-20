@@ -1,5 +1,4 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[a4paper,margin=1in]{geometry}
+\documentclass[twocolumn=on,fontsize=12pt,DIV=calc]{scrartcl}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[hidelinks]{hyperref}
@@ -31,13 +30,19 @@ Considere uma partícula de massa $m$ na posição $\vec r$ sobre a qual
 atua uma força $\vec F$. O \textbf{torque} da força $\vec F$ é definido
 por $\vec\tau=\vec r\times\vec F$, onde $\times$ denota o
 \textbf{produto vetorial} de dois vetores, o qual é definido por
-$$\vec A\times\vec B= \left|
+\begin{equation*}
+  \begin{split}
+    \vec A\times\vec B&= \left|
       \begin{array}{ccc}
         \hat i&\hat j&\hat k\\
         A_x&A_y&A_z\\
         B_x&B_y&B_z
       \end{array}
-    \right|=(A_yB_z-A_zB_y)\hat i+(A_zB_x-A_xB_z)\hat j+(A_xB_y-A_yB_x)\hat k\,.$$
+    \right|\\
+    &=(A_yB_z-A_zB_y)\hat i+(A_zB_x-A_xB_z)\hat j\\
+    &\quad+(A_xB_y-A_yB_x)\hat k\,.
+  \end{split}
+\end{equation*}
 A unidade do torque no sistema internacional (SI) é
 $\mathrm{N}\cdot\mathrm{m}$.
 
@@ -199,14 +204,20 @@ temos que
   \vec L=\int [(\vec r\cdot\vec r)\vec\omega-(\vec r\cdot\vec\omega)\vec r]\,dm\,.
 \end{equation}
 Se $\theta$ é o ângulo entre os vetores $\vec\omega$ e $\vec r$, então
-$\vec r\cdot\omega=r\omega\cos\theta$ e, por conseguinte,
+$\vec r\cdot\vec \omega=r\omega\cos\theta$ e, por conseguinte,
 $$\vec L=\int [r^2\vec\omega-(r\omega\cos\theta)\vec r]\,dm\,.$$
 Devido a que o corpo gira em torno de um eixo de simetria, podemos
 inferir que o vetor $\vec L$ deve ter a mesma direção que o vetor
 $\vec\omega$. Isso quer dizer que as direções perpendiculares a
 $\vec\omega$ devem se anular após fazer a integral na
 Eq.~(\ref{eq:6}). Logo, vamos ter
-$$\vec L=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm=\int (r^2-r^2\cos^2\theta)\vec\omega\,dm=\int (r^2\sen^2\theta)\vec\omega\,dm\,.$$
+\begin{equation*}
+  \begin{split}
+    \vec L&=\int \dpar{r^2\vec\omega-(r\omega\cos\theta)(r\cos\theta)\frac{\vec\omega}{\omega}}\,dm\\
+    &=\int (r^2-r^2\cos^2\theta)\vec\omega\,dm\\
+    &=\int (r^2\sen^2\theta)\vec\omega\,dm\,.
+  \end{split}
+\end{equation*}
 Como todo ponto do corpo rígido gira com a mesma velocidade angular,
 obtemos que
 \begin{equation}
@@ -304,9 +315,9 @@ pessoa está junto a uma parede.
   total pode ser escrito como
   $\vec \tau_{\mathrm{ext}}=\vec\tau_P+\vec\tau_N$, onde $\vec\tau_P$
   e $\vec\tau_N$ têm direções opostas.
-  \begin{figure}[t]
+  \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/tombo.pdf}
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/tombo.pdf}
     \caption{Estudo do tombo de um corpo rígido.}
     \label{fig:tombo}
   \end{figure}
@@ -356,10 +367,10 @@ caso contrário, será negativo.
   à parede.
 
   \noindent\textit{Dica:} Considere o ponto de apoio da barra na parede como o ponto de referência para o cálculo de torques. Com isso, encontre o valor da tensão na corda.
-  \begin{figure}[t]
+  \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/barra_equilibrio.pdf}
-    \caption{Barra homogênea em equilíbrio estático.}
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/barra_equilibrio.pdf}
+    \caption{Barra homogênea em equilíbrio es\-tá\-ti\-co.}
     \label{fig:barra_equilibrio}
   \end{figure}
 \end{ex}
@@ -391,9 +402,9 @@ caso contrário, será negativo.
   normal devido ao chão é nula. Use a condição de equilíbrio
   $\vec\tau_{\mathrm{ext}}=0$ considerando o ponto mais alto do
   desnível como ponto de referência para o cálculo de torques.
-  \begin{figure}[t]
+  \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/roda_obstaculo.pdf}
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/roda_obstaculo.pdf}
     \caption{Roda atascada devido a um desnível do chão.}
     \label{fig:roda_obstaculo}
   \end{figure}
@@ -463,8 +474,11 @@ partícula atuarão duas forças gravitacionais devido às duas partículas
 restantes. Logo, se as partículas tem massas $m_1$, $m_2$ e $m_3$, a
 força gravitacional resultante sobre a partícula $1$ será
 \begin{equation*}
-  \vec F_1=\vec F_{12}+\vec F_{13}=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec
+  \begin{split}
+    \vec F_1&=\vec F_{12}+\vec F_{13}\\
+    &=\frac{Gm_1m_2}{|\vec r_1-\vec r_2|^3}(\vec r_2-\vec
     r_1)+\frac{Gm_1m_3}{|\vec r_1-\vec r_3|^3}(\vec r_3-\vec r_1)\,.
+  \end{split}
 \end{equation*}
 
 Consideremos uma partícula de massa $m$ na posição
@@ -482,7 +496,11 @@ energia potencial. De fato, se definimos a \textbf{energia potencial
 \end{equation}
 vemos que
 \begin{equation*}
-  \frac{\partial V_g}{\partial x}=\frac{\partial}{\partial x}\dpar{-\frac{GMm}{\sqrt{x^2+y^2+z^2}}}=-\frac{GMmx}{(x^2+y^2+z^2)^{3/2}}=-\frac{GMmx}{r^3}\,.
+  \begin{split}
+    \frac{\partial V_g}{\partial x}&=\frac{\partial}{\partial x}\dpar{-\frac{GMm}{\sqrt{x^2+y^2+z^2}}}\\
+    &=-\frac{GMmx}{(x^2+y^2+z^2)^{3/2}}\\
+    &=-\frac{GMmx}{r^3}\,.
+  \end{split}
 \end{equation*}
 Analogamente vamos ter que
 $$\frac{\partial V_g}{\partial y}=-\frac{GMmy}{r^3}\quad\text{e}\quad\frac{\partial V_g}{\partial z_1}=-\frac{GMmz}{r^3}\,.$$
@@ -529,9 +547,9 @@ posições são dadas pelo vetor $\vec r'$.
   conclua que a energia potencial gravitacional da partícula é dada
   por
   $$V_g=-\int_0^{2\pi}\frac{Gm}{\sqrt{R^2+z^2}}\lambda R\,d\phi\,.$$
-  \begin{figure}[t]
+  \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/potencial_espira.pdf}
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/potencial_espira.pdf}
     \caption{Partícula de massa $m$ sobre um arame circular homogêneo
       de massa $M$.}
     \label{fig:potencial_espira}
@@ -564,9 +582,9 @@ posições são dadas pelo vetor $\vec r'$.
   Use a mudança de variável $u=R^2+z^2-2Rz\cos\theta$ na integral para
   chegar na expressão
   $$V_g=-\frac{\pi Gm\sigma R}{z}\int_{R^2+z^2-2Rz}^{R^2+z^2+2Rz}\frac{du}{\sqrt{u}}\,.$$
-  \begin{figure}[t]
+  \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/potencial_esfera.pdf}
+    \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/potencial_esfera.pdf}
     \caption{Partícula de massa $m$ sobre uma casca esférica homogênea
       de massa $M$.}
     \label{fig:potencial_esfera}
@@ -700,15 +718,15 @@ planetas, obteve as seguintes leis empíricas:
 \item O período de um planeta é diretamente proporcional ao semi-eixo
   maior da sua órbita elíptica elevado ao expoente $3/2$.
 \end{enumerate}
-\begin{figure}[t]
+\begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/orbitaeliptica.pdf}
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/orbitaeliptica.pdf}
   \caption{Primeira lei de Kepler. Uma elipse tem a propriedade de
     que, para qualquer ponto dela, a soma das distâncias entre o ponto
     e os focos é uma constante.}
   \label{fig:orbitaeliptica}
 \end{figure}
-\begin{figure}[t]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/leikepler2.pdf}
   \caption{Segunda lei de Kepler.}
@@ -737,7 +755,7 @@ perpendicular a $\vec L$. Assim, podemos considerar convenientemente
 que o plano do movimento é o plano $xy$ (ver
 figura~\ref{fig:leikepler2r}).
 
-\begin{figure}[t]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/leikepler2r.pdf}
   \caption{O movimento do planeta é realizado no plano $xy$.}
@@ -753,15 +771,26 @@ $\vec r=r\cos\theta\hat i+r\sen\theta\hat j$. Logo,
   \end{split}
 \end{equation*}
 e, por conseguinte,
-$$\vec L=m\vec r\times\dot{\vec r}=m\left|
+\begin{equation*}
+  \begin{split}
+    \vec L&=m\vec r\times\dot{\vec r}\\
+    &=m\!\left|
   \begin{array}{ccc}
     \hat i&\hat j&\hat k\\
     r\cos\theta& r\sen\theta& 0\\
-    \dot r\cos\theta-r\dot\theta\sen\theta& \dot r\sen\theta+r\dot\theta\cos\theta&0
+    \dot r\cos\theta\!-\!r\dot\theta\sen\theta& \dot r\sen\theta\!+\!r\dot\theta\cos\theta&0
   \end{array}
-  \right|\,.$$
+  \right|.
+  \end{split}
+\end{equation*}
 Portanto,
-$$\vec L=m[r\cos\theta(\dot r\sen\theta+r\dot\theta\cos\theta)-r\sen\theta(\dot r\cos\theta-r\dot\theta\sen\theta)]\hat k=mr^2\dot\theta\hat k\,.$$
+\begin{equation*}
+  \begin{split}
+    \vec L&=m[r\cos\theta(\dot r\sen\theta+r\dot\theta\cos\theta)\\
+    &\qquad-r\sen\theta(\dot r\cos\theta-r\dot\theta\sen\theta)]\hat k\\
+    &=mr^2\dot\theta\hat k\,.
+  \end{split}
+\end{equation*}
 Como esse vetor é constante, seu módulo $L=mr^2\dot\theta$ é uma
 constante. Por outro lado, sabe-se dos cursos de cálculo que a área da
 região limitada pela elipse e os vetores $\vec r(\theta_1)$ e
@@ -836,19 +865,20 @@ Exemplos de movimentos periódicos são os seguintes:
 \end{enumerate}
 
 Vamos estudar o movimento oscilatório (vaivém) de um bloco acoplado a
-uma mola fixa, como mostrado na figura~\ref{fig:massamola}. A posição
-de equilíbrio indicada na figura representa a posição do bloco quando
-a mola não está deformada (não está esticada nem comprimida). Quando o
-bloco está à direita da posição de equilíbrio, ele estica a mola e,
-por conseguinte, a mola exerce uma força sobre o bloco orientada para
-a esquerda. Quando o bloco está à esquerda da posição de equilíbrio,
-ele comprime a mola e devido a isso a mola exerce uma força sobre o
-bloco orientada para a direita. Em ambos os casos a força aplicada
-pela mola tenta restituir a forma da mola, por isso às vezes essa
-força é chamada de \textbf{força de restituição}.
-\begin{figure}[t]
+uma mola fixa de massa desprezível, como mostrado na
+figura~\ref{fig:massamola}. A posição de equilíbrio indicada na figura
+representa a posição do bloco quando a mola não está deformada (não
+está esticada nem comprimida). Quando o bloco está à direita da
+posição de equilíbrio, ele estica a mola e, por conseguinte, a mola
+exerce uma força sobre o bloco orientada para a esquerda. Quando o
+bloco está à esquerda da posição de equilíbrio, ele comprime a mola e
+devido a isso a mola exerce uma força sobre o bloco orientada para a
+direita. Em ambos os casos a força aplicada pela mola tenta restituir
+a forma da mola, por isso às vezes essa força é chamada de
+\textbf{força de restituição}.
+\begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/massamola.pdf}
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/massamola.pdf}
   \caption{Movimento oscilatório de um bloco acoplado a uma mola
     fixa.}
   \label{fig:massamola}
@@ -902,7 +932,7 @@ Eqs.~(\ref{eq:15}) e~(\ref{eq:16}) que
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/osciladoranalogia.pdf}
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/osciladoranalogia.pdf}
   \caption{Relação entre movimento circular uniforme e movimento de um
     oscilador harmônico.}
   \label{fig:ociladoranalogia}
@@ -967,7 +997,14 @@ cosseno e seno tem período $2\pi$ (ver figura~\ref{fig:senocosseno}),
 ou seja, o menor valor de $p$ tal que $\cos(z+p)=\cos z$ e
 $\sen(z+p)=\sen z$ para qualquer $z$ é $p=2\pi$. Logo, segue da
 Eq.~(\ref{eq:18}) que, para qualquer $t$,
-$$x\dpar{t+\frac{2\pi}{\omega}}=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}=A\cos(\omega t+\phi+2\pi)=A\cos(\omega t+\phi)=x(t)\,.$$
+\begin{equation*}
+  \begin{split}
+    x\dpar{t+\frac{2\pi}{\omega}}&=A\cos\dsqr{\omega\dpar{t+\frac{2\pi}{\omega}}+\phi}\\
+    &=A\cos(\omega t+\phi+2\pi)\\
+    &=A\cos(\omega t+\phi)\\
+    &=x(t)\,.
+  \end{split}
+\end{equation*}
 De forma análoga vamos podemos verificar que $v(t+2\pi/\omega)=v(t)$
 para qualquer $t$. Logo, o oscilador harmônico realiza um movimento
 periódico com período
@@ -975,9 +1012,9 @@ periódico com período
   \label{eq:22}
   T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}\,.
 \end{equation}
-\begin{figure}[t]
+\begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/senocosseno.pdf}
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/senocosseno.pdf}
   \caption{Gráficos das funções cosseno e seno.}
   \label{fig:senocosseno}
 \end{figure}
@@ -998,9 +1035,9 @@ do ângulo associado por unidade de tempo. Isso justifica chamar a
 grandeza $\omega$ de \textbf{frequência angular} do oscilador
 harmônico.
 
-\begin{figure}[t]
+\begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/oscilador_periodo.pdf}
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/oscilador_periodo.pdf}
   \caption{Ilustração de uma única oscilação.}
   \label{fig:oscilador_periodo}
 \end{figure}
@@ -1052,7 +1089,12 @@ $$E_T=\frac{mv^2}{2}+\frac{kx^2}{2}\,,$$
 onde o segundo termo da direita corresponde à energia potencial
 elástica. Como $x=A\cos(\omega t+\phi)$ e
 $v=-A\omega\sen(\omega t+\phi)$, com $\omega=\sqrt{k/m}$, temos que
-$$E_T=\frac{m\omega^2A^2}{2}\sen^2(\omega t+\phi)+\frac{kA^2}{2}\cos^2(\omega t+\phi)=\frac{kA^2}{2}[\sen^2(\omega t+\phi)+\cos^2(\omega t+\phi)]\,.$$
+\begin{equation*}
+  \begin{split}
+    E_T&=\frac{m\omega^2A^2}{2}\sen^2(\omega t+\phi)+\frac{kA^2}{2}\cos^2(\omega t+\phi)\\
+    &=\frac{kA^2}{2}[\sen^2(\omega t+\phi)+\cos^2(\omega t+\phi)]\,.
+  \end{split}
+\end{equation*}
 Portanto,
 $$E_T=\frac{kA^2}{2}\,,$$
 que é uma constante.
@@ -1207,7 +1249,7 @@ instante de tempo nas três condições de amortecimento.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth,keepaspectratio]{aux/osciladoramortecido.pdf}
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/osciladoramortecido.pdf}
   \caption{Gráfico da posição de um oscilador harmônico amortecido nos
     casos subamortecido ($b=0{,}2\sqrt{km}$), críticamente amortecido
     ($b=2\sqrt{km}$) e superamortecido ($b=6\sqrt{km}$).}
