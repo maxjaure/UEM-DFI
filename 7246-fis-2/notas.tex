@@ -3,8 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsmath,amsfonts,amsthm}
-\usepackage{mathptmx}
-\usepackage[scaled]{helvet}
+\usepackage[varg]{txfonts}
 \usepackage{microtype}
 \usepackage{graphicx}
 
@@ -1290,16 +1289,17 @@ extrema, dizemos que ocorreu \textbf{ressonância}.
 \section{Ondas mecânicas}
 
 Uma \textbf{onda mecânica} é uma perturbação que se desloca através de
-um material, chamado de \textbf{meio} de propagação da onda. Conforme
-a onda se propaga através do meio, as partículas do meio sofrem
-deslocamentos. Esses deslocamentos podem ser perpendiculares à direção
-de propagação da onda, como no caso de uma onda que se propaga através
-de uma corda tensionada, podem ser paralelos, como no caso do som que
-se propaga no ar, ou a combinação dos dois, como no caso de uma onda
-que se propaga através superfície de um líquido. No primeiro caso a
-onda é chamada de uma \textbf{onda transversal} e no segundo de uma
-\textbf{onda longitudinal} (no último caso a onda tem uma componente
-tranversal e outra longitudinal).
+um material (uma corda, o ar, a água, etc.), chamado de \textbf{meio}
+de propagação da onda. Conforme a onda se propaga através do meio, as
+partículas do meio sofrem deslocamentos. Esses deslocamentos podem ser
+perpendiculares à direção de propagação da onda, como no caso de uma
+onda que se propaga através de uma corda tensionada, podem ser
+paralelos, como no caso do som que se propaga no ar, ou a combinação
+dos dois, como no caso de uma onda que se propaga através superfície
+de um líquido. No primeiro caso a onda é chamada de uma \textbf{onda
+  transversal} e no segundo de uma \textbf{onda longitudinal} (no
+último caso a onda tem uma componente tranversal e outra
+longitudinal).
 
 Antes de uma onda se propagar através de um méio, as partículas do
 meio não foram perturbadas ainda e se encontram em posições de
@@ -1311,10 +1311,126 @@ oscilatórios. Deve-se ressaltar que as velocidades das partículas do
 meio são diferentes da velocidade de propagação da onda. Por outro
 lado, como o movimento das partículas do meio é oscilatório, uma onda
 não transporta matéria de uma região do meio para outra. No entanto,
-como para gerar uma onda (ou qualquer tipo de movimento) é preciso
-fornecer energia ao sistema, a onda transfere essa energia de uma
-região do meio para outra.
+como partículas do meio que estavam inicialmente em repouso começam a
+oscilar (ganham energia) quando a onda passa, a onda transfere energia
+de uma região do meio para outra.
 
+Quando um meio é perturbado produzindo uma única ondulação que se
+propaga através dele, a onda produzida é chamada às vezes de
+\textbf{pulso ondulatório}. Por outro lado, se o meio é perturbado de
+forma contínua e periódica, a onda produzida é chamada de \textbf{onda
+  periódica}. Nesse caso, conforme a onda se propaga, as partículas do
+meio realizam movimentos oscilatórios e periódicos que têm o mesmo
+período.
 
+Um caso importante de onda periódica ocorre quando a onda faz as
+partículas do meio se comportarem como osciladores harmônicos simples
+que têm a mesma frequência e a mesma amplitude. Nesse caso, a onda é
+chamada de uma \textbf{onda senoidal}, pois tem a forma do gráfico das
+funções trigonométricas seno ou cosseno (ver
+figura~\ref{fig:onda}). Os pontos onde as partículas do meio sofreram
+um deslocamento positivo (negativo) máximo devido a uma onda senoidal
+são chamados de \textbf{cristas} (\textbf{vales}). O comprimento de
+onda de uma onda senoidal pode ser obtido então medindo a distância
+entre duas cristas (ou entre dois vales) consecutivos.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/onda.pdf}
+  \caption{Onda periódica de comprimento de onda $\lambda$ que se
+    propaga para a direita através de uma corda em dois instantes de
+    tempo $t_0$ e $t_1$. As setas em vermelho indicam os deslocamentos
+    das partículas da corda provocados pela propagação da onda.}
+  \label{fig:onda}
+\end{figure}
+
+A distância que uma onda periódica percorre em um intervalo de tempo
+igual a um período é chamado de \textbf{comprimento de onda} e é
+usualmente denotado por $\lambda$ (lê-se lambda). Conhecendo-se o
+comprimento de onda $\lambda$ e o período $T$ de uma onda periódica, a
+velocidade de propagação da onda pode ser encontrada pela relação
+\begin{equation}
+  \label{eq:28}
+  v=\frac{\lambda}{T}=\lambda f\,,
+\end{equation}
+onde $f=1/T$ é a frequência da onda. Em muitos casos, a velocidade da
+onda só depende das propriedades mecânicas do meio. Dessa maneira, a
+Eq.~(\ref{eq:28}) implica que um aumento na frequência da onda produz
+uma diminuição no seu comprimento de onda e vice-versa.
+
+\begin{ex}
+  \textbf{Ondas sonoras} são ondas longitudinais periódicas que se
+  propagam no ar. A velocidade de propagação de uma onda sonora
+  (velocidade do som) depende da temperatura do ambiente. Se a
+  velocidade do som a $20\,º\mathrm{C}$ é 344\,\textrm{m/s}, determine
+  o comprimento de onda de uma onda sonora de frequência igual a
+  $784\,\mathrm{Hz}$ (Nota sol na quinta oitava de um piano).
+\end{ex}
+
+Ondas podem se propagar em mais de uma direção, por exemplo a onda
+produzida na superfície de um líquido quando uma gota de água cai
+sobre ela. No entanto, adotando um posto de vista introdutório, nós
+estaremos interessados somente em ondas que se propagam em uma única
+direção, a qual será identificada com o eixo $x$.
+
+Como as partículas de um meio se comportam como osciladores harmônicos
+simples que têm a mesma frequência angular $\omega$ e a mesma
+amplitude $A$ quando uma onda senoidal se propaga, o deslocamento de
+uma partícula na posição $x$ para qualquer instante de tempo $t$ será
+dado por
+\begin{equation}
+  \label{eq:29}
+  y(x,t)=A\cos(\omega t+c(x))\,,
+\end{equation}
+onde $c(x)$ é uma função de $x$. Em particular vamos ter que
+$y(0,t)=A\cos(\omega t+c(0))$. Se a onda se propaga para a direita com
+velocidade $v$, depois de um intervalo de tempo $x/v$, os
+deslocamentos da partícula na posição $x\ge 0$ serão iguais que os
+deslocamentos sofridos pela partícula na posição $x=0$. Logo, vamos
+ter que
+$$A\cos(\omega t+c(0))=A\cos\dpar{\omega\dpar{t+\frac{x}{v}}+c(x)}$$
+para todo $t$. Essa igualdade é satisfeita se
+$$\omega t+c(0)=\omega t+\frac{\omega}{v} x+c(x)\,,$$
+ou seja, se
+$$c(x)=c(0)-\frac{\omega}{v} x\,.$$
+Substituindo isso na Eq.~(\ref{eq:29}) temos que
+$$y(x,t)=A\cos\dpar{\omega t-\frac{\omega}{v} x+c(0)}\,.$$
+Como o cosseno é uma função par ($\cos (-z)=\cos z$ para qualquer
+$z$), então, pondo $c(0)=-\phi$, vamos ter que
+\begin{equation}
+  \label{eq:30}
+  y(x,t)=A\cos(kx-\omega t+\phi)\,,
+\end{equation}
+onde
+$$k=\frac{\omega}{v}$$
+é chamado de \textbf{número de onda} ou \textbf{vetor de onda}. A
+função $y$ dada pela Eq.~(\ref{eq:30}) é chamada de uma \textbf{função
+  de onda}, a constante $A$ é chamada de \textbf{amplitude} da onda e
+$\phi$ de \textbf{fase}. Pode-se verificar que, no caso de uma onda
+senoidal que se propaga para à esquerda, o sinal de $\omega t$ na
+Eq.~(\ref{eq:30}) é positivo.
+
+\begin{ex}
+  Se uma onda senoidal tem sua função de onda dada pela
+  Eq.~(\ref{eq:30}), mostre que
+  $$k=\frac{2\pi}{\lambda}\quad\text{e}\quad \omega=2\pi f\,,$$
+  onde $\lambda$ é o comprimento de onda e $f$ a frequência da onda.
+
+  \noindent\textit{Dica:} Use a periodicidade da função cosseno junto
+  ao fato de que $y(x+n\lambda,t)=y(x,t)$ para qualquer $t$ e qualquer
+  inteiro $n\ge 0$.
+\end{ex}
+
+\begin{ex}
+  Uma onda transversal senoidal com amplitude igual a
+  $0{,}02\,\mathrm{m}$ se propaga através de uma corda tensionada de
+  esquerda para a direita com velocidade de $0{,}5\,\mathrm{m/s}$. (i)
+  Determine o número de onda, a frequência e a frequência angular da
+  onda. (ii) Encontre a função de onda que descreve a onda sabendo que
+  no instante inicial a extremidade da esquerda está na posição de
+  equilíbrio e se move de cima para baixo. (iii) Encontre a expressão
+  do deslocamento de um ponto da corda que está na posição
+  $x=3\,\mathrm{m}$ para qualquer instante de tempo.
+\end{ex}
 
 \end{document}
