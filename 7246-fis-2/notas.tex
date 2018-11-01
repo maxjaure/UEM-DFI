@@ -1423,8 +1423,9 @@ Eq.~(\ref{eq:30}) é positivo.
 
 \begin{ex}
   Uma onda transversal senoidal com amplitude igual a
-  $0{,}02\,\mathrm{m}$ se propaga através de uma corda tensionada de
-  esquerda para a direita com velocidade de $0{,}5\,\mathrm{m/s}$. (i)
+  $0{,}02\,\mathrm{m}$ e comprimento de onda igual a
+  $0{,}5\,\mathrm{m}$ se propaga através de uma corda tensionada de
+  esquerda para a direita com velocidade de $10\,\mathrm{m/s}$. (i)
   Determine o número de onda, a frequência e a frequência angular da
   onda. (ii) Encontre a função de onda que descreve a onda sabendo que
   no instante inicial a extremidade da esquerda está na posição de
@@ -1432,5 +1433,65 @@ Eq.~(\ref{eq:30}) é positivo.
   do deslocamento de um ponto da corda que está na posição
   $x=3\,\mathrm{m}$ para qualquer instante de tempo.
 \end{ex}
+
+A velocidade de uma partícula do meio pela qual passa uma onda
+senoidal descrita pela função de onda~(\ref{eq:30}) é dada pela
+derivada parcial de $y$ em relação ao tempo, ou seja,
+$$\frac{\partial y}{\partial t}=\omega A\sen(kx-\omega t+\phi)\,.$$
+Da mesma forma, a aceleração dessa partícula será dada por
+\begin{equation}
+  \label{eq:31}
+  \frac{\partial^2 y}{\partial t^2}=\omega^2A\cos(kx-\omega t+\phi)=\omega^2y(x,t)\,.
+\end{equation}
+Por outro lado, a derivada parcial de $y$ em relação a $x$ é
+$$\frac{\partial y}{\partial x}=-kA\sen(kx-\omega t+\phi)$$
+e, por conseguinte,
+\begin{equation}
+  \label{eq:32}
+  \frac{\partial^2 y}{\partial x^2}=k^2A\cos(kx-\omega t+\phi)=k^2y(x,t)\,.
+\end{equation}
+Vemos então das equações~(\ref{eq:31}) e~(\ref{eq:32}) que
+$$\frac{1}{\omega^2}\frac{\partial^2 y}{\partial t^2}=\frac{1}{k^2}\frac{\partial^2 y}{\partial x^2}\,.$$
+Lembrando que $\omega/k=v$, onde $v$ é a velocidade de propagação da
+onda, obtemos a equação
+\begin{equation}
+  \frac{\partial^2 y}{\partial x^2}=\frac{1}{v^2}\frac{\partial^2 y}{\partial t^2}\,,
+\end{equation}
+a qual é chamada de \textbf{equação de onda}.
+
+Suponhamos que uma onda transversal senoidal se propague através de
+uma corda tensionada de densidade linear de massa $\rho(x)$ e
+consideremos uma porção da corda como ilustrado na
+figura~\ref{fig:ondavelocidade}. Desprezando o efeito da gravidade e
+considerando que a corda se deforma muito pouco quando a onda passa,
+as únicas forças que atuam sobre a porção de corda são as tensões
+$\vec T(x)$, no seu extremo esquerdo, e $\vec T(x+\Delta x)$, no
+direito. Logo, decompondo essas forças em componentes horizontal e
+vertical e usando a segunda lei de Newton vamos ter que
+$$T(x+\Delta x)\cos\theta(x+\Delta x)-T(x)\cos\theta(x)=0$$
+e
+\begin{multline*}
+  T(x+\Delta x)\sen\theta(x+\Delta x)\\
+  -T(x)\sen\theta(x)=\rho(x)\sqrt{\Delta x^2+\Delta
+    y^2}\frac{\partial^2 y}{\partial t^2}\,.
+\end{multline*}
+Dividindo essas equações por $\Delta x$ e tomando o limite
+$\Delta x\to 0$, vamos ter que
+\begin{equation*}
+  \begin{split}
+    \frac{\partial}{\partial x}[T\cos\theta]&=0\\
+    \frac{\partial}{\partial
+      x}[T\sen\theta]&=\rho(x)\sqrt{1+\dpar{\frac{\partial y}{\partial
+          x}}^2}\frac{\partial^2 y}{\partial t^2}\,.
+  \end{split}
+\end{equation*}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/ondavelocidade.pdf}
+  \caption{Porção de uma corda tensionada, pela qual passa uma onda
+    senoidal.}
+  \label{fig:ondavelocidade}
+\end{figure}
 
 \end{document}
