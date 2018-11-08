@@ -1455,43 +1455,187 @@ $$\frac{1}{\omega^2}\frac{\partial^2 y}{\partial t^2}=\frac{1}{k^2}\frac{\partia
 Lembrando que $\omega/k=v$, onde $v$ é a velocidade de propagação da
 onda, obtemos a equação
 \begin{equation}
+  \label{eq:33}
   \frac{\partial^2 y}{\partial x^2}=\frac{1}{v^2}\frac{\partial^2 y}{\partial t^2}\,,
 \end{equation}
 a qual é chamada de \textbf{equação de onda}.
 
-Suponhamos que uma onda transversal senoidal se propague através de
-uma corda tensionada de densidade linear de massa $\rho(x)$ e
-consideremos uma porção da corda como ilustrado na
+A função de onda~(\ref{eq:30}), que descreve uma onda senoidal, é uma
+solução particular da equação de onda. A equação de onda admite outros
+tipos de solução, por exemplo funções de onda que descrevem ondas
+triangulares, quadradas, etc.
+
+Suponhamos que uma onda transversal se propague através de uma corda
+tensionada de densidade linear de massa $\rho(x)$ e consideremos uma
+porção da corda como ilustrado na
 figura~\ref{fig:ondavelocidade}. Desprezando o efeito da gravidade e
 considerando que a corda se deforma muito pouco quando a onda passa,
 as únicas forças que atuam sobre a porção de corda são as tensões
-$\vec T(x)$, no seu extremo esquerdo, e $\vec T(x+\Delta x)$, no
+$\vec F(x)$, no seu extremo esquerdo, e $\vec F(x+\Delta x)$, no
 direito. Logo, decompondo essas forças em componentes horizontal e
 vertical e usando a segunda lei de Newton vamos ter que
-$$T(x+\Delta x)\cos\theta(x+\Delta x)-T(x)\cos\theta(x)=0$$
+$$F(x+\Delta x)\cos\theta(x+\Delta x)-F(x)\cos\theta(x)=0$$
 e
 \begin{multline*}
-  T(x+\Delta x)\sen\theta(x+\Delta x)\\
-  -T(x)\sen\theta(x)=\rho(x)\sqrt{\Delta x^2+\Delta
+  F(x+\Delta x)\sen\theta(x+\Delta x)\\
+  -F(x)\sen\theta(x)=\rho(x)\sqrt{\Delta x^2+\Delta
     y^2}\frac{\partial^2 y}{\partial t^2}\,.
 \end{multline*}
 Dividindo essas equações por $\Delta x$ e tomando o limite
 $\Delta x\to 0$, vamos ter que
-\begin{equation*}
+\begin{equation}
+  \label{eq:34}
   \begin{split}
-    \frac{\partial}{\partial x}[T\cos\theta]&=0\\
+    \frac{\partial}{\partial x}[F\cos\theta]&=0\\
     \frac{\partial}{\partial
-      x}[T\sen\theta]&=\rho(x)\sqrt{1+\dpar{\frac{\partial y}{\partial
+      x}[F\sen\theta]&=\rho(x)\sqrt{1+\dpar{\frac{\partial y}{\partial
           x}}^2}\frac{\partial^2 y}{\partial t^2}\,.
   \end{split}
+\end{equation}
+Como a corda se deforma muito pouco quando a onda se propaga, vamos
+ter $|\partial y/\partial x|\ll 1$ e assim podemos usar a aproximação
+$1+(\partial y/\partial x)^2\approx 1$. Por outro lado,
+$\tan\theta=\partial y/\partial x$,
+$$\cos\theta=\frac{1}{\sqrt{\sec^2\theta}}=\frac{1}{\sqrt{1+\tan^2\theta}}=\frac{1}{\sqrt{1+(\frac{\partial y}{\partial x})^2}}\approx 1$$
+e
+$$\sen\theta=\cos\theta\tan\theta\approx \frac{\partial y}{\partial x}\,.$$
+Logo, nas equações~(\ref{eq:34}) vamos ter que
+\begin{equation*}
+  \begin{split}
+    \frac{\partial F}{\partial x}&=0\\
+    \frac{\partial F}{\partial x}\frac{\partial y}{\partial
+      x}+F(x)\frac{\partial^2 y}{\partial
+      x^2}&=\rho(x)\frac{\partial^2 y}{\partial t^2}\,.
+  \end{split}
 \end{equation*}
+Portanto,
+$$\frac{\partial^2 y}{\partial x^2}=\frac{\rho(x)}{F(x)}\frac{\partial^2 y}{\partial t^2}\,.$$
+Comparando essa Eq. com a Eq. de onda~(\ref{eq:33}), obtemos que a
+velocidade de propagação da onda através da corda é dada por
+$$v(x)=\sqrt{\frac{F(x)}{\rho(x)}}\,.$$
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.45\textwidth,keepaspectratio]{aux/ondavelocidade.pdf}
-  \caption{Porção de uma corda tensionada, pela qual passa uma onda
-    senoidal.}
+  \caption{Porção de uma corda tensionada, pela qual se propaga uma
+    onda transversal.}
   \label{fig:ondavelocidade}
 \end{figure}
+
+\begin{ex}
+  \label{ex:ondapoco}
+  João se encontra no fundo de um poço de $80\,\mathrm{m}$ de
+  profundidade. Na sua posição se encontra um bloco de
+  $15\,\mathrm{kg}$ suspenso por uma corda de $2\,\mathrm{kg}$, a qual
+  conecta o bloco com um suporte que se encontra na superfície. Em um
+  certo instante João balnça a corda gerando uma onda que se propaga
+  de baixo para cima. (i) Assumindo que a tensão da corda é a mesma em
+  todo ponto dela, calcule o tempo que a onda demora em chegar na
+  superfície. (ii) Levando em conta que a tensão não é constante,
+  determine a velocidade da onda quando ela chega na superfície.
+\end{ex}
+
+Uma onda transfere energia de uma região do méio para outra. Para
+analisar essa transferência de energia, vamos considerar o caso
+partícular de uma onda transversal que se propaga de esquerda para à
+direita através de uma corda, a qual se deforma muito pouco. Nesse
+caso, desprezando efeitos gravitacionais, a única força que atua sobre
+a porção de corda constituida por pontos com posições $\ge x$ é a
+tensão $\vec F(x)$. Essa força realiza um trabalho
+$-F(x)\sen\theta(x)\Delta y$ sobre a porção de corda em
+consideração. Logo, o trabalho realizado por unidade de tempo
+(potência) será $-F(x)\sen\theta(x)\,(\Delta y/\Delta t)$. Tomando o
+limite $\Delta t\to 0$, obtemos a potência instantânea
+$$P(x,t)=-F(x)\sen\theta(x)\frac{\partial y}{\partial t}\,.$$
+Como a corda se deforma pouco,
+$\sen\theta\approx \partial y/\partial x$ e, por conseguinte,
+\begin{equation}
+  \label{eq:35}
+  P(x,t)=-F(x)\frac{\partial y}{\partial x}\frac{\partial y}{\partial t}\,.
+\end{equation}
+
+A expressão da potência instantânea dada na Eq.~(\ref{eq:35}) é valida
+para qualquer onda transversal que se propaga por uma corda, seja
+senoidal ou não. Em particular, se a onda é senoidal e é descrita pela
+função de onda $y(x,t)=A\cos(kx-\omega t+\phi)$, vamos ter que
+$\partial y/\partial x=-kA\sen(kx-\omega t+\phi)$ e
+$\partial y/\partial x=\omega A\sen(kx-\omega t+\phi)$. Logo, na
+Eq.~(\ref{eq:35}) vamos ter que
+$$P(x,t)=k\omega A^2F(x)\sen^2(kx-\omega t+\phi)\,.$$
+Lembrando que $v=\omega/k=\sqrt{F(x)/\rho(x)}$, temos que
+$k=\omega\sqrt{\rho(x)/F(x)}$. Portanto,
+\begin{equation}
+  \label{eq:36}
+  P(x,t)=\sqrt{\rho(x)F(x)}\omega^2A^2\sen^2(kx-\omega t+\phi)\,.
+\end{equation}
+Segue daqui que a potência instantânea de uma onda senoidal nunca é
+negativa. Isso quer dizer que se a energia flui de uma região do meio
+para outra, o fluxo de energia segue o sentido da propagação da onda
+senoidal e nunca no sentido contrário.
+
+Como o valor máximo da função $\sen^2$ é $1$, segue da
+Eq.~(\ref{eq:36}) que o valor máximo da potência instantânea é
+$$P_\mathrm{max}(x)=\sqrt{\rho(x)F(x)}\omega^2A^2\,.$$
+Por outro lado, a potência média é dada por
+$$P_\mathrm{med}(x)=\frac{1}{T}\int_0^TP(x,t)\,dt\,,$$
+onde $T$ é o período da onda. Logo,
+$$P_\mathrm{med}(x)=\frac{P_\mathrm{max}(x)}{T}\int_0^T\sen^2(kx-\omega t+\phi)\,dt\,.$$
+Usando a identidade trigonométrica $2\sen^2z=1-\cos 2z$, temos que
+$$P_\mathrm{med}(x)=\frac{P_\mathrm{max}(x)}{2T}\int_0^T[1-\cos[2(kx-\omega t+\phi)]\,dt\,.$$
+Logo,
+$$P_\mathrm{med}(x)=\frac{P_\mathrm{max}(x)}{2T}\dsqr{t+\frac{\sen[2(kx-\omega t+\phi)]}{2\omega}}_0^T\,.$$
+Como o segundo termo do lado direito dá o mesmo valor quando avaliado
+nos limites, vamos obter que
+$$P_\mathrm{med}(x)=\frac{P_\mathrm{max}(x)}{2}\,.$$
+
+\begin{ex}
+  Se no exercício~\ref{ex:ondapoco} João gera uma onda periódica
+  senoidal de amplitude igual a $0{,}2\,\mathrm{m}$ e com uma
+  frequência igual a $2\,\mathrm{Hz}$, determine as potências máxima e
+  média da onda assumindo que a tensão é a mesma em todo ponto da
+  corda.
+\end{ex}
+
+Diferentemente de uma onda que se propaga através de uma corda, a qual
+se propaga em uma única dimensão, outras ondas (por exemplo, o som) se
+propagam nas três dimensões espaciais. Para essas ondas, define-se a
+\textbf{intensidade} da onda como a razão da potência média pela área
+de uma região do meio que a onda atravessa. Se as ondas se propagam de
+forma radial, a intensidade a uma distância $r$ do gerador de ondas
+será dada por
+$$I=\frac{P_\mathrm{med}}{4\pi r^2}\,.$$
+Segue daqui que a intensidade das ondas decai com a distância elevada
+ao quadrado.
+
+\begin{ex}
+  Um alto-falante que se encontra na parte superior de um poste de
+  $5\,\mathrm{m}$ de altura gera ondas sonoras que se propagam
+  radialmente. Se a intensidade na base do poste é de
+  $0{,}1\, \mathrm{W/m^2}$. Determine a intensidade em um ponto que se
+  encontra no chão a uma distância de $10\,\mathrm{m}$ da base do
+  poste.
+\end{ex}
+
+Até agora temos considerado a propagação de uma única onda atráves de
+um meio. Quando temos duas ou mais ondas se propagando no meio, o
+deslocamento resultante das partículas do meio é igual à soma dos
+deslocamentos provocados por cada onda de forma independente. Isso é
+conhecido como o \textbf{princípio de superposição}. Matematicamente,
+se $y_1(x,t)$ e $y_2(x,t)$ são funções de onda que descrevem duas
+ondas que se propagam através de um meio, então a função de onda que
+descreve os deslocamentos resultantes será
+$$y(x,t)=y_1(x,t)+y_2(x,t)\,.$$
+
+Consideremos um pedaço de uma corda que tem o extremo direito fixo a
+uma parede e suponhamos que uma onda senoidal se propague através da
+corda de esquerda para a direita. Quando a onda chega no extremo
+direito, como ele está fixo, a onda vai ser refletida e se propagará
+de direita para à esquerda. Vamos usar o princípio de superposição
+para encontrar a função de onda que descreve os deslocamentos
+resultantes da corda. Para isso, suponhamos que
+$y_1(x,t)=A\cos(kx-\omega t+\phi_1)$ descreva a onda incidente. Logo,
+como a onda refletida deve ter a mesma amplitude e a mesma frequência
+do que a onda incidente, sua função de onda vai ter a forma
+$y_2(x,t)=A\cos(kx+\omega t+\phi_2)$.
 
 \end{document}
