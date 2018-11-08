@@ -1636,6 +1636,65 @@ resultantes da corda. Para isso, suponhamos que
 $y_1(x,t)=A\cos(kx-\omega t+\phi_1)$ descreva a onda incidente. Logo,
 como a onda refletida deve ter a mesma amplitude e a mesma frequência
 do que a onda incidente, sua função de onda vai ter a forma
-$y_2(x,t)=A\cos(kx+\omega t+\phi_2)$.
+$y_2(x,t)=A\cos(kx+\omega t+\phi_2)$. Pelo princípio de superposição a
+função de onda resultante é $y(x,t)=y_1(x,t)+y_2(x,t)$. Se $x=0$
+corresponde à posição onde a corda está fixa na parede, então a função
+de onda $y(x,t)$ deve satisfazer as \textbf{condições de contorno}
+$$y(0,t)=0\quad\text{e}\quad \frac{\partial y}{\partial t}(0,t)=0$$
+para qualquer $t$. Em particular, considerando $t=0$, vamos ter que
+\begin{equation*}
+  \begin{split}
+    y(0,0)&=A\cos\phi_1+A\cos\phi_2=0\\
+    \frac{\partial y}{\partial t}(0,0)&=\omega A\sen\phi_1-\omega
+    A\sen\phi_2=0\,.
+  \end{split}
+\end{equation*}
+Logo, $\phi_1$ e $\phi_2$ devem satisfazer as equações
+\begin{equation}
+  \label{eq:37}
+  \begin{split}
+    \cos\phi_2&=-\cos\phi_1\\
+    \sen\phi_2&=\sen\phi_1
+  \end{split}
+\end{equation}
+Multiplicando essas equações, vamos obter que $\sen(\phi_1+\phi_2)=0$
+e, por conseguinte, $\phi_1+\phi_2=0,\pi$. Como o primeiro caso viola
+a primeira equação em~(\ref{eq:37}). Portanto, devemos ter
+$\phi_2=\pi-\phi_1$. Logo,
+\begin{equation*}
+  \begin{split}
+    y(x,t)&=A\cos(kx-\omega t+\phi_1)\\
+    &\quad +A\cos(kx+\omega t+\pi-\phi_1)\\
+    &=A[\cos(kx-\omega t+\phi_1)-\cos(kx+\omega t-\phi_1)]\\
+    &=A[\cos kx\cos(\omega t-\phi_1)\\
+    &\qquad+\sen kx\sen(\omega t-\phi_1)\\
+    &\qquad-\cos kx\cos(\omega t-\phi_1)\\
+    &\qquad+\sen kx\sen(\omega t-\phi_1)]\,.
+  \end{split}
+\end{equation*}
+Portanto,
+\begin{equation}
+  \label{eq:38}
+  y(x,t)=2A\sen kx\sen(\omega t-\phi_1)\,.
+\end{equation}
+
+A onda descrita pela função de onda dada na Eq.~(\ref{eq:38}) parece
+que não se desloca através da corda, por isso ela é chamada de uma
+\textbf{onda estacionária}. Segue da Eq.~(\ref{eq:38}) que o valor
+máximo do deslocamento para uma posição $x$ é
+\begin{equation}
+  \label{eq:39}
+  y_\mathrm{max}(x)=2A|\sen kx|\,.
+\end{equation}
+Isso quer dizer que um ponto da corda na posição $x$ se comporta como
+um oscilador harmônico simples com amplitude $y_\mathrm{max}(x)$. A
+Eq.~(\ref{eq:39}) nos diz também que existem pontos da corda que não
+são deslocados pela onda. Esses pontos são chamados de
+\textbf{nós}. Para encontrar a posição dos nós, vamos usar a condição
+$y_\mathrm{max}(x)=0$. Logo, vamos ter que $\sen kx=0$, o que implica
+que $kx=0,\pi,2\pi,3\pi,\ldots$. Portanto, as posições dos nós vão ser
+$$x=0,\frac{\pi}{k},\frac{2\pi}{k},\frac{3\pi}{k},\ldots$$
+ou, em termos do comprimento de onda $\lambda=2\pi/k$,
+$$x=0,\frac{\lambda}{2},\lambda,\frac{3\lambda}{2},\ldots\,.$$
 
 \end{document}
