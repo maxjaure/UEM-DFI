@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{microtype}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\newcommand{\R}{\mathbb{R}}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Exercise}[section]
+
+\title{Notes of elementary physics 1}
+\author{Max Jauregui}
+
+\begin{document}
+\maketitle
+\section{Kinematics in one dimension}
+
+\subsection{Frames of reference}
+
+We are going to study the motion of an object which can move along a
+straight line. We assume that the dimensions of the object are not
+important in its motion. Hence, any object will be considered as a
+\emph{particle}, which is represented by a dot.
+
+In order to study the motion of a particle, we need to define a
+\emph{frame of reference}, which is composed by a coordinate system
+and a clock. In the particular case where a particle moves along a
+straight line, the coordinate system is just composed by a point,
+labeled as the \emph{origin} of the frame of reference, and an axis,
+usually called the \emph{$x$-axis}.
+
+Fixed a frame of reference, the position of a particle at an instant
+$t\ge 0$ is given by a real number $x(t)$. This defines a function
+$x:[0,\infty)\to\R$, which, as almost any function in physics, will be
+assumed to have derivatives of any order.
+
+The international system of units (SI) establishes the second (s) as
+the unit of time and the meter (m) as the unit of length. In this
+direction, we will consider that $x(t)$ is the position of a particle
+measured in meters at an instant $t$, measured in seconds.
+
+\subsection{Average velocity and average speed}
+
+Let us consider a particle that moves in a straight line and let us
+suppose that we know the position of the particle at two distinct
+instants $t_1$ and $t_2$. The \emph{average velocity} of the particle
+in this interval of time is defined as
+$$\overline v=\frac{x(t_2)-x(t_1)}{t_2-t_1}\,.$$
+Introducing the notation $\Delta t=t_2-t_1$, we can write
+$$\overline{v}=\frac{x(t_1+\Delta t)-x(t_1)}{\Delta t}\,.$$
+The unit of average velocity in the SI is meters per second (m/s).
+
+The average velocity of a particle can be positive, negative or
+zero. For instance, if $x(t_2)=x(t_1)$ (the particle returns to the
+same position), then $\overline{v}=0\,\mathrm{m/s}$. In this case, the
+particle is not necessarily at rest and, consequently, it could have
+traveled a distance $d$ different from zero. We define the
+\emph{average speed} of the particle as
+$$v_s=\frac{d}{|\Delta t|}\,.$$
+The average speed of a particle is always non-negative. The definition
+of average speed remains the same for the general motion of a particle
+in three dimensions.
+\begin{ex}
+  A dog is initially (instant $0\,\mathrm{s}$) in the position
+  $0\,\mathrm{m}$. Then, the dog runs $40\,\mathrm{m}$ to the right
+  and then $20\,\mathrm{m}$ to the left, reaching its final position
+  at the instant $12\,\mathrm{s}$. Find the average velocity and the
+  average speed of the dog in this interval of time. \emph{Answer:}
+  $\overline{v}=1{,}7\,\mathrm{m/s}$ and
+  $\overline{v}_s=5\,\mathrm{m/s}$.
+\end{ex}
+
+\subsection{Instantaneous velocity}
+
+Let us begin with an example.
+
+\begin{ex}
+  A particle moves in a straight line such that it is in the position
+  $1{,}0\,\mathrm{m}$ at instant $1{,}0\,\mathrm{s}$. (i) If the
+  particle is in the position $4{,}0\,\mathrm{m}$ at the instant
+  $2{,}0\,\mathrm{s}$, find the average velocity of the particle
+  between the instants $1{,}0\,\mathrm{s}$ and
+  $1{,}2\,\mathrm{s}$. (ii) Suppose that the particle is in the
+  positions $2{,}3\,\mathrm{m}$ and $1{,}7\,\mathrm{m}$ at the
+  instants $1{,}5\,\mathrm{s}$ and $1{,}1\,\mathrm{s}$
+  respectively. Find the average velocity of the particle between the
+  instants $1{,}0\,\mathrm{s}$ and $1{,}5\,\mathrm{s}$ and between
+  $1{,}0\,\mathrm{s}$ and $1{,}3\,\mathrm{s}$. \emph{Answer:} (i)
+  $3{,}0\,\mathrm{m/s}$ (ii) $2{,}6\,\mathrm{m/s}$ and
+  $2{,}1\,\mathrm{m/s}$.
+\end{ex}
+
+The exercise above illustrates that the average velocity between the
+instants $1\,\mathrm{s}$ and $t$ approximate to $2\,\mathrm{m/s}$ as
+$t$ approaches $1\,\mathrm{s}$. This motivates to say that the
+velocity of the particle at the instant $1\,\mathrm{s}$ is
+$2\,\mathrm{m/s}$. This velocity is called the \emph{instantaneous
+  velocity} and is defined in general, for an arbitrary instant $t$,
+by
+$$v(t)=\lim_{\Delta t\to 0}\frac{x(t+\Delta t)-x(t)}{\Delta t}\,.$$
+The limit on the right hand side of this equation is a very important
+one and is called the \emph{derivative} of the function $x$ at the
+point $t$, denoted by $dx/dt$. Then, we have
+$$v(t)=\frac{dx}{dt}\,.$$
+
+
+\end{document}
