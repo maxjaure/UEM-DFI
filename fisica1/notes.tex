@@ -2,7 +2,9 @@
 \usepackage{microtype}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{graphicx}
 
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 
 \theoremstyle{definition}
@@ -102,6 +104,48 @@ The limit on the right hand side of this equation is a very important
 one and is called the \emph{derivative} of the function $x$ at the
 point $t$, denoted by $dx/dt$. Then, we have
 $$v(t)=\frac{dx}{dt}\,.$$
+The absolute value of the instantaneous velocity is called
+\emph{instantaneous speed}.
 
+In this course we will essentially work with polynomial functions. In
+order to compute the derivative of a polynomial, we will use the
+following rules:
+\begin{eqnarray*}
+  \frac{dt^n}{dt}&=&nt^{n-1}\,,\quad n\in\N\,;\\
+  \frac{dc}{dt}&=& 0\,,\quad\mbox{for any constant }c\,.
+\end{eqnarray*}
+
+\begin{ex}
+  The position of a particle in meters is given by the expression
+  $x(t)=5 t^2-2 t+3$ if $t$ is measured in seconds. Find the
+  instantaneous velocity of the particle at the instant
+  $2\,\mathrm{s}$. \emph{Answer:} $18\,\mathrm{m/s}$.
+\end{ex}
+
+Having the pairs $(t,x(t))$ for several values of $t$, we can plot the
+graph of the function $x$. This graph is usually called
+\emph{displacement-time graph} or simply \emph{$x$ vs $t$ graph}. The
+ratio $r=[x(t+\Delta t)-x(t)]/\Delta t$ is the slope of the segment
+that connects the points $(t,x(t))$ and $(t+\Delta t,x(t+\Delta
+t))$. If $\Delta t$ tends to $0$ ($\Delta t\to 0$), the ratio $r$
+becomes the slope of the tangent line that passes through the point
+$(t,x(t))$. Thus, if we have an $x$ vs $t$ graph, the instantaneous
+velocity at an instant $t$ will be given by the slope of the line that
+is tangent to the curve at that instant.
+
+\begin{ex}
+  Consider the $x$ vs $t$ graph given in Fig.~\ref{fig:xtgraph}. (i)
+  Find the approximate values of the instants where the instant
+  velocity is $0\,\mathrm{m/s}$. (ii) Find the approximate instant
+  where the particle moves from right to left at maximum instantaneous
+  speed.
+
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{xtgraph.pdf}
+    \caption{$x$ vs $t$ graph.}
+    \label{fig:xtgraph}
+  \end{figure}
+\end{ex}
 
 \end{document}
