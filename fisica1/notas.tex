@@ -5,7 +5,9 @@
 \usepackage{microtype}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{graphicx}
 
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 
 \theoremstyle{definition}
@@ -112,7 +114,47 @@ O limite do lado direito é muito importante e é chamado em cálculo de
 derivada da função $x$ no ponto $t$, denotado por $dx/dt$. Logo, temos
 que
 $$v(t)=\frac{dx}{dt}\,.$$
-O valor absoluto da velocidade instantânea é chamado de
+O valor absoluto da velocidade instantânea é chamado às vezes de
 \emph{velocidade escalar instantânea}.
+
+Neste curso essencialmente trabalharemos com funciones
+polinomiais. Para calcular a derivada de polinômios, usaremos as
+seguintes regras:
+\begin{eqnarray*}
+  \frac{dt^n}{dt}&=&nt^{n-1}\,,\quad n\in\N\,;\\
+  \frac{dc}{dt}&=& 0\,,\quad\mbox{para qualquer constante }c\,.
+\end{eqnarray*}
+
+\begin{ex}
+  A posição de uma partícula em metros é dada pela expressão
+  $x(t)=5t^2-2t+3$ se $t$ é medido em segundos. Encontre a velocidade
+  instantânea da partícula no instante
+  $2\,\mathrm{s}$. \emph{Resposta:} $18\,\mathrm{m/s}$.
+\end{ex}
+
+Tendo os pares $(t,x(t))$ para vários instantes $t$, podemos desenhar
+o gráfico da função $x$. Esse gráfico é usualmente chamado de
+\emph{gráfico posição versus tempo} ou simplesmente \emph{gráfico $x$
+  vs $t$}. A razão $r=[x(t+\Delta t)-x(t)]/\Delta t$ é a inclinação do
+segmento que une os pontos $(t,x(t))$ e $(t+\Delta t,x(t+\Delta
+t))$. Se $\Delta t$ tende a $0$ ($\Delta t\to 0$), a razão $r$
+torna-se a inclinação da reta tangente que passa pelo ponto
+$(t,x(t))$. Assim, se temos um gráfico $x$ vs $t$, a velocidade
+instantânea em um instante $t$ será dada pela inclinação da reta que é
+tangente ao gráfico nesse instante.
+
+\begin{ex}
+  Considere o gráfico $x$ vs $t$ dado na Fig.~\ref{fig:xtcurve}. (i)
+  Encontre os valores aproximados dos instantes onde a velocidade
+  instantânea é $0\,\mathrm{m/s}$. (ii) Encontre o valor aproximado do
+  instante em que a partícula se move de direita a esquerda com
+  velocidade escalar instantânea máxima.
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{xtcurve.pdf}
+    \caption{$x$ vs $t$ graph.}
+    \label{fig:xtcurve}
+  \end{figure}
+\end{ex}
 
 \end{document}
